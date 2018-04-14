@@ -13,7 +13,7 @@ module.exports = (shepherd) => {
         uri: configuration.remoteFile,
         agentOptions: {
           keepAlive: true,
-          keepAliveMsecs: 15000,
+          keepAliveMsecs: 25000,
         },
       });
 
