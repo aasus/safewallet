@@ -1,11 +1,11 @@
 #!/bin/bash
-# Script to build gui for Agama App
+# Script to build gui for Safewallet App
 
-[ -d ${WORKSPACE}/gui/EasyDEX-GUI ] && cd ${WORKSPACE}/gui/EasyDEX-GUI
-[ -d ../gui/EasyDEX-GUI ] && cd ../gui/EasyDEX-GUI
-[ -d gui/EasyDEX-GUI ] && cd gui/EasyDEX-GUI
+[ -d ${WORKSPACE}/gui/FairExchange-GUI ] && cd ${WORKSPACE}/gui/FairExchange-GUI
+[ -d ../gui/FairExchange-GUI ] && cd ../gui/FairExchange-GUI
+[ -d gui/FairExchange-GUI ] && cd gui/FairExchange-GUI
 
-echo "Building EasyDEX-GUI"
+echo "Building FairExchange-GUI"
 echo "Actual directory is: ${PWD}"
 
 echo "Checkout to redux branch."
@@ -18,6 +18,6 @@ echo "Installing nodejs modules."
 npm install 
 npm install webpack
 
-echo "Building EasyDEX-GUI app."
+echo "Building FairExchange-GUI app."
 npm run build 
-echo "EasyDEX-GUI is built!"
+echo "FairExchange-GUI is built!"

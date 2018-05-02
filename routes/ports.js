@@ -1,7 +1,7 @@
 // default daemon ports
 
 const assetChainPorts = {
-  'komodod': '7771',
+  'safecoind': '7771',
   'markermaker': '7783',
   'OOT': '12467',
   'PIZZA': '11608',

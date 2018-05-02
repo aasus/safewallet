@@ -5,8 +5,8 @@ const request = require('request');
 
 module.exports = (shepherd) => {
   shepherd.startSPV = (coin) => {
-    if (coin === 'KMD+REVS+JUMBLR') {
-      shepherd.addElectrumCoin('KMD');
+    if (coin === 'SAFE+REVS+JUMBLR') {
+      shepherd.addElectrumCoin('SAFE');
       shepherd.addElectrumCoin('REVS');
       shepherd.addElectrumCoin('JUMBLR');
     } else {
@@ -20,7 +20,7 @@ module.exports = (shepherd) => {
     }
   }
 
-  shepherd.startKMDNative = (selection, isManual) => {
+  shepherd.startSAFENative = (selection, isManual) => {
     let herdData;
     const acHerdData = {
       REVS: {
@@ -46,13 +46,13 @@ module.exports = (shepherd) => {
     };
     const httpRequest = () => {
       const options = {
-        url: `http://127.0.0.1:${shepherd.appConfig.agamaPort}/shepherd/herd`,
+        url: `http://127.0.0.1:${shepherd.appConfig.safewalletPort}/shepherd/herd`,
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          herd: 'komodod',
+          herd: 'safecoind',
           options: herdData,
           token: shepherd.appSessionHash,
         }),
@@ -64,12 +64,12 @@ module.exports = (shepherd) => {
     };
 
     if (isManual) {
-      shepherd.kmdMainPassiveMode = true;
+      shepherd.safeMainPassiveMode = true;
     }
 
-    if (selection === 'KMD') {
+    if (selection === 'SAFE') {
       herdData = {
-        'ac_name': 'komodod',
+        'ac_name': 'safecoind',
         'ac_options': [
           '-daemon=0',
           '-addnode=78.47.196.146',
@@ -97,7 +97,7 @@ module.exports = (shepherd) => {
       httpRequest();
     } else {
       const herdData = [{
-        'ac_name': 'komodod',
+        'ac_name': 'safecoind',
         'ac_options': [
           '-daemon=0',
           '-addnode=78.47.196.146',
@@ -125,13 +125,13 @@ module.exports = (shepherd) => {
       for (let i = 0; i < herdData.length; i++) {
         setTimeout(() => {
           const options = {
-            url: `http://127.0.0.1:${shepherd.appConfig.agamaPort}/shepherd/herd`,
+            url: `http://127.0.0.1:${shepherd.appConfig.safewalletPort}/shepherd/herd`,
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-              herd: 'komodod',
+              herd: 'safecoind',
               options: herdData[i],
               token: shepherd.appSessionHash,
             }),

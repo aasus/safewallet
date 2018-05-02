@@ -18,23 +18,23 @@ module.exports = (shepherd) => {
 
       switch (_platform) {
         case 'darwin':
-          shepherd.komodoDir = shepherd.appConfig.dataDir.length ? shepherd.appConfig.dataDir : `${process.env.HOME}/Library/Application Support/Komodo`;
+          shepherd.safecoinDir = shepherd.appConfig.dataDir.length ? shepherd.appConfig.dataDir : `${process.env.HOME}/Library/Application Support/Safecoin`;
           break;
         case 'linux':
-          shepherd.komodoDir = shepherd.appConfig.dataDir.length ? shepherd.appConfig.dataDir : `${process.env.HOME}/.komodo`;
+          shepherd.safecoinDir = shepherd.appConfig.dataDir.length ? shepherd.appConfig.dataDir : `${process.env.HOME}/.safecoin`;
           break;
         case 'win32':
-          shepherd.komodoDir = shepherd.appConfig.dataDir.length ? shepherd.appConfig.dataDir : `${process.env.APPDATA}/Komodo`;
-          shepherd.komodoDir = path.normalize(shepherd.komodoDir);
+          shepherd.safecoinDir = shepherd.appConfig.dataDir.length ? shepherd.appConfig.dataDir : `${process.env.APPDATA}/Safecoin`;
+          shepherd.safecoinDir = path.normalize(shepherd.safecoinDir);
           break;
       }
 
-      if (_herd === 'komodo') {
-        _location = shepherd.komodoDir;
+      if (_herd === 'safecoin') {
+        _location = shepherd.safecoinDir;
       }
 
       if (_ac) {
-        _location = `${shepherd.komodoDir}/${_ac}`;
+        _location = `${shepherd.safecoinDir}/${_ac}`;
 
         if (_ac === 'CHIPS') {
           _location = shepherd.chipsDir;
@@ -69,8 +69,8 @@ module.exports = (shepherd) => {
 
   shepherd.get('/coind/stdout', (req, res) => {
     if (shepherd.checkToken(req.query.token)) {
-      const _daemonName = req.query.chain !== 'komodod' && req.query.chain.toLowerCase() !== 'kmd' ? req.query.chain : 'komodod';
-      const _daemonLogName = `${shepherd.agamaDir}/${_daemonName}.log`;
+      const _daemonName = req.query.chain !== 'safecoind' && req.query.chain.toLowerCase() !== 'safe' ? req.query.chain : 'safecoind';
+      const _daemonLogName = `${shepherd.safewalletDir}/${_daemonName}.log`;
 
       shepherd.readDebugLog(_daemonLogName, 'all')
       .then((result) => {

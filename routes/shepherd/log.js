@@ -15,18 +15,18 @@ module.exports = (shepherd) => {
   }
 
   shepherd.writeLog = (data) => {
-    const logLocation = `${shepherd.agamaDir}/shepherd`;
+    const logLocation = `${shepherd.safewalletDir}/shepherd`;
     const timeFormatted = new Date(Date.now()).toLocaleString('en-US', { hour12: false });
 
     if (shepherd.appConfig.debug) {
-      if (fs.existsSync(`${logLocation}/agamalog.txt`)) {
-        fs.appendFile(`${logLocation}/agamalog.txt`, `${timeFormatted}  ${data}\r\n`, (err) => {
+      if (fs.existsSync(`${logLocation}/safewalletlog.txt`)) {
+        fs.appendFile(`${logLocation}/safewalletlog.txt`, `${timeFormatted}  ${data}\r\n`, (err) => {
           if (err) {
             shepherd.log('error writing log file');
           }
         });
       } else {
-        fs.writeFile(`${logLocation}/agamalog.txt`, `${timeFormatted}  ${data}\r\n`, (err) => {
+        fs.writeFile(`${logLocation}/safewalletlog.txt`, `${timeFormatted}  ${data}\r\n`, (err) => {
           if (err) {
             shepherd.log('error writing log file');
           }
@@ -65,7 +65,7 @@ module.exports = (shepherd) => {
    */
   shepherd.post('/guilog', (req, res, next) => {
     if (shepherd.checkToken(req.body.token)) {
-      const logLocation = `${shepherd.agamaDir}/shepherd`;
+      const logLocation = `${shepherd.safewalletDir}/shepherd`;
       const timestamp = req.body.timestamp;
 
       if (!shepherd.guiLog[shepherd.appSessionHash]) {
@@ -85,7 +85,7 @@ module.exports = (shepherd) => {
         };
       }
 
-      fs.writeFile(`${logLocation}/agamalog.json`, JSON.stringify(shepherd.guiLog), (err) => {
+      fs.writeFile(`${logLocation}/safewalletlog.json`, JSON.stringify(shepherd.guiLog), (err) => {
         if (err) {
           shepherd.writeLog('error writing gui log file');
         }
@@ -115,8 +115,8 @@ module.exports = (shepherd) => {
     if (shepherd.checkToken(req.query.token)) {
       const logExt = req.query.type === 'txt' ? 'txt' : 'json';
 
-      if (fs.existsSync(`${shepherd.agamaDir}/shepherd/agamalog.${logExt}`)) {
-        fs.readFile(`${shepherd.agamaDir}/shepherd/agamalog.${logExt}`, 'utf8', (err, data) => {
+      if (fs.existsSync(`${shepherd.safewalletDir}/shepherd/safewalletlog.${logExt}`)) {
+        fs.readFile(`${shepherd.safewalletDir}/shepherd/safewalletlog.${logExt}`, 'utf8', (err, data) => {
           if (err) {
             const errorObj = {
               msg: 'error',
@@ -136,7 +136,7 @@ module.exports = (shepherd) => {
       } else {
         const errorObj = {
           msg: 'error',
-          result: `agama.${logExt} doesnt exist`,
+          result: `safewallet.${logExt} doesnt exist`,
         };
 
         res.end(JSON.stringify(errorObj));
@@ -152,13 +152,13 @@ module.exports = (shepherd) => {
   });
 
   shepherd.printDirs = () => {
-    shepherd.log(`agama dir: ${shepherd.agamaDir}`);
+    shepherd.log(`safewallet dir: ${shepherd.safewalletDir}`);
     shepherd.log('--------------------------')
-    shepherd.log(`komodo dir: ${shepherd.komododBin}`);
-    shepherd.log(`komodo bin: ${shepherd.komodoDir}`);
-    shepherd.writeLog(`agama dir: ${shepherd.agamaDir}`);
-    shepherd.writeLog(`komodo dir: ${shepherd.komododBin}`);
-    shepherd.writeLog(`komodo bin: ${shepherd.komodoDir}`);
+    shepherd.log(`safecoin dir: ${shepherd.safecoindBin}`);
+    shepherd.log(`safecoin bin: ${shepherd.safecoinDir}`);
+    shepherd.writeLog(`safewallet dir: ${shepherd.safewalletDir}`);
+    shepherd.writeLog(`safecoin dir: ${shepherd.safecoindBin}`);
+    shepherd.writeLog(`safecoin bin: ${shepherd.safecoinDir}`);
   }
 
   return shepherd;

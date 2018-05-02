@@ -58,11 +58,11 @@ module.exports = (shepherd) => {
         }
       }
 
-      if (network === 'komodo' ||
-          network === 'KMD') {
+      if (network === 'safecoin' ||
+          network === 'SAFE') {
         const _locktime = Math.floor(Date.now() / 1000) - 777;
         tx.setLockTime(_locktime);
-        shepherd.log(`kmd tx locktime set to ${_locktime}`, true);
+        shepherd.log(`safe tx locktime set to ${_locktime}`, true);
       }
 
       for (let i = 0; i < utxo.length; i++) {

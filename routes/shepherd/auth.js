@@ -67,7 +67,7 @@ module.exports = (shepherd) => {
     const {
       pub,
       pubHex,
-    } = shepherd.seedToWif(seed, 'komodo', true);
+    } = shepherd.seedToWif(seed, 'safecoin', true);
 
     shepherd.staking[coin] = {
       pub,

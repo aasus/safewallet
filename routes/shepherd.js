@@ -75,7 +75,7 @@ shepherd.appConfig = shepherd._appConfig.config;
 // core
 shepherd = require('./shepherd/paths.js')(shepherd);
 
-shepherd.pathsAgama();
+shepherd.pathsSafewallet();
 
 // core
 shepherd = require('./shepherd/log.js')(shepherd);
@@ -87,7 +87,7 @@ shepherd.pathsDaemons();
 
 shepherd.appConfigSchema = shepherd._appConfig.schema;
 shepherd.defaultAppConfig = Object.assign({}, shepherd.appConfig);
-shepherd.kmdMainPassiveMode = false;
+shepherd.safeMainPassiveMode = false;
 
 // spv
 shepherd = require('./shepherd/electrum/network.js')(shepherd);
@@ -145,7 +145,7 @@ shepherd.printDirs();
 
 // default route
 shepherd.get('/', (req, res, next) => {
-  res.send('Agama app server');
+  res.send('Safewallet app server');
 });
 
 // expose sockets obj

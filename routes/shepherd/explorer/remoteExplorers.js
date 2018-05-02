@@ -1,5 +1,5 @@
 const remoteExplorers = {
-  KMD: 'http://kmd.komodochainz.info',
+  SAFE: 'http://safe.safecoinchainz.info',
   MSHARK: 'http://MSHARK.explorer.supernet.org',
   REVS: 'http://revs.explorer.supernet.org',
   SUPERNET: 'http://SUPERNET.explorer.supernet.org',
