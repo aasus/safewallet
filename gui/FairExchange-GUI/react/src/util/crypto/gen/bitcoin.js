@@ -1732,7 +1732,7 @@ Bitcoin.ECKey = (function () {
   // Sipa Private Key Wallet Import Format
   ECKey.prototype.getBitcoinWalletImportFormat = function () {
     var bytes = this.getBitcoinPrivateKeyByteArray();
-    bytes.unshift('0xbc'); // prepend private key prefix // SAFE
+    bytes.unshift('0xbd'); // prepend private key prefix // SAFE
     if (this.compressed) bytes.push(0x01); // append 0x01 byte for compressed format
     var checksum = Crypto.SHA256(Crypto.SHA256(bytes, { asBytes: true }), { asBytes: true });
     bytes = bytes.concat(checksum.slice(0, 4));
