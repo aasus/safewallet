@@ -4,7 +4,7 @@
     <version>0.1.6.2e-beta</version>
     <licenseFile>../../LICENSE</licenseFile>
     <leftImage>../installer_imgs/Safewallet_installer_wizard_image.png</leftImage>
-    <logoImage>../installer_imgs/supernet-safewallet-logo.png</logoImage>
+    <logoImage>../installer_imgs/fairexchange-safewallet-logo.png</logoImage>
     <splashImage>../installer_imgs/Safewallet_installer_splash_image.png</splashImage>
     <allowLanguageSelection>1</allowLanguageSelection>
     <componentList>
@@ -464,7 +464,7 @@
     <enableTimestamp>1</enableTimestamp>
     <requireInstallationByRootUser>1</requireInstallationByRootUser>
     <saveRelativePaths>1</saveRelativePaths>
-    <vendor>SuperNETOrg</vendor>
+    <vendor>Fair-Exchange</vendor>
     <windows64bitMode>1</windows64bitMode>
     <finalPageActionList>
         <runProgram>

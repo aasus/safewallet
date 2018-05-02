@@ -1,24 +1,24 @@
 let electrumServers = {
   kv: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10016,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'KV',
     serverList: [
-      'electrum1.cipig.net:10016',
-      'electrum2.cipig.net:10016'
+      'electrum1.ipv6admin.com:10016',
+      'electrum2.ipv6admin.com:10016'
     ],
   },
   bntn: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10026,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'BNTN',
     serverList: [
-      'electrum1.cipig.net:10026',
-      'electrum2.cipig.net:10026'
+      'electrum1.ipv6admin.com:10026',
+      'electrum2.ipv6admin.com:10026'
     ],
   },
   eql: { // !estimatefee
@@ -44,14 +44,14 @@ let electrumServers = {
     ],
   },
   coqui: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10011,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'COQUI',
     serverList: [
-      'electrum1.cipig.net:10011',
-      'electrum2.cipig.net:10011'
+      'electrum1.ipv6admin.com:10011',
+      'electrum2.ipv6admin.com:10011'
     ],
   },
   chain: { // !estimatefee
@@ -77,58 +77,58 @@ let electrumServers = {
     ],
   },
   revs: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10003,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'REVS',
     serverList: [
-      'electrum1.cipig.net:10003',
-      'electrum2.cipig.net:10003'
+      'electrum1.ipv6admin.com:10003',
+      'electrum2.ipv6admin.com:10003'
     ],
   },
   supernet: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10005,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'SUPERNET',
     serverList: [
-      'electrum1.cipig.net:10005',
-      'electrum2.cipig.net:10005'
+      'electrum1.ipv6admin.com:10005',
+      'electrum2.ipv6admin.com:10005'
     ],
   },
   dex: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10006,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'DEX',
     serverList: [
-      'electrum1.cipig.net:10006',
-      'electrum2.cipig.net:10006'
+      'electrum1.ipv6admin.com:10006',
+      'electrum2.ipv6admin.com:10006'
     ],
   },
   bots: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10007,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'BOTS',
     serverList: [
-      'electrum1.cipig.net:10007',
-      'electrum2.cipig.net:10007'
+      'electrum1.ipv6admin.com:10007',
+      'electrum2.ipv6admin.com:10007'
     ],
   },
   crypto: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10008,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'CRYPTO',
     serverList: [
-      'electrum1.cipig.net:10008',
-      'electrum2.cipig.net:10008'
+      'electrum1.ipv6admin.com:10008',
+      'electrum2.ipv6admin.com:10008'
     ],
   },
   dnr: { // !estimatefee
@@ -143,58 +143,58 @@ let electrumServers = {
     ],
   },
   hodl: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10009,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'HODL',
     serverList: [
-      'electrum1.cipig.net:10009',
-      'electrum2.cipig.net:10009'
+      'electrum1.ipv6admin.com:10009',
+      'electrum2.ipv6admin.com:10009'
     ],
   },
   pangea: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10010,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'PANGEA',
     serverList: [
-      'electrum1.cipig.net:10010',
-      'electrum2.cipig.net:10010'
+      'electrum1.ipv6admin.com:10010',
+      'electrum2.ipv6admin.com:10010'
     ],
   },
   bet: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10012,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'BET',
     serverList: [
-      'electrum1.cipig.net:10012',
-      'electrum2.cipig.net:10012'
+      'electrum1.ipv6admin.com:10012',
+      'electrum2.ipv6admin.com:10012'
     ],
   },
   mshark: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10013,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'MSHARK',
     serverList: [
-      'electrum1.cipig.net:10013',
-      'electrum2.cipig.net:10013'
+      'electrum1.ipv6admin.com:10013',
+      'electrum2.ipv6admin.com:10013'
     ],
   },
   mnz: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10002,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'MNZ',
     serverList: [
-      'electrum1.cipig.net:10002',
-      'electrum2.cipig.net:10002'/*,
+      'electrum1.ipv6admin.com:10002',
+      'electrum2.ipv6admin.com:10002'/*,
       '18.216.195.109:10002',
       '52.41.58.116:10002',
       '52.67.48.29:10002',
@@ -203,69 +203,69 @@ let electrumServers = {
     ],
   },
   wlc: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10014,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'WLC',
     serverList: [
-      'electrum1.cipig.net:10014',
-      'electrum2.cipig.net:10014'
+      'electrum1.ipv6admin.com:10014',
+      'electrum2.ipv6admin.com:10014'
     ],
   },
   mgw: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10015,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'MGW',
     serverList: [
-      'electrum1.cipig.net:10015',
-      'electrum2.cipig.net:10015'
+      'electrum1.ipv6admin.com:10015',
+      'electrum2.ipv6admin.com:10015'
     ],
   },
   btch: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10020,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'BTCH',
     serverList: [
-      'electrum1.cipig.net:10020',
-      'electrum2.cipig.net:10020'
+      'electrum1.ipv6admin.com:10020',
+      'electrum2.ipv6admin.com:10020'
     ],
   },
   beer: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10022,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'BEER',
     serverList: [
-      'electrum1.cipig.net:10022',
-      'electrum2.cipig.net:10022'
+      'electrum1.ipv6admin.com:10022',
+      'electrum2.ipv6admin.com:10022'
     ],
   },
   pizza: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10024,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'PIZZA',
     serverList: [
-      'electrum1.cipig.net:10024',
-      'electrum2.cipig.net:10024'
+      'electrum1.ipv6admin.com:10024',
+      'electrum2.ipv6admin.com:10024'
     ],
   },
   vote2018: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10021,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'VOTE2018',
     serverList: [
-      'electrum1.cipig.net:10021',
-      'electrum2.cipig.net:10021'
+      'electrum1.ipv6admin.com:10021',
+      'electrum2.ipv6admin.com:10021'
     ],
   },
   ninja: { // !estimatefee
@@ -280,135 +280,135 @@ let electrumServers = {
     ],
   },
   jumblr: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10004,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'JUMBLR',
     serverList: [
-      'electrum1.cipig.net:10004',
-      'electrum2.cipig.net:10004'
+      'electrum1.ipv6admin.com:10004',
+      'electrum2.ipv6admin.com:10004'
     ],
   },
   safecoin: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10001,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'SAFE',
     serverList: [
-      'electrum1.cipig.net:10001',
-      'electrum2.cipig.net:10001',
+      'electrum1.ipv6admin.com:10001',
+      'electrum2.ipv6admin.com:10001',
     ],
   },
   dogecoin: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10060,
     proto: 'tcp',
     txfee: 100000000,
     abbr: 'DOGE',
     serverList: [
-      'electrum1.cipig.net:10060',
-      'electrum2.cipig.net:10060'
+      'electrum1.ipv6admin.com:10060',
+      'electrum2.ipv6admin.com:10060'
     ],
   },
   viacoin: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10067,
     proto: 'tcp',
     txfee: 100000,
     abbr: 'VIA',
     serverList: [
-      'electrum1.cipig.net:10067',
-      'electrum2.cipig.net:10067'
+      'electrum1.ipv6admin.com:10067',
+      'electrum2.ipv6admin.com:10067'
     ],
   },
   vertcoin: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10071,
     proto: 'tcp',
     txfee: 100000,
     abbr: 'VTC',
     serverList: [
-      'electrum1.cipig.net:10071',
-      'electrum2.cipig.net:10071'
+      'electrum1.ipv6admin.com:10071',
+      'electrum2.ipv6admin.com:10071'
     ],
   },
   namecoin: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10066,
     proto: 'tcp',
     txfee: 100000,
     abbr: 'NMC',
     serverList: [
-      'electrum1.cipig.net:10066',
-      'electrum2.cipig.net:10066'
+      'electrum1.ipv6admin.com:10066',
+      'electrum2.ipv6admin.com:10066'
     ],
   },
   monacoin: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10070,
     proto: 'tcp',
     txfee: 100000,
     abbr: 'MONA',
     serverList: [
-      'electrum1.cipig.net:10070',
-      'electrum2.cipig.net:10070'
+      'electrum1.ipv6admin.com:10070',
+      'electrum2.ipv6admin.com:10070'
     ],
   },
   litecoin: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10065,
     proto: 'tcp',
     txfee: 100000,
     abbr: 'LTC',
     serverList: [
-      'electrum1.cipig.net:10065',
-      'electrum2.cipig.net:10065'
+      'electrum1.ipv6admin.com:10065',
+      'electrum2.ipv6admin.com:10065'
     ],
   },
   faircoin: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10063,
     proto: 'tcp',
     txfee: 1000000,
     abbr: 'FAIR',
     serverList: [
-      'electrum1.cipig.net:10063',
-      'electrum2.cipig.net:10063'
+      'electrum1.ipv6admin.com:10063',
+      'electrum2.ipv6admin.com:10063'
     ],
   },
   dgb: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10059,
     proto: 'tcp',
     txfee: 100000,
     abbr: 'DGB',
     serverList: [
-      'electrum1.cipig.net:10059',
-      'electrum2.cipig.net:10059'
+      'electrum1.ipv6admin.com:10059',
+      'electrum2.ipv6admin.com:10059'
     ],
   },
   dash: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10061,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'DASH',
     serverList: [
-      'electrum1.cipig.net:10061',
-      'electrum2.cipig.net:10061'
+      'electrum1.ipv6admin.com:10061',
+      'electrum2.ipv6admin.com:10061'
     ],
   },
   crown: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10069,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'CRW',
     serverList: [
-      'electrum1.cipig.net:10069',
-      'electrum2.cipig.net:10069'
+      'electrum1.ipv6admin.com:10069',
+      'electrum2.ipv6admin.com:10069'
     ],
   },
   btc: {
@@ -417,8 +417,8 @@ let electrumServers = {
     proto: 'tcp',
     abbr: 'BTC',
     serverList: [
-      'electrum1.cipig.net:10000',
-      'electrum2.cipig.net:10000',
+      'electrum1.ipv6admin.com:10000',
+      'electrum2.ipv6admin.com:10000',
       'mooo.not.fyi:50011',
       'e-x.not.fyi:50001',
       'vps.hsmiths.com:50001',
@@ -441,80 +441,80 @@ let electrumServers = {
     ],
   },
   blk: { // pos
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10054,
     proto: 'tcp',
     abbr: 'BLK',
     txfee: 10000,
     serverList: [
-      'electrum1.cipig.net:10054',
-      'electrum2.cipig.net:10054'
+      'electrum1.ipv6admin.com:10054',
+      'electrum2.ipv6admin.com:10054'
     ],
   },
   sib: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10050,
     proto: 'tcp',
     abbr: 'SIB',
     txfee: 10000,
     serverList: [
-      'electrum1.cipig.net:10050',
-      'electrum2.cipig.net:10050'
+      'electrum1.ipv6admin.com:10050',
+      'electrum2.ipv6admin.com:10050'
     ],
   },
   bch: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10051,
     proto: 'tcp',
     abbr: 'BCH',
     txfee: 10000,
     serverList: [
-      'electrum1.cipig.net:10051',
-      'electrum2.cipig.net:10051'
+      'electrum1.ipv6admin.com:10051',
+      'electrum2.ipv6admin.com:10051'
     ],
   },
   argentum: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10069,
     proto: 'tcp',
     txfee: 50000,
     abbr: 'ARG',
     serverList: [
-      'electrum1.cipig.net:10069',
-      'electrum2.cipig.net:10069'
+      'electrum1.ipv6admin.com:10069',
+      'electrum2.ipv6admin.com:10069'
     ],
   },
   chips: { // !estimatefee
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10053,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'CHIPS',
     serverList: [
-      'electrum1.cipig.net:10053',
-      'electrum2.cipig.net:10053'
+      'electrum1.ipv6admin.com:10053',
+      'electrum2.ipv6admin.com:10053'
     ],
   },
   zec: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10058,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'ZEC',
     serverList: [
-      'electrum1.cipig.net:10058',
-      'electrum2.cipig.net:10058'
+      'electrum1.ipv6admin.com:10058',
+      'electrum2.ipv6admin.com:10058'
     ],
   },
   hush: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10064,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'HUSH',
     serverList: [
-      'electrum1.cipig.net:10064',
-      'electrum2.cipig.net:10064'
+      'electrum1.ipv6admin.com:10064',
+      'electrum2.ipv6admin.com:10064'
     ],
   },
   sng: { // ssl 50002
@@ -540,14 +540,14 @@ let electrumServers = {
     ],
   },
   zcl: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 50055,
     proto: 'tcp',
     txfee: 1000,
     abbr: 'ZCL',
     serverList: [
-      'electrum1.cipig.net:10055',
-      'electrum2.cipig.net:10055'
+      'electrum1.ipv6admin.com:10055',
+      'electrum2.ipv6admin.com:10055'
     ],
   },
   hodlc: {
@@ -562,25 +562,25 @@ let electrumServers = {
     ],
   },
   btx: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10057,
     proto: 'tcp',
     txfee: 50000,
     abbr: 'BTX',
     serverList: [
-      'electrum1.cipig.net:10057',
-      'electrum2.cipig.net:10057'
+      'electrum1.ipv6admin.com:10057',
+      'electrum2.ipv6admin.com:10057'
     ],
   },
   btcz: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10056,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'BTCZ',
     serverList: [
-      'electrum1.cipig.net:10056',
-      'electrum2.cipig.net:10056'
+      'electrum1.ipv6admin.com:10056',
+      'electrum2.ipv6admin.com:10056'
     ],
   },
   grs: {
@@ -618,14 +618,14 @@ let electrumServers = {
     ],
   },
   emc2: {
-    address: 'electrum1.cipig.net',
+    address: 'electrum1.ipv6admin.com',
     port: 10062,
     proto: 'tcp',
     txfee: 100000,
     abbr: 'EMC2',
     serverList: [
-      'electrum1.cipig.net:10062',
-      'electrum2.cipig.net:10062'
+      'electrum1.ipv6admin.com:10062',
+      'electrum2.ipv6admin.com:10062'
     ],
   },
   bcbc: {

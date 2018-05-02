@@ -10,11 +10,11 @@
     "make-rpm": "node make-rpm.js",
     "make-deb": "node make-deb.js"
   },
-  "repository": "https://github.com/SafecoinPlatform/Safewallet/",
-  "homepage": "http://safecoinplatform.com",
+  "repository": "https://github.com/fair-exchange/Safewallet/",
+  "homepage": "http://ipv6admin.com",
   "keywords": [
     "safewallet",
-    "SuperNET",
+    "fair-exchange",
     "safecoin",
     "multicoin",
     "wallet",
@@ -34,7 +34,7 @@
     "bip39": "^2.5.0",
     "bitcoinforksjs-lib": "git://github.com/Fair-Exchange/bitcoinjs-lib#opt-in-bitcoincash-sighash",
     "bitcoinjs-lib": "git://github.com/Fair-Exchange/bitcoinjs-lib",
-    "bitcoinjs-lib-pos": "git://github.com/SafecoinPlatform/bitcoinjs-lib-pos",
+    "bitcoinjs-lib-pos": "git://github.com/fair-exchange/bitcoinjs-lib-pos",
     "bitcoinjs-lib-zcash": "git://github.com/pbca26/bitcoinjs-lib#zcash",
     "tx-decoder": "git://github.com/pbca26/tx-decoder",
     "bluebird": "^3.4.7",

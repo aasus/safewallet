@@ -4,7 +4,7 @@
     <version>${PKG_VERSION}</version>
     <licenseFile>../LICENSE</licenseFile>
     <leftImage>../assets/installer_imgs/Safewallet_installer_wizard_image.png</leftImage>
-    <logoImage>../assets/installer_imgs/supernet-safewallet-logo.png</logoImage>
+    <logoImage>../assets/installer_imgs/fairexchange-safewallet-logo.png</logoImage>
     <splashImage>../assets/installer_imgs/Safewallet_installer_splash_image.png</splashImage>
     <allowLanguageSelection>1</allowLanguageSelection>
     <componentList>
@@ -331,7 +331,7 @@
     <requireInstallationByRootUser>1</requireInstallationByRootUser>
     <saveRelativePaths>1</saveRelativePaths>
     <uninstallerName>Uninstall-Safewallet</uninstallerName>
-    <vendor>SuperNETOrg</vendor>
+    <vendor>Fair-Exchange</vendor>
     <finalPageActionList>
         <runProgram>
             <program>/bin/Safewallet</program>

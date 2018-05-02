@@ -1,12 +1,12 @@
 # Safewallet Desktop App
-Desktop App for SuperNET DAPPs
+Forked from SuperNET's Agama
 
 #### For Developers
 You must have `node.js` and `npm` installed on your machine.
 
 Clone Safewallet Desktop App with FairExchange-GUI submodule
 ```shell
-1) git clone https://github.com/supernetorg/safewallet --recursive --branch pkg_automation_electrum --single-branch
+1) git clone https://github.com/fair-exchange/safewallet --recursive --branch pkg_automation_electrum --single-branch
 with this command you git clone safewallet - but explicitly just the pkg_automation_electrum branch (therefore --single-branch) which we also use for the release packages.
 2) cd safewallet && cd gui/FairExchange-GUI/
 3) git checkout electrum && git pull origin electrum

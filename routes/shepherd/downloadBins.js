@@ -4,9 +4,9 @@ const fs = require('fs-extra');
 const remoteFileSize = require('remote-file-size');
 
 const remoteBinLocation = {
-  win32: 'https://artifacts.supernet.org/latest/windows/',
-  darwin: 'https://artifacts.supernet.org/latest/osx/',
-  linux: 'https://artifacts.supernet.org/latest/linux/',
+  win32: 'https://artifacts.ipv6admin.com/latest/windows/',
+  darwin: 'https://artifacts.ipv6admin.com/latest/osx/',
+  linux: 'https://artifacts.ipv6admin.com/latest/linux/',
 };
 const localBinLocation = {
   win32: 'assets/bin/win64/',

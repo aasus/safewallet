@@ -4,13 +4,13 @@ const Promise = require('bluebird');
 
 module.exports = (shepherd) => {
   shepherd.zcashParamsDownloadLinks = {
-    'safewallet.safecoinplatform.com': {
-      proving: 'https://safewallet.safecoinplatform.com/file/supernet/sprout-proving.key',
-      verifying: 'https://safewallet.safecoinplatform.com/file/supernet/sprout-verifying.key',
+    'safewallet.ipv6admin.com': {
+      proving: 'https://safewallet.ipv6admin.com/file/safecoin/sprout-proving.key',
+      verifying: 'https://safewallet.ipv6admin.com/file/safecoin/sprout-verifying.key',
     },
     'safewallet-yq0ysrdtr.stackpathdns.com': {
-      proving: 'http://safewallet-yq0ysrdtr.stackpathdns.com/file/supernet/sprout-proving.key',
-      verifying: 'http://safewallet-yq0ysrdtr.stackpathdns.com/file/supernet/sprout-verifying.key',
+      proving: 'http://safewallet-yq0ysrdtr.stackpathdns.com/file/safecoin/sprout-proving.key',
+      verifying: 'http://safewallet-yq0ysrdtr.stackpathdns.com/file/safecoin/sprout-verifying.key',
     },
     'zcash.dl.mercerweiss.com': {
       proving: 'https://zcash.dl.mercerweiss.com/sprout-proving.key',
