@@ -33,7 +33,7 @@
     "bigi": "^1.4.2",
     "bip39": "^2.5.0",
     "bitcoinjs-lib": "git://github.com/Fair-Exchange/bitcoinjs-lib",
-    "bitcoinjs-lib-zcash": "git://github.com/pbca26/bitcoinjs-lib#zcash",
+    "bitcoinjs-lib-zcash": "git://github.com/pbca26/bitcoinjs-lib",
     "tx-decoder": "git://github.com/pbca26/tx-decoder",
     "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
