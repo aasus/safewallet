@@ -10,7 +10,9 @@ cd assets
   rm -rvf artifacts.ipv6admin.com
 echo
 echo Step: Cloning latest binaries for build
-wget --recursive --no-parent https://artifacts.ipv6admin.com/latest/
+#wget --recursive --no-parent https://artifacts.ipv6admin.com/latest/
+wget https://github.com/Fair-Exchange/bitcore-node-safecoin/releases/download/v0.01/artifacts.tar.gz
+tar zxf artifacts.tar.gz
 cd ..
 echo =========================================
 echo
