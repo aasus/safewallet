@@ -129,7 +129,7 @@ export function checkCoinType(coin) {
 	}
 
 	if (coin === 'ZEC' ||
-			coin === 'KMD') {
+			coin === 'SAFE') {
 		return 'crypto';
 	}
 }
@@ -230,6 +230,6 @@ export function startAssetChain(confpath, coin, mode, getSuppyOnly) {
 export function startCrypto(confpath, coin, mode) {
 	const assetChainPorts = window.require('electron').remote.getCurrentWindow().assetChainPorts;
 
-	coin = coin === 'KMD' ? 'komodod' : coin;
+	coin = coin === 'SAFE' ? 'safecoind' : coin;
 	return assetChainPorts[coin];
 }
