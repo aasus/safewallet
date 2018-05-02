@@ -95,16 +95,16 @@ networks.xzc = {
   isZcash: true,
 };
 
-// https://raw.githubusercontent.com/jl777/safecoin/beta/src/chainparams.cpp
+// https://github.com/Fair-Exchange/safecoin/blob/master/src/chainparams.cpp
 networks.safecoin = {
   messagePrefix: '\x19Safecoin Signed Message:\n',
   bip32: {
     public: 0x0488b21e,
     private: 0x0488ade4,
   },
-  pubKeyHash: 0x3c,
-  scriptHash: 0x55,
-  wif: 0xbc,
+  pubKeyHash: 0x3d,
+  scriptHash: 0x56,
+  wif: 0xbd,
   dustThreshold: 1000,
   isZcash: true,
 };
