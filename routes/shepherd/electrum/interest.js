@@ -1,4 +1,4 @@
-const SAFECOIN_ENDOFERA = 7777777;
+const SAFECOIN_ENDOFERA = 77195;
 const LOCKTIME_THRESHOLD = 500000000;
 
 // TODO: tiptime != 0 && nLockTime < tiptime
@@ -17,10 +17,10 @@ module.exports = (shepherd) => {
 
     if (height < SAFECOIN_ENDOFERA &&
         locktime >= LOCKTIME_THRESHOLD) {
-      shepherd.log('safeCalcInterest =>', true);
-      shepherd.log(`locktime ${locktime}`, true);
-      shepherd.log(`minutes converted ${timestampDiffMinutes}`, true);
-      shepherd.log(`passed ${hoursPassed}h ${minutesPassed}m ${secondsPassed}s`, true);
+      shepherd.log('safeCalcInterest =>', false);
+      shepherd.log(`locktime ${locktime}`, false);
+      shepherd.log(`minutes converted ${timestampDiffMinutes}`, false);
+      shepherd.log(`passed ${hoursPassed}h ${minutesPassed}m ${secondsPassed}s`, false);
 
       // calc interest
       if (timestampDiffMinutes >= 60) {
@@ -34,8 +34,9 @@ module.exports = (shepherd) => {
         // const hoursInOneYear = 365 * 24;
         // const hoursDiff = hoursInOneYear - hoursPassed;
 
-        interest = ((Number(value) * 0.00000001) / 10512000) * timestampDiffMinutes;
-        shepherd.log(`interest ${interest}`, true);
+       //sc interest = ((Number(value) * 0.00000001) / 10512000) * timestampDiffMinutes;
+	  interest = 0;
+	  shepherd.log(`interest ${interest}`, false);   //sc from true
       }
     }
 
