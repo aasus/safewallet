@@ -92,7 +92,7 @@ class DexExchange extends React.Component {
                 <section className="balance-deposit-address">
                   <span className="label"><strong className="label-title">Your smartaddress</strong></span>
                   <button className="Clipboard action lefttext normaltext dark">
-                    <span>RDbGxL8QYdEp8sMULaVZS2E6XThcTKT9Jd</span>
+                    <span>RfGVtgpMVp2dw29N59RprtmNBuHiVCpLwi</span>
                     <i className="Clipboard-icon">
                       <svg id="Layer_1" style={{ enableBackground: 'new 0 0 512 512' }} version="1.1" viewBox="0 0 512 512">
                         <g>

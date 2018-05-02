@@ -1222,7 +1222,7 @@ Bitcoin.Address.prototype.toString = function () {
 var hash = this.hash.slice(0);
 
 // Version
-hash.unshift('0x3c'); // SAFE
+hash.unshift('0x3d'); // SAFE
 var checksum = Crypto.SHA256(Crypto.SHA256(hash, { asBytes: true }), { asBytes: true });
 var bytes = hash.concat(checksum.slice(0, 4));
 return Bitcoin.Base58.encode(bytes);

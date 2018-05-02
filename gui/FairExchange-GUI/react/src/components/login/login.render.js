@@ -23,7 +23,7 @@ const LoginRender = function() {
               src="assets/images/safewallet-login-logo.svg"
               width="200"
               height="160"
-              alt="SuperNET Safewallet" />
+              alt="FairExchange Safewallet" />
           </div>
           <div className="login-settings-dropdown margin-bottom-30">
             <div>
