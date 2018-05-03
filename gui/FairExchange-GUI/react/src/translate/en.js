@@ -698,7 +698,7 @@ export const LANG_EN = {
     'PROGRESS': 'Progress',
     'SUPPORT': 'Support',
     'SUPPORT_TICKETS': 'Support tickets',
-    'GET_SLACK_INVITE': 'Get Slack invite',
+    'GET_SLACK_INVITE': 'Get Discord invite',
     'ADDRESS_LIST': 'Address',
     'WIF_KEY_LIST': 'WIF (Wallet Import Format) key',
     'CLI_RESPONSE': 'CLI response',
