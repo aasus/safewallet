@@ -185,7 +185,7 @@ export const LANG_EN = {
     'SELECT_A_COIN': 'Select Coin to add to Safewallet Wallet',
     'WALLETS': 'Wallets',
     'ACTIVATE_COIN': 'Activate Coin',
-    'WELCOME_PLEASE_ADD': 'Welcome. Please add a coin to start.',
+    'WELCOME_PLEASE_ADD': 'Welcome. Please choose SAFE to begin.',
     'SELECT_SEED_TYPE': 'Please select compatible wallet seed type',
     'SELECT': '-Select-',
     'NATIVE_MODE': 'Native Mode',
