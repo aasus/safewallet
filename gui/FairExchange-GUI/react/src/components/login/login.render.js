@@ -244,7 +244,14 @@ const LoginRender = function() {
               { translate('INDEX.WELCOME_PLEASE_ADD') }
             </h4>
             <div className="form-group form-material floating width-540 vertical-margin-30 auto-side-margin">
-
+            <button
+              className="btn btn-lg btn-primary btn-block ladda-button"
+              onClick={ this.toggleActivateCoinForm }>
+              <span className="ladda-label">
+                { translate('INDEX.ACTIVATE_COIN') }
+              </span>
+            </button>
+              <div className="line">{ translate('LOGIN.OR_USE_A_SHORTCUT') }</div>
               <div className="addcoin-shortcut">
                 <div>
                   <i className="icon fa-cube margin-right-5"></i>
