@@ -1,10 +1,10 @@
-const KOMODO_ENDOFERA = 7777777;
+const SAFECOIN_ENDOFERA = 77195;
 const LOCKTIME_THRESHOLD = 500000000;
 
 // TODO: tiptime != 0 && nLockTime < tiptime
 
 module.exports = (shepherd) => {
-  shepherd.kmdCalcInterest = (locktime, value, height) => { // value in sats
+  shepherd.safeCalcInterest = (locktime, value, height) => { // value in sats
     const timestampDiff = Math.floor(Date.now() / 1000) - locktime - 777;
     const hoursPassed = Math.floor(timestampDiff / 3600);
     const minutesPassed = Math.floor((timestampDiff - (hoursPassed * 3600)) / 60);
@@ -12,15 +12,15 @@ module.exports = (shepherd) => {
     let timestampDiffMinutes = timestampDiff / 60;
     let interest = 0;
 
-    shepherd.log(`${height} vs ${KOMODO_ENDOFERA}`);
+    shepherd.log(`${height} vs ${SAFECOIN_ENDOFERA}`);
     shepherd.log(`${locktime} vs ${LOCKTIME_THRESHOLD}`);
 
-    if (height < KOMODO_ENDOFERA &&
+    if (height < SAFECOIN_ENDOFERA &&
         locktime >= LOCKTIME_THRESHOLD) {
-      shepherd.log('kmdCalcInterest =>', true);
-      shepherd.log(`locktime ${locktime}`, true);
-      shepherd.log(`minutes converted ${timestampDiffMinutes}`, true);
-      shepherd.log(`passed ${hoursPassed}h ${minutesPassed}m ${secondsPassed}s`, true);
+      shepherd.log('safeCalcInterest =>', false);
+      shepherd.log(`locktime ${locktime}`, false);
+      shepherd.log(`minutes converted ${timestampDiffMinutes}`, false);
+      shepherd.log(`passed ${hoursPassed}h ${minutesPassed}m ${secondsPassed}s`, false);
 
       // calc interest
       if (timestampDiffMinutes >= 60) {
@@ -34,8 +34,9 @@ module.exports = (shepherd) => {
         // const hoursInOneYear = 365 * 24;
         // const hoursDiff = hoursInOneYear - hoursPassed;
 
-        interest = ((Number(value) * 0.00000001) / 10512000) * timestampDiffMinutes;
-        shepherd.log(`interest ${interest}`, true);
+       //sc interest = ((Number(value) * 0.00000001) / 10512000) * timestampDiffMinutes;
+	  interest = 0;
+	  shepherd.log(`interest ${interest}`, false);   //sc from true
       }
     }
 

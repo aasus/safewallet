@@ -19,7 +19,7 @@ module.exports = (shepherd) => {
 
       res.end(JSON.stringify(successObj));
 
-      shepherd.updateAgama();
+      shepherd.updateSafewallet();
     } else {
       const errorObj = {
         msg: 'error',
@@ -30,7 +30,7 @@ module.exports = (shepherd) => {
     }
   });
 
-  shepherd.updateAgama = () => {
+  shepherd.updateSafewallet = () => {
     const rootLocation = path.join(__dirname, '../../');
 
     shepherd.downloadFile({

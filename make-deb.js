@@ -3,15 +3,15 @@
 var installer = require('electron-installer-debian');
 
 var options = {
-  src: 'build/Agama-linux-x64/',
+  src: 'build/Safewallet-linux-x64/',
   dest: 'build/',
   arch: 'amd64',
-  icon: 'assets/icons/agama_icons/64x64.png',
-  name: 'agama-app',
-  bin: 'Agama',
+  icon: 'assets/icons/safewallet_icons/64x64.png',
+  name: 'safewallet-app',
+  bin: 'Safewallet',
   categories: ['Office', 'Internet'],
-  homepage: 'http://supernet.org',
-  maintainer: 'SuperNET <dev@supernet.org>',
+  homepage: 'http://ipv6admin.com',
+  maintainer: '<dev@ipv6admin.com>',
 }
 
 console.log('Creating package (this may take a while)');

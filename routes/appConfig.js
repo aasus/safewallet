@@ -1,7 +1,10 @@
 const appConfig = {
   config: { // default config
     host: '127.0.0.1',
-    agamaPort: 17777,
+      safewalletPort: 18777,
+      safewalletPort: 17777,
+      experimentalFeatures: false,
+      dev: false,
     maxDescriptors: {
       darwin: 90000,
       linux: 1000000,
@@ -28,11 +31,11 @@ const appConfig = {
       displayName: 'Hostname',
       info: 'Application hostname',
     },
-    agamaPort: {
+    safewalletPort: {
       display: true,
       type: 'number',
-      displayName: 'Agama Port',
-      info: 'Agama HTTP port. Required to run GUI.',
+      displayName: 'Safewallet Port',
+      info: 'Safewallet HTTP port. Required to run GUI.',
     },
     maxDescriptors: {
       display: false,
@@ -49,8 +52,8 @@ const appConfig = {
       },
     },
     dev: {
-      display: true,
-      initDisplay: true,
+      display: false,
+      initDisplay: false,
       displayName: 'Developer mode',
       info: 'Enable developer mode',
       type: 'boolean',
@@ -69,16 +72,16 @@ const appConfig = {
       type: 'boolean',
     },
     experimentalFeatures: {
-      display: true,
-      initDisplay: true,
+      display: false,
+      initDisplay: false,
       displayName: 'Enable advanced features',
       type: 'boolean',
     },
     dataDir: {
       display: true,
       initDisplay: true,
-      displayName: 'Komodo data directory',
-      info: 'The data directory is the location where Komodo data files are stored, including the wallet data file',
+      displayName: 'Safecoin data directory',
+      info: 'The data directory is the location where Safecoin data files are stored, including the wallet data file',
       type: 'folder',
     },
     dex: {
@@ -99,7 +102,7 @@ const appConfig = {
     stopNativeDaemonsOnQuit: {
       display: true,
       displayName: 'Stop native daemons on app quit',
-      info: 'If set to false agama will run in detached coin daemon mode',
+      info: 'If set to false safewallet will run in detached coin daemon mode',
       type: 'boolean',
     },
     failedRPCAttemptsThreshold: {

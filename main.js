@@ -1,4 +1,4 @@
-// main proc for Agama
+// main proc for Safewallet
 // this app spawns iguana in background in nontech-mode
 
 const electron = require('electron');
@@ -32,7 +32,7 @@ process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
 let shepherd = require('./routes/shepherd');
 let guiapp = express();
 
-shepherd.createAgamaDirs();
+shepherd.createSafewalletDirs();
 
 let appConfig = shepherd.loadLocalConfig(); // load app config
 
@@ -49,14 +49,14 @@ if (localVersionFile.indexOf('\r\n') > -1) {
 }
 
 const appBasicInfo = {
-	name: 'Agama',
+	name: 'Safewallet',
 	version: localVersion[0],
 };
 
 app.setName(appBasicInfo.name);
 app.setVersion(appBasicInfo.version);
 
-shepherd.createAgamaDirs();
+shepherd.createSafewalletDirs();
 
 const appSessionHash = randomBytes(32).toString('hex');
 const _spvFees = shepherd.getSpvFees();
@@ -94,8 +94,8 @@ const _defaultAppSettings = __defaultAppSettings;
 shepherd.log(`app started in ${(appConfig.dev ? 'dev mode' : ' user mode')}`);
 shepherd.writeLog(`app started in ${(appConfig.dev ? 'dev mode' : ' user mode')}`);
 
-shepherd.setConfKMD();
-// shepherd.setConfKMD('CHIPS');
+shepherd.setConfSAFE();
+// shepherd.setConfSAFE('CHIPS');
 
 guiapp.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', appConfig.dev ? '*' : 'http://127.0.0.1:3000');
@@ -141,7 +141,7 @@ guiapp.use(bodyParser.urlencoded({
 })); // support encoded bodies
 
 guiapp.get('/', (req, res) => {
-	res.send('Agama app server');
+	res.send('Safewallet app server');
 });
 
 const guipath = path.join(__dirname, '/gui');
@@ -158,13 +158,13 @@ let closeAppAfterLoading = false;
 let forceQuitApp = false;
 
 module.exports = guiapp;
-let agamaIcon;
+let safewalletIcon;
 
 if (os.platform() === 'linux') {
-	agamaIcon = path.join(__dirname, '/assets/icons/agama_icons/128x128.png');
+	safewalletIcon = path.join(__dirname, '/assets/icons/safewallet_icons/128x128.png');
 }
 if (os.platform() === 'win32') {
-	agamaIcon = path.join(__dirname, '/assets/icons/agama_app_icon.ico');
+	safewalletIcon = path.join(__dirname, '/assets/icons/safewallet_app_icon.ico');
 }
 
 // close app
@@ -181,13 +181,13 @@ function createAppCloseWindow() {
 		width: 500,
 		height: 320,
 		frame: false,
-		icon: agamaIcon,
+		icon: safewalletIcon,
 		show: false,
 	});
 
 	appCloseWindow.setResizable(false);
 
-	appCloseWindow.loadURL(appConfig.dev ? `http://${appConfig.host}:${appConfig.agamaPort}/gui/startup/app-closing.html` : `file://${__dirname}/gui/startup/app-closing.html`);
+	appCloseWindow.loadURL(appConfig.dev ? `http://${appConfig.host}:${appConfig.safewalletPort}/gui/startup/app-closing.html` : `file://${__dirname}/gui/startup/app-closing.html`);
 
   appCloseWindow.webContents.on('did-finish-load', () => {
     setTimeout(() => {
@@ -198,7 +198,7 @@ function createAppCloseWindow() {
 
 function createWindow(status, hideLoadingWindow) {
 	if (process.argv.indexOf('spvcoins=all/add-all') > -1) {
-		shepherd.startSPV('kmd');
+		shepherd.startSPV('safe');
 	}
 
 	if (status === 'open') {
@@ -226,13 +226,13 @@ function createWindow(status, hideLoadingWindow) {
 			{ role: 'selectall' },
 		]);
 
-		// check if agama is already running
-		portscanner.checkPortStatus(appConfig.agamaPort, '127.0.0.1', (error, status) => {
+		// check if safewallet is already running
+		portscanner.checkPortStatus(appConfig.safewalletPort, '127.0.0.1', (error, status) => {
 			// Status is 'open' if currently in use or 'closed' if available
 			if (status === 'closed') {
-				server.listen(appConfig.agamaPort, () => {
-					shepherd.log(`guiapp and sockets.io are listening on port ${appConfig.agamaPort}`);
-					shepherd.writeLog(`guiapp and sockets.io are listening on port ${appConfig.agamaPort}`);
+				server.listen(appConfig.safewalletPort, () => {
+					shepherd.log(`guiapp and sockets.io are listening on port ${appConfig.safewalletPort}`);
+					shepherd.writeLog(`guiapp and sockets.io are listening on port ${appConfig.safewalletPort}`);
 					// start sockets.io
 					io.set('origins', appConfig.dev ? 'http://127.0.0.1:3000' : null); // set origin
 				});
@@ -241,31 +241,31 @@ function createWindow(status, hideLoadingWindow) {
 				mainWindow = new BrowserWindow({ // dirty hack to prevent main window flash on quit
 					width: closeAppAfterLoading ? 1 : 1280,
 					height: closeAppAfterLoading ? 1 : 850,
-					icon: agamaIcon,
+					icon: safewalletIcon,
 					show: false,
 				});
 
 				if (appConfig.dev) {
 					mainWindow.loadURL('http://127.0.0.1:3000');
 				} else {
-					mainWindow.loadURL(`file://${__dirname}/gui/EasyDEX-GUI/react/build/index.html`);
+					mainWindow.loadURL(`file://${__dirname}/gui/FairExchange-GUI/react/build/index.html`);
 				}
 
 				shepherd.setIO(io); // pass sockets object to shepherd router
 				shepherd.setVar('appBasicInfo', appBasicInfo);
 				shepherd.setVar('appSessionHash', appSessionHash);
 
-				// load our index.html (i.e. Agama GUI)
-				shepherd.writeLog('show agama gui');
+				// load our index.html (i.e. Safewallet GUI)
+				shepherd.writeLog('show safewallet gui');
 				mainWindow.appConfig = appConfig;
 				mainWindow.appConfigSchema = shepherd.appConfigSchema;
 				mainWindow.arch = arch();
 				mainWindow.appBasicInfo = appBasicInfo;
 				mainWindow.appSessionHash = appSessionHash;
 				mainWindow.assetChainPorts = require('./routes/ports.js');
-				mainWindow.agamaIcon = agamaIcon;
+				mainWindow.safewalletIcon = safewalletIcon;
 				mainWindow.testLocation = shepherd.testLocation;
-				mainWindow.kmdMainPassiveMode = shepherd.kmdMainPassiveMode;
+				mainWindow.safeMainPassiveMode = shepherd.safeMainPassiveMode;
 				mainWindow.getAppRuntimeLog = shepherd.getAppRuntimeLog;
 				mainWindow.nativeCoindList = nativeCoindList;
 				mainWindow.zcashParamsExist = _zcashParamsExist;
@@ -273,15 +273,15 @@ function createWindow(status, hideLoadingWindow) {
 				mainWindow.zcashParamsDownloadLinks = shepherd.zcashParamsDownloadLinks;
 				mainWindow.isWindows = os.platform() === 'win32' ? true : false; // obsolete(?)
 				mainWindow.appExit = appExit;
-				mainWindow.getMaxconKMDConf = shepherd.getMaxconKMDConf;
-				mainWindow.setMaxconKMDConf = shepherd.setMaxconKMDConf;
+				mainWindow.getMaxconSAFEConf = shepherd.getMaxconSAFEConf;
+				mainWindow.setMaxconSAFEConf = shepherd.setMaxconSAFEConf;
 				mainWindow.getMMCacheData = shepherd.getMMCacheData;
 				mainWindow.activeSection = 'wallets';
 				mainWindow.argv = process.argv;
 				mainWindow.getAssetChainPorts = shepherd.getAssetChainPorts;
 				mainWindow.spvFees = _spvFees;
 				mainWindow.startSPV = shepherd.startSPV;
-				mainWindow.startKMDNative = shepherd.startKMDNative;
+				mainWindow.startSAFENative = shepherd.startSAFENative;
 				mainWindow.addressVersionCheck = shepherd.addressVersionCheck;
 				mainWindow.getCoinByPub = shepherd.getCoinByPub;
 				mainWindow.resetSettings = () => { shepherd.saveLocalAppConf(__defaultAppSettings) };
@@ -308,7 +308,7 @@ function createWindow(status, hideLoadingWindow) {
 					width: 500,
 					height: 355,
 					frame: false,
-					icon: agamaIcon,
+					icon: safewalletIcon,
 					show: false,
 				});
 
@@ -316,12 +316,12 @@ function createWindow(status, hideLoadingWindow) {
 				mainWindow.forseCloseApp = forseCloseApp;
 
 				willQuitApp = true;
-				server.listen(appConfig.agamaPort + 1, () => {
-					shepherd.log(`guiapp and sockets.io are listening on port ${appConfig.agamaPort + 1}`);
-					shepherd.writeLog(`guiapp and sockets.io are listening on port ${appConfig.agamaPort + 1}`);
+				server.listen(appConfig.safewalletPort + 1, () => {
+					shepherd.log(`guiapp and sockets.io are listening on port ${appConfig.safewalletPort + 1}`);
+					shepherd.writeLog(`guiapp and sockets.io are listening on port ${appConfig.safewalletPort + 1}`);
 				});
-				mainWindow.loadURL(appConfig.dev ? `http://${appConfig.host}:${appConfig.agamaPort + 1}/gui/startup/agama-instance-error.html` : `file://${__dirname}/gui/startup/agama-instance-error.html`);
-				shepherd.log('another agama app is already running');
+				mainWindow.loadURL(appConfig.dev ? `http://${appConfig.host}:${appConfig.safewalletPort + 1}/gui/startup/safewallet-instance-error.html` : `file://${__dirname}/gui/startup/safewallet-instance-error.html`);
+				shepherd.log('another safewallet app is already running');
 			}
 
 		  mainWindow.webContents.on('did-finish-load', () => {
@@ -360,7 +360,7 @@ function createWindow(status, hideLoadingWindow) {
 						shepherd.log('Closing Main Window...');
 						shepherd.writeLog('exiting app...');
 
-						shepherd.quitKomodod(appConfig.cliStopTimeout);
+						shepherd.quitSafecoind(appConfig.cliStopTimeout);
 
 						const result = 'Closing daemons: done';
 
@@ -415,7 +415,7 @@ function createWindow(status, hideLoadingWindow) {
 					closeApp();
 				} else {
 					createAppCloseWindow();
-					shepherd.quitKomodod(appConfig.cliStopTimeout);
+					shepherd.quitSafecoind(appConfig.cliStopTimeout);
 					_appClosingInterval = setInterval(() => {
 						if (!Object.keys(shepherd.coindInstanceRegistry).length) {
 							closeApp();

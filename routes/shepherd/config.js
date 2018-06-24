@@ -5,8 +5,8 @@ const Promise = require('bluebird');
 
 module.exports = (shepherd) => {
   shepherd.loadLocalConfig = () => {
-    if (fs.existsSync(`${shepherd.agamaDir}/config.json`)) {
-      let localAppConfig = fs.readFileSync(`${shepherd.agamaDir}/config.json`, 'utf8');
+    if (fs.existsSync(`${shepherd.safewalletDir}/config.json`)) {
+      let localAppConfig = fs.readFileSync(`${shepherd.safewalletDir}/config.json`, 'utf8');
 
       shepherd.log('app config set from local file');
       shepherd.writeLog('app config set from local file');
@@ -56,9 +56,9 @@ module.exports = (shepherd) => {
   };
 
   shepherd.saveLocalAppConf = (appSettings) => {
-    let appConfFileName = `${shepherd.agamaDir}/config.json`;
+    let appConfFileName = `${shepherd.safewalletDir}/config.json`;
 
-    _fs.access(shepherd.agamaDir, shepherd.fs.constants.R_OK, (err) => {
+    _fs.access(shepherd.safewalletDir, shepherd.fs.constants.R_OK, (err) => {
       if (!err) {
 
         const FixFilePermissions = () => {
@@ -92,8 +92,8 @@ module.exports = (shepherd) => {
             fsnode.chmodSync(appConfFileName, '0666');
             setTimeout(() => {
               shepherd.log(result);
-              shepherd.log(`app conf.json file is created successfully at: ${shepherd.agamaDir}`);
-              shepherd.writeLog(`app conf.json file is created successfully at: ${shepherd.agamaDir}`);
+              shepherd.log(`app conf.json file is created successfully at: ${shepherd.safewalletDir}`);
+              shepherd.writeLog(`app conf.json file is created successfully at: ${shepherd.safewalletDir}`);
               resolve(result);
             }, 2000);
           });

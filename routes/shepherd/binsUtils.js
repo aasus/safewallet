@@ -7,8 +7,8 @@ module.exports = (shepherd) => {
   shepherd.binFixRights = () => {
     const osPlatform = os.platform();
     const _bins = [
-      shepherd.komododBin,
-      shepherd.komodocliBin
+      shepherd.safecoindBin,
+      shepherd.safecoincliBin
     ];
 
     if (osPlatform === 'darwin' ||

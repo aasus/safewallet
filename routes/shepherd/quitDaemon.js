@@ -2,16 +2,16 @@ const portscanner = require('portscanner');
 const execFile = require('child_process').execFile;
 
 module.exports = (shepherd) => {
-  shepherd.quitKomodod = (timeout = 100) => {
-    // if komodod is under heavy load it may not respond to cli stop the first time
-    // exit komodod gracefully
+  shepherd.quitSafecoind = (timeout = 100) => {
+    // if safecoind is under heavy load it may not respond to cli stop the first time
+    // exit safecoind gracefully
     let coindExitInterval = {};
     shepherd.lockDownAddCoin = true;
 
     for (let key in shepherd.coindInstanceRegistry) {
       if (shepherd.appConfig.stopNativeDaemonsOnQuit) {
-        const chain = key !== 'komodod' ? key : null;
-        let _coindQuitCmd = shepherd.komodocliBin;
+        const chain = key !== 'safecoind' ? key : null;
+        let _coindQuitCmd = shepherd.safecoincliBin;
 
          // any coind
         if (shepherd.nativeCoindList[key.toLowerCase()]) {
@@ -32,10 +32,10 @@ module.exports = (shepherd) => {
             _arg.push(`-ac_name=${chain}`);
 
             if (shepherd.appConfig.dataDir.length) {
-              _arg.push(`-datadir=${shepherd.appConfig.dataDir + (key !== 'komodod' ? '/' + key : '')}`);
+              _arg.push(`-datadir=${shepherd.appConfig.dataDir + (key !== 'safecoind' ? '/' + key : '')}`);
             }
           } else if (
-            key === 'komodod' &&
+            key === 'safecoind' &&
             shepherd.appConfig.dataDir.length
           ) {
             _arg.push(`-datadir=${shepherd.appConfig.dataDir}`);
@@ -73,7 +73,7 @@ module.exports = (shepherd) => {
             }
 
             setTimeout(() => {
-              shepherd.killRogueProcess(key === 'CHIPS' ? 'chips-cli' : 'komodo-cli');
+              shepherd.killRogueProcess(key === 'CHIPS' ? 'chips-cli' : 'safecoin-cli');
             }, 100);
           });
         }
@@ -91,7 +91,7 @@ module.exports = (shepherd) => {
   shepherd.post('/coind/stop', (req, res) => {
     if (shepherd.checkToken(req.body.token)) {
       const _chain = req.body.chain;
-      let _coindQuitCmd = shepherd.komodocliBin;
+      let _coindQuitCmd = shepherd.safecoincliBin;
       let _arg = [];
 
 
@@ -111,14 +111,14 @@ module.exports = (shepherd) => {
       execFile(`${_coindQuitCmd}`, _arg, (error, stdout, stderr) => {
         shepherd.log(`stdout: ${stdout}`);
         shepherd.log(`stderr: ${stderr}`);
-        shepherd.log(`send stop sig to ${_chain ? _chain : 'komodo'}`);
+        shepherd.log(`send stop sig to ${_chain ? _chain : 'safecoin'}`);
 
         if (stdout.indexOf('EOF reached') > -1 ||
             stderr.indexOf('EOF reached') > -1 ||
             (error && error.toString().indexOf('Command failed') > -1 && !stderr) || // win "special snowflake" case
             stdout.indexOf('connect to server: unknown (code -1)') > -1 ||
             stderr.indexOf('connect to server: unknown (code -1)') > -1) {
-          delete shepherd.coindInstanceRegistry[_chain ? _chain : 'komodod'];
+          delete shepherd.coindInstanceRegistry[_chain ? _chain : 'safecoind'];
 
           const obj = {
             msg: 'success',
@@ -127,8 +127,8 @@ module.exports = (shepherd) => {
 
           res.end(JSON.stringify(obj));
         } else {
-          if (stdout.indexOf('Komodo server stopping') > -1) {
-            delete shepherd.coindInstanceRegistry[_chain ? _chain : 'komodod'];
+          if (stdout.indexOf('Safecoin server stopping') > -1) {
+            delete shepherd.coindInstanceRegistry[_chain ? _chain : 'safecoind'];
 
             const obj = {
               msg: 'success',
@@ -161,7 +161,7 @@ module.exports = (shepherd) => {
       const _chain = req.body.chain;
 
       if (req.body.mode === 'native') {
-        delete shepherd.coindInstanceRegistry[_chain ? _chain : 'komodod'];
+        delete shepherd.coindInstanceRegistry[_chain ? _chain : 'safecoind'];
 
         if (_chain) {
           shepherd.removePubkey(_chain.toLowerCase());
@@ -174,7 +174,7 @@ module.exports = (shepherd) => {
 
         res.end(JSON.stringify(obj));
       } else {
-        delete shepherd.electrumCoins[_chain === 'komodo' ? 'KMD' : _chain];
+        delete shepherd.electrumCoins[_chain === 'safecoin' ? 'SAFE' : _chain];
 
         if (Object.keys(shepherd.electrumCoins).length - 1 === 0) {
           shepherd.electrumCoins.auth = false;

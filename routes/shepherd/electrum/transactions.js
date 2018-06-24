@@ -479,7 +479,7 @@ module.exports = (shepherd) => {
           confirmations: tx.confirmations,
         };
 
-        if (network === 'komodo') { // calc claimed interest amount
+        if (network === 'safecoin') { // calc claimed interest amount
           const vinVoutDiff = _total.inputs - _total.outputs;
 
           if (vinVoutDiff < 0) {
@@ -507,7 +507,7 @@ module.exports = (shepherd) => {
           to: _addresses.outputs,
         }];
 
-        if (network === 'komodo') { // calc claimed interest amount
+        if (network === 'safecoin') { // calc claimed interest amount
           const vinVoutDiff = _total.inputs - _total.outputs;
 
           if (vinVoutDiff < 0) {

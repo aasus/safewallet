@@ -1,5 +1,5 @@
 const bitcoinJS = require('bitcoinjs-lib');
-const bitcoinJSForks = require('bitcoinforksjs-lib');
+const bitcoinJSForks = require('bitcoinforkjs-lib');
 const bitcoinZcash = require('bitcoinjs-lib-zcash');
 const bitcoinPos = require('bitcoinjs-lib-pos');
 const coinSelect = require('coinselect');
@@ -65,7 +65,7 @@ module.exports = (shepherd) => {
           let utxoVerified = true;
 
           for (let i = 0; i < utxoList.length; i++) {
-            if (network === 'komodo') {
+            if (network === 'safecoin') {
               utxoListFormatted.push({
                 txid: utxoList[i].txid,
                 vout: utxoList[i].vout,
@@ -231,8 +231,8 @@ module.exports = (shepherd) => {
             // shepherd.log(`sendto ${outputAddress} amount ${value} (${value * 0.00000001})`, true);
             shepherd.log(`changeto ${changeAddress} amount ${_change} (${_change * 0.00000001})`, true);
 
-            // account for KMD interest
-            if (network === 'komodo' &&
+            // account for SAFE interest
+            if (network === 'safecoin' &&
                 totalInterest > 0) {
               // account for extra vout
               // const _feeOverhead = outputs.length === 1 ? shepherd.estimateTxSize(0, 1) * feeRate : 0;
@@ -506,11 +506,11 @@ module.exports = (shepherd) => {
       }
     }
 
-    if (network === 'komodo' ||
-        network === 'KMD') {
+    if (network === 'safecoin' ||
+        network === 'SAFE') {
       const _locktime = Math.floor(Date.now() / 1000) - 777;
       tx.setLockTime(_locktime);
-      shepherd.log(`kmd tx locktime set to ${_locktime}`, true);
+      shepherd.log(`safe tx locktime set to ${_locktime}`, true);
     }
 
     shepherd.log('buildSignedTx unsigned tx data vin', true);

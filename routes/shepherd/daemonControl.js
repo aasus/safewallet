@@ -38,8 +38,8 @@ module.exports = (shepherd) => {
     }
 
     switch (flock) {
-      case 'komodod':
-        DaemonConfPath = shepherd.komodoDir;
+      case 'safecoind':
+        DaemonConfPath = shepherd.safecoinDir;
         if (_platform === 'win32') {
           DaemonConfPath = path.normalize(DaemonConfPath);
           shepherd.log('===>>> SHEPHERD API OUTPUT ===>>>');
@@ -61,7 +61,7 @@ module.exports = (shepherd) => {
         DaemonConfPath = _platform === 'win32' ? path.normalize(`${shepherd.coindRootDir}/${coind.toLowerCase()}`) : `${shepherd.coindRootDir}/${coind.toLowerCase()}`;
         break;
       default:
-        DaemonConfPath = `${shepherd.komodoDir}/${flock}`;
+        DaemonConfPath = `${shepherd.safecoinDir}/${flock}`;
         if (_platform === 'win32') {
           DaemonConfPath = path.normalize(DaemonConfPath);
         }
@@ -86,11 +86,11 @@ module.exports = (shepherd) => {
 
     // TODO: notify gui that reindex/rescan param is used to reflect on the screen
     //       asset chain debug.log unlink
-    if (flock === 'komodod') {
-      let kmdDebugLogLocation = (data.ac_name !== 'komodod' ? `${shepherd.komodoDir}/${data.ac_name}` : shepherd.komodoDir) + '/debug.log';
+    if (flock === 'safecoind') {
+      let safeDebugLogLocation = (data.ac_name !== 'safecoind' ? `${shepherd.safecoinDir}/${data.ac_name}` : shepherd.safecoinDir) + '/debug.log';
 
       // get custom coind port
-      const _coindConf = data.ac_name !== 'komodod' ? `${shepherd.komodoDir}/${data.ac_name}/${data.ac_name}.conf` : `${shepherd.komodoDir}/komodo.conf`;
+      const _coindConf = data.ac_name !== 'safecoind' ? `${shepherd.safecoinDir}/${data.ac_name}/${data.ac_name}.conf` : `${shepherd.safecoinDir}/safecoin.conf`;
 
       try {
         const _coindConfContents = fs.readFileSync(_coindConf, 'utf8');
@@ -100,87 +100,87 @@ module.exports = (shepherd) => {
 
           if (_coindCustomPort[1]) {
             shepherd.assetChainPorts[data.ac_name] = _coindCustomPort[1];
-            shepherd.rpcConf[data.ac_name === 'komodod' ? 'KMD' : data.ac_name].port = _coindCustomPort[1];
+            shepherd.rpcConf[data.ac_name === 'safecoind' ? 'SAFE' : data.ac_name].port = _coindCustomPort[1];
             shepherd.log(`${data.ac_name} custom port ${_coindCustomPort[1]}`);
           } else {
             shepherd.assetChainPorts[data.ac_name] = shepherd.assetChainPortsDefault[data.ac_name];
-            shepherd.rpcConf[data.ac_name === 'komodod' ? 'KMD' : data.ac_name].port = shepherd.assetChainPortsDefault[data.ac_name];
+            shepherd.rpcConf[data.ac_name === 'safecoind' ? 'SAFE' : data.ac_name].port = shepherd.assetChainPortsDefault[data.ac_name];
             shepherd.log(`${data.ac_name} port ${shepherd.assetChainPorts[data.ac_name]}`);
           }
         } else {
           shepherd.assetChainPorts[data.ac_name] = shepherd.assetChainPortsDefault[data.ac_name];
-          shepherd.rpcConf[data.ac_name === 'komodod' ? 'KMD' : data.ac_name].port = shepherd.assetChainPortsDefault[data.ac_name];
+          shepherd.rpcConf[data.ac_name === 'safecoind' ? 'SAFE' : data.ac_name].port = shepherd.assetChainPortsDefault[data.ac_name];
           shepherd.log(`${data.ac_name} port ${shepherd.assetChainPorts[data.ac_name]}`);
         }
       } catch (e) {
-        if (shepherd.rpcConf[data.ac_name === 'komodod' ? 'KMD' : data.ac_name]) {
-          shepherd.rpcConf[data.ac_name === 'komodod' ? 'KMD' : data.ac_name].port = shepherd.assetChainPortsDefault[data.ac_name];
+        if (shepherd.rpcConf[data.ac_name === 'safecoind' ? 'SAFE' : data.ac_name]) {
+          shepherd.rpcConf[data.ac_name === 'safecoind' ? 'SAFE' : data.ac_name].port = shepherd.assetChainPortsDefault[data.ac_name];
         }
         shepherd.assetChainPorts[data.ac_name] = shepherd.assetChainPortsDefault[data.ac_name];
         shepherd.log(`${data.ac_name} port ${shepherd.assetChainPorts[data.ac_name]}`);
       }
 
-      shepherd.log('komodod flock selected...');
+      shepherd.log('safecoind flock selected...');
       shepherd.log(`selected data: ${JSON.stringify(data, null, '\t')}`);
-      shepherd.writeLog('komodod flock selected...');
+      shepherd.writeLog('safecoind flock selected...');
       shepherd.writeLog(`selected data: ${data}`);
 
-      // datadir case, check if komodo/chain folder exists
+      // datadir case, check if safecoin/chain folder exists
       if (shepherd.appConfig.dataDir.length &&
-          data.ac_name !== 'komodod') {
-        const _dir = data.ac_name !== 'komodod' ? `${shepherd.komodoDir}/${data.ac_name}` : shepherd.komodoDir;
+          data.ac_name !== 'safecoind') {
+        const _dir = data.ac_name !== 'safecoind' ? `${shepherd.safecoinDir}/${data.ac_name}` : shepherd.safecoinDir;
 
         try {
           _fs.accessSync(_dir, fs.R_OK | fs.W_OK);
 
-          shepherd.log(`komodod datadir ${_dir} exists`);
+          shepherd.log(`safecoind datadir ${_dir} exists`);
         } catch (e) {
-          shepherd.log(`komodod datadir ${_dir} access err: ${e}`);
-          shepherd.log(`attempting to create komodod datadir ${_dir}`);
+          shepherd.log(`safecoind datadir ${_dir} access err: ${e}`);
+          shepherd.log(`attempting to create safecoind datadir ${_dir}`);
 
           fs.mkdirSync(_dir);
 
           if (fs.existsSync(_dir)) {
-            shepherd.log(`created komodod datadir folder at ${_dir}`);
+            shepherd.log(`created safecoind datadir folder at ${_dir}`);
           } else {
-            shepherd.log(`unable to create komodod datadir folder at ${_dir}`);
+            shepherd.log(`unable to create safecoind datadir folder at ${_dir}`);
           }
         }
       }
 
       // truncate debug.log
-      if (!shepherd.kmdMainPassiveMode) {
+      if (!shepherd.safeMainPassiveMode) {
         try {
-          const _confFileAccess = _fs.accessSync(kmdDebugLogLocation, fs.R_OK | fs.W_OK);
+          const _confFileAccess = _fs.accessSync(safeDebugLogLocation, fs.R_OK | fs.W_OK);
 
           if (_confFileAccess) {
-            shepherd.log(`error accessing ${kmdDebugLogLocation}`);
-            shepherd.writeLog(`error accessing ${kmdDebugLogLocation}`);
+            shepherd.log(`error accessing ${safeDebugLogLocation}`);
+            shepherd.writeLog(`error accessing ${safeDebugLogLocation}`);
           } else {
             try {
-              fs.unlinkSync(kmdDebugLogLocation);
-              shepherd.log(`truncate ${kmdDebugLogLocation}`);
-              shepherd.writeLog(`truncate ${kmdDebugLogLocation}`);
+              fs.unlinkSync(safeDebugLogLocation);
+              shepherd.log(`truncate ${safeDebugLogLocation}`);
+              shepherd.writeLog(`truncate ${safeDebugLogLocation}`);
             } catch (e) {
               shepherd.log('cant unlink debug.log');
             }
           }
         } catch (e) {
-          shepherd.log(`komodod debug.log access err: ${e}`);
-          shepherd.writeLog(`komodod debug.log access err: ${e}`);
+          shepherd.log(`safecoind debug.log access err: ${e}`);
+          shepherd.writeLog(`safecoind debug.log access err: ${e}`);
         }
       }
 
-      // get komodod instance port
+      // get safecoind instance port
       const _port = shepherd.assetChainPorts[data.ac_name];
 
       try {
-        // check if komodod instance is already running
+        // check if safecoind instance is already running
         portscanner.checkPortStatus(_port, '127.0.0.1', (error, status) => {
           // Status is 'open' if currently in use or 'closed' if available
           if (status === 'closed' ||
               !shepherd.appConfig.stopNativeDaemonsOnQuit) {
-            // start komodod via exec
+            // start safecoind via exec
             const _customParamDict = {
               silent: '&',
               reindex: '-reindex',
@@ -201,23 +201,23 @@ module.exports = (shepherd) => {
             }
 
             if (shepherd.appConfig.dataDir.length) {
-              _customParam = _customParam + ' -datadir=' + shepherd.appConfig.dataDir + (data.ac_name !== 'komodod' ? '/' + data.ac_name : '');
+              _customParam = _customParam + ' -datadir=' + shepherd.appConfig.dataDir + (data.ac_name !== 'safecoind' ? '/' + data.ac_name : '');
             }
 
-            shepherd.log(`exec ${shepherd.komododBin} ${data.ac_options.join(' ')}${_customParam}`);
-            shepherd.writeLog(`exec ${shepherd.komododBin} ${data.ac_options.join(' ')}${_customParam}`);
+            shepherd.log(`exec ${shepherd.safecoindBin} ${data.ac_options.join(' ')}${_customParam}`);
+            shepherd.writeLog(`exec ${shepherd.safecoindBin} ${data.ac_options.join(' ')}${_customParam}`);
 
             const isChain = data.ac_name.match(/^[A-Z]*$/);
             const coindACParam = isChain ? ` -ac_name=${data.ac_name} ` : '';
             shepherd.log(`daemon param ${data.ac_custom_param}`);
 
             shepherd.coindInstanceRegistry[data.ac_name] = true;
-            if (!shepherd.kmdMainPassiveMode) {
+            if (!shepherd.safeMainPassiveMode) {
               let _arg = `${coindACParam}${data.ac_options.join(' ')}${_customParam}`;
               _arg = _arg.trim().split(' ');
 
-              const _daemonName = data.ac_name !== 'komodod' ? data.ac_name : 'komodod';
-              const _daemonLogName = `${shepherd.agamaDir}/${_daemonName}.log`;
+              const _daemonName = data.ac_name !== 'safecoind' ? data.ac_name : 'safecoind';
+              const _daemonLogName = `${shepherd.safewalletDir}/${_daemonName}.log`;
 
               try {
                 fs.accessSync(_daemonLogName, fs.R_OK | fs.W_OK);
@@ -231,7 +231,7 @@ module.exports = (shepherd) => {
                 let spawnOut = fs.openSync(_daemonLogName, 'a');
                 let spawnErr = fs.openSync(_daemonLogName, 'a');
 
-                spawn(shepherd.komododBin, _arg, {
+                spawn(shepherd.safecoindBin, _arg, {
                   stdio: [
                     'ignore',
                     spawnOut,
@@ -242,7 +242,7 @@ module.exports = (shepherd) => {
               } else {
                 let logStream = fs.createWriteStream(_daemonLogName, { flags: 'a' });
 
-                let _daemonChildProc = execFile(`${shepherd.komododBin}`, _arg, {
+                let _daemonChildProc = execFile(`${shepherd.safecoindBin}`, _arg, {
                   maxBuffer: 1024 * 1000000, // 1000 mb
                 }, (error, stdout, stderr) => {
                   shepherd.writeLog(`stdout: ${stdout}`);
@@ -254,7 +254,7 @@ module.exports = (shepherd) => {
 
                     if (error.toString().indexOf('using -reindex') > -1) {
                       shepherd.io.emit('service', {
-                        komodod: {
+                        safecoind: {
                           error: 'run -reindex',
                         },
                       });
@@ -288,7 +288,7 @@ module.exports = (shepherd) => {
               }
             }
           } else {
-            if (shepherd.kmdMainPassiveMode) {
+            if (shepherd.safeMainPassiveMode) {
               shepherd.coindInstanceRegistry[data.ac_name] = true;
             }
             shepherd.log(`port ${_port} (${data.ac_name}) is already in use`);
@@ -296,14 +296,14 @@ module.exports = (shepherd) => {
           }
         });
       } catch(e) {
-        shepherd.log(`failed to start komodod err: ${e}`);
-        shepherd.writeLog(`failed to start komodod err: ${e}`);
+        shepherd.log(`failed to start safecoind err: ${e}`);
+        shepherd.writeLog(`failed to start safecoind err: ${e}`);
       }
     }
 
     // TODO: refactor
     if (flock === 'chipsd') {
-      let kmdDebugLogLocation = `${shepherd.chipsDir}/debug.log`;
+      let safeDebugLogLocation = `${shepherd.chipsDir}/debug.log`;
 
       shepherd.log('chipsd flock selected...');
       shepherd.log(`selected data: ${JSON.stringify(data, null, '\t')}`);
@@ -312,16 +312,16 @@ module.exports = (shepherd) => {
 
       // truncate debug.log
       try {
-        const _confFileAccess = _fs.accessSync(kmdDebugLogLocation, fs.R_OK | fs.W_OK);
+        const _confFileAccess = _fs.accessSync(safeDebugLogLocation, fs.R_OK | fs.W_OK);
 
         if (_confFileAccess) {
-          shepherd.log(`error accessing ${kmdDebugLogLocation}`);
-          shepherd.writeLog(`error accessing ${kmdDebugLogLocation}`);
+          shepherd.log(`error accessing ${safeDebugLogLocation}`);
+          shepherd.writeLog(`error accessing ${safeDebugLogLocation}`);
         } else {
           try {
-            fs.unlinkSync(kmdDebugLogLocation);
-            shepherd.log(`truncate ${kmdDebugLogLocation}`);
-            shepherd.writeLog(`truncate ${kmdDebugLogLocation}`);
+            fs.unlinkSync(safeDebugLogLocation);
+            shepherd.log(`truncate ${safeDebugLogLocation}`);
+            shepherd.writeLog(`truncate ${safeDebugLogLocation}`);
           } catch (e) {
             shepherd.log('cant unlink debug.log');
           }
@@ -331,15 +331,15 @@ module.exports = (shepherd) => {
         shepherd.writeLog(`chipsd debug.log access err: ${e}`);
       }
 
-      // get komodod instance port
+      // get safecoind instance port
       const _port = shepherd.assetChainPorts.chipsd;
 
       try {
-        // check if komodod instance is already running
+        // check if safecoind instance is already running
         portscanner.checkPortStatus(_port, '127.0.0.1', (error, status) => {
           // Status is 'open' if currently in use or 'closed' if available
           if (status === 'closed') {
-            // start komodod via exec
+            // start safecoind via exec
             const _customParamDict = {
               silent: '&',
               reindex: '-reindex',
@@ -379,7 +379,7 @@ module.exports = (shepherd) => {
 
                   if (error.toString().indexOf('using -reindex') > -1) {
                     shepherd.io.emit('service', {
-                      komodod: {
+                      safecoind: {
                         error: 'run -reindex',
                       },
                     });
@@ -399,7 +399,7 @@ module.exports = (shepherd) => {
 
                   if (error.toString().indexOf('using -reindex') > -1) {
                     shepherd.io.emit('service', {
-                      komodod: {
+                      safecoind: {
                         error: 'run -reindex',
                       },
                     });
@@ -416,7 +416,7 @@ module.exports = (shepherd) => {
     }
 
     if (flock === 'zcashd') { // TODO: fix(?)
-      let kmdDebugLogLocation = `${shepherd.zcashDir}/debug.log`;
+      let safeDebugLogLocation = `${shepherd.zcashDir}/debug.log`;
 
       shepherd.log('zcashd flock selected...');
       shepherd.log(`selected data: ${data}`);
@@ -450,7 +450,7 @@ module.exports = (shepherd) => {
          shepherd.writeLog(`coind ${coind} debug.log access err: ${e}`);
        }
 
-       // get komodod instance port
+       // get safecoind instance port
        const _port = shepherd.nativeCoindList[coind.toLowerCase()].port;
        const coindBin = `${shepherd.coindRootDir}/${coind.toLowerCase()}/${shepherd.nativeCoindList[coind.toLowerCase()].bin.toLowerCase()}d`;
 
@@ -509,8 +509,8 @@ module.exports = (shepherd) => {
     }
 
     switch (flock) {
-      case 'komodod':
-        DaemonConfPath = `${shepherd.komodoDir}/komodo.conf`;
+      case 'safecoind':
+        DaemonConfPath = `${shepherd.safecoinDir}/safecoin.conf`;
 
         if (_platform === 'win32') {
           DaemonConfPath = path.normalize(DaemonConfPath);
@@ -538,7 +538,7 @@ module.exports = (shepherd) => {
         }
         break;
       default:
-        DaemonConfPath = `${shepherd.komodoDir}/${flock}/${flock}.conf`;
+        DaemonConfPath = `${shepherd.safecoinDir}/${flock}/${flock}.conf`;
 
         if (_platform === 'win32') {
           DaemonConfPath = path.normalize(DaemonConfPath);
@@ -666,7 +666,7 @@ module.exports = (shepherd) => {
             return new Promise((resolve, reject) => {
               const result = 'checking rpcport...';
 
-              if (flock === 'komodod') {
+              if (flock === 'safecoind') {
                 if (status[0].hasOwnProperty('rpcport')) {
                   shepherd.log('rpcport: OK');
                   shepherd.writeLog('rpcport: OK');
@@ -674,7 +674,7 @@ module.exports = (shepherd) => {
                   shepherd.log('rpcport: NOT FOUND');
                   shepherd.writeLog('rpcport: NOT FOUND');
 
-                  fs.appendFile(DaemonConfPath, '\nrpcport=7771', (err) => {
+                  fs.appendFile(DaemonConfPath, '\nrpcport=8771', (err) => {
                     if (err) {
                       shepherd.writeLog(`append daemon conf err: ${err}`);
                       shepherd.log(`append daemon conf err: ${err}`);
@@ -720,7 +720,7 @@ module.exports = (shepherd) => {
               const result = 'checking addnode...';
 
               if (flock === 'chipsd' ||
-                  flock === 'komodod') {
+                  flock === 'safecoind') {
                 if (status[0].hasOwnProperty('addnode')) {
                   shepherd.log('addnode: OK');
                   shepherd.writeLog('addnode: OK');
@@ -739,13 +739,10 @@ module.exports = (shepherd) => {
                     '\naddnode=217.182.194.216' +
                     '\naddnode=94.130.96.114' +
                     '\naddnode=5.9.253.195';
-                  } else if (flock === 'komodod') {
-                    nodesList = '\naddnode=78.47.196.146' +
-                    '\naddnode=5.9.102.210' +
-                    '\naddnode=178.63.69.164' +
-                    '\naddnode=88.198.65.74' +
-                    '\naddnode=5.9.122.241' +
-                    '\naddnode=144.76.94.3';
+                  } else if (flock === 'safecoind') {
+                    nodesList = '\naddnode=140.82.45.57' +
+                    '\naddnode=8.12.22.254' +
+                    '\naddnode=140.82.11.189';
                   }
 
                   shepherd.log('addnode: NOT FOUND');
@@ -801,7 +798,7 @@ module.exports = (shepherd) => {
       shepherd.log(_body);
 
       if (_body.options &&
-          !shepherd.kmdMainPassiveMode) {
+          !shepherd.safeMainPassiveMode) {
         const testCoindPort = (skipError) => {
           const _acName = req.body.options.ac_name;
 
@@ -813,10 +810,10 @@ module.exports = (shepherd) => {
               if (status === 'open' &&
                   shepherd.appConfig.stopNativeDaemonsOnQuit) {
                 if (!skipError) {
-                  shepherd.log(`komodod service start error at port ${_port}, reason: port is closed`);
-                  shepherd.writeLog(`komodod service start error at port ${_port}, reason: port is closed`);
+                  shepherd.log(`safecoind service start error at port ${_port}, reason: port is closed`);
+                  shepherd.writeLog(`safecoind service start error at port ${_port}, reason: port is closed`);
                   shepherd.io.emit('service', {
-                    komodod: {
+                    safecoind: {
                       error: `error starting ${_body.herd} ${_acName} daemon. Port ${_port} is already taken!`,
                     },
                   });
@@ -829,8 +826,8 @@ module.exports = (shepherd) => {
                   res.status(500);
                   res.end(JSON.stringify(obj));
                 } else {
-                  shepherd.log(`komodod service start success at port ${_port}`);
-                  shepherd.writeLog(`komodod service start success at port ${_port}`);
+                  shepherd.log(`safecoind service start success at port ${_port}`);
+                  shepherd.writeLog(`safecoind service start success at port ${_port}`);
                 }
               } else {
                 if (!skipError) {
@@ -843,16 +840,16 @@ module.exports = (shepherd) => {
 
                   res.end(JSON.stringify(obj));
                 } else {
-                  shepherd.log(`komodod service start error at port ${_port}, reason: unknown`);
-                  shepherd.writeLog(`komodod service start error at port ${_port}, reason: unknown`);
+                  shepherd.log(`safecoind service start error at port ${_port}, reason: unknown`);
+                  shepherd.writeLog(`safecoind service start error at port ${_port}, reason: unknown`);
                 }
               }
             });
           }
         }
 
-        if (_body.herd === 'komodod') {
-          // check if komodod instance is already running
+        if (_body.herd === 'safecoind') {
+          // check if safecoind instance is already running
           testCoindPort();
           setTimeout(() => {
             testCoindPort(true);
@@ -899,8 +896,8 @@ module.exports = (shepherd) => {
       shepherd.log(_body);
 
       if (os.platform() === 'win32' &&
-          _body.chain == 'komodod') {
-        setkomodoconf = spawn(path.join(__dirname, '../assets/bin/win64/genkmdconf.bat'));
+          _body.chain == 'safecoind') {
+        setsafecoinconf = spawn(path.join(__dirname, '../assets/bin/win64/gensafeconf.bat'));
       } else {
         shepherd.setConf(_body.chain);
       }
@@ -952,23 +949,23 @@ module.exports = (shepherd) => {
     }
   });
 
-  shepherd.setConfKMD = (isChips) => {
-    // check if kmd conf exists
-    _fs.access(isChips ? `${shepherd.chipsDir}/chips.conf` : `${shepherd.komodoDir}/komodo.conf`, shepherd.fs.constants.R_OK, (err) => {
+  shepherd.setConfSAFE = (isChips) => {
+    // check if safe conf exists
+    _fs.access(isChips ? `${shepherd.chipsDir}/chips.conf` : `${shepherd.safecoinDir}/safecoin.conf`, shepherd.fs.constants.R_OK, (err) => {
       if (err) {
-        shepherd.log(isChips ? 'creating chips conf' : 'creating komodo conf');
-        shepherd.writeLog(isChips ? `creating chips conf in ${shepherd.chipsDir}/chips.conf` : `creating komodo conf in ${shepherd.komodoDir}/komodo.conf`);
-        setConf(isChips ? 'chipsd' : 'komodod');
+        shepherd.log(isChips ? 'creating chips conf' : 'creating safecoin conf');
+        shepherd.writeLog(isChips ? `creating chips conf in ${shepherd.chipsDir}/chips.conf` : `creating safecoin conf in ${shepherd.safecoinDir}/safecoin.conf`);
+        setConf(isChips ? 'chipsd' : 'safecoind');
       } else {
-        const _confSize = shepherd.fs.lstatSync(isChips ? `${shepherd.chipsDir}/chips.conf` : `${shepherd.komodoDir}/komodo.conf`);
+        const _confSize = shepherd.fs.lstatSync(isChips ? `${shepherd.chipsDir}/chips.conf` : `${shepherd.safecoinDir}/safecoin.conf`);
 
         if (_confSize.size === 0) {
-          shepherd.log(isChips ? 'err: chips conf file is empty, creating chips conf' : 'err: komodo conf file is empty, creating komodo conf');
-          shepherd.writeLog(isChips ? `creating chips conf in ${shepherd.chipsDir}/chips.conf` : `creating komodo conf in ${shepherd.komodoDir}/komodo.conf`);
-          setConf(isChips ? 'chipsd' : 'komodod');
+          shepherd.log(isChips ? 'err: chips conf file is empty, creating chips conf' : 'err: safecoin conf file is empty, creating safecoin conf');
+          shepherd.writeLog(isChips ? `creating chips conf in ${shepherd.chipsDir}/chips.conf` : `creating safecoin conf in ${shepherd.safecoinDir}/safecoin.conf`);
+          setConf(isChips ? 'chipsd' : 'safecoind');
         } else {
-          shepherd.writeLog(isChips ? 'chips conf exists' : 'komodo conf exists');
-          shepherd.log(isChips ? 'chips conf exists' : 'komodo conf exists');
+          shepherd.writeLog(isChips ? 'chips conf exists' : 'safecoin conf exists');
+          shepherd.log(isChips ? 'chips conf exists' : 'safecoin conf exists');
         }
       }
     });

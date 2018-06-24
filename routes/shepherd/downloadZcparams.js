@@ -4,17 +4,17 @@ const Promise = require('bluebird');
 
 module.exports = (shepherd) => {
   shepherd.zcashParamsDownloadLinks = {
-    'agama.komodoplatform.com': {
-      proving: 'https://agama.komodoplatform.com/file/supernet/sprout-proving.key',
-      verifying: 'https://agama.komodoplatform.com/file/supernet/sprout-verifying.key',
+    'no download source selected': {        // dummy
+      proving: 'https://forge.plus/sprout-proving.key',
+      verifying: 'https://forge.plus/sprout-verifying.key',
     },
-    'agama-yq0ysrdtr.stackpathdns.com': {
-      proving: 'http://agama-yq0ysrdtr.stackpathdns.com/file/supernet/sprout-proving.key',
-      verifying: 'http://agama-yq0ysrdtr.stackpathdns.com/file/supernet/sprout-verifying.key',
+    'Main Download Link': {
+      proving: 'https://forge.plus/sprout-proving.key',
+      verifying: 'https://forge.plus/sprout-verifying.key',
     },
     'zcash.dl.mercerweiss.com': {
-      proving: 'https://zcash.dl.mercerweiss.com/sprout-proving.key',
-      verifying: 'https://zcash.dl.mercerweiss.com/sprout-verifying.key',
+      proving: 'https://z.cash/downloads/sprout-proving.key',
+      verifying: 'https://z.cash/downloads/sprout-verifying.key',
     },
   };
 

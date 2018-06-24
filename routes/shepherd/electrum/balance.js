@@ -14,12 +14,12 @@ module.exports = (shepherd) => {
         if (json &&
             json.hasOwnProperty('confirmed') &&
             json.hasOwnProperty('unconfirmed')) {
-          if (network === 'komodo') {
+          if (network === 'safecoin') {
             ecl.blockchainAddressListunspent(req.query.address)
             .then((utxoList) => {
               if (utxoList &&
                   utxoList.length) {
-                // filter out < 10 KMD amounts
+                // filter out < 10 SAFE amounts
                 let _utxo = [];
 
                 for (let i = 0; i < utxoList.length; i++) {
@@ -57,7 +57,7 @@ module.exports = (shepherd) => {
                         if (decodedTx &&
                             decodedTx.format &&
                             decodedTx.format.locktime > 0) {
-                          interestTotal += shepherd.kmdCalcInterest(decodedTx.format.locktime, _utxoItem.value, _utxoItem.height);
+                          interestTotal += shepherd.safeCalcInterest(decodedTx.format.locktime, _utxoItem.value, _utxoItem.height);
                         }
 
                         shepherd.log('decoded tx =>', true);

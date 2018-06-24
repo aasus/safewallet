@@ -9,7 +9,7 @@ const bs58check = require('bs58check');
 
 module.exports = (shepherd) => {
   shepherd.wifToWif = (wif, network) => {
-    network = network === 'KMD' ? 'komodo' : network.toLowerCase();
+    network = network === 'SAFE' ? 'safecoin' : network.toLowerCase();
     const key = shepherd.isZcash(network) ? new bitcoinZcash.ECPair.fromWIF(wif, shepherd.getNetworkData(network), true) : new bitcoin.ECPair.fromWIF(wif, shepherd.getNetworkData(network), true);
 
     return {
@@ -100,7 +100,7 @@ module.exports = (shepherd) => {
   });
 
   shepherd.getCoinByPub = (address) => {
-    const _skipNetworks = ['btc', 'crw', 'dgb', 'arg', 'zec', 'nmc', 'ltc', 'vtc', 'via', 'fair', 'doge', 'kmd', 'mona'];
+    const _skipNetworks = ['btc', 'crw', 'dgb', 'arg', 'zec', 'nmc', 'ltc', 'vtc', 'via', 'fair', 'doge', 'safe', 'mona'];
 
     try {
       const _b58check = shepherd.isZcash(network.toLowerCase()) ? bitcoinZcash.address.fromBase58Check(address) : bitcoin.address.fromBase58Check(address);
@@ -239,7 +239,7 @@ module.exports = (shepherd) => {
   shepherd.post('/electrum/seed/bip39/match', (req, res, next) => {
     if (shepherd.checkToken(req.body.token)) {
       const seed = bip39.mnemonicToSeed(req.body.seed);
-      const hdMaster = bitcoin.HDNode.fromSeedBuffer(seed, shepherd.electrumJSNetworks.komodo);
+      const hdMaster = bitcoin.HDNode.fromSeedBuffer(seed, shepherd.electrumJSNetworks.safecoin);
       const matchPattern = req.body.match;
       const _defaultAddressDepth = req.body.addressdepth;
       const _defaultAccountCount = req.body.accounts;

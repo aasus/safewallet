@@ -6,7 +6,7 @@ const request = require('request');
 
 module.exports = (shepherd) => {
   shepherd.getConf = (chain) => {
-    let _confLocation = chain === 'komodod' ? `${shepherd.komodoDir}/komodo.conf` : `${shepherd.komodoDir}/${chain}/${chain}.conf`;
+    let _confLocation = chain === 'safecoind' ? `${shepherd.safecoinDir}/safecoin.conf` : `${shepherd.safecoinDir}/${chain}/${chain}.conf`;
     _confLocation = chain === 'CHIPS' ? `${shepherd.chipsDir}/chips.conf` : _confLocation;
 
     // any coind
@@ -47,7 +47,7 @@ module.exports = (shepherd) => {
           if (shepherd.nativeCoindList[chain.toLowerCase()]) {
             shepherd.rpcConf[chain] = parsedRpcConfig;
           } else {
-            shepherd.rpcConf[chain === 'komodod' ? 'KMD' : chain] = parsedRpcConfig;
+            shepherd.rpcConf[chain === 'safecoind' ? 'SAFE' : chain] = parsedRpcConfig;
           }
         } else {
           shepherd.log(`${_confLocation} is empty`);
@@ -80,17 +80,17 @@ module.exports = (shepherd) => {
         res.end(JSON.stringify(errorObj));
       } else {
         const _mode = req.body.payload.mode === 'passthru' ? 'passthru' : 'default';
-        const _chain = req.body.payload.chain === 'KMD' ? null : req.body.payload.chain;
+        const _chain = req.body.payload.chain === 'SAFE' ? null : req.body.payload.chain;
         let _params = req.body.payload.params ? ` ${req.body.payload.params}` : '';
         let _cmd = req.body.payload.cmd;
 
         if (!shepherd.rpcConf[_chain]) {
-          shepherd.getConf(req.body.payload.chain === 'KMD' || !req.body.payload.chain && shepherd.kmdMainPassiveMode ? 'komodod' : req.body.payload.chain);
+          shepherd.getConf(req.body.payload.chain === 'SAFE' || !req.body.payload.chain && shepherd.safeMainPassiveMode ? 'safecoind' : req.body.payload.chain);
         }
 
         if (_mode === 'default') {
           if (req.body.payload.rpc2cli) {
-            let _coindCliBin = shepherd.komodocliBin;
+            let _coindCliBin = shepherd.safecoincliBin;
 
             if (shepherd.nativeCoindList &&
                 _chain &&
@@ -128,7 +128,7 @@ module.exports = (shepherd) => {
                 let _res;
                 let _error;
 
-                if (_chain !== 'komodod' &&
+                if (_chain !== 'safecoind' &&
                     stderr.indexOf(`error creating`) > -1) {
                   shepherd.log(`replace error creating (gen${_chain})`);
                   stderr = stderr.replace(`error creating (gen${_chain})`, '');
@@ -162,7 +162,7 @@ module.exports = (shepherd) => {
                 let _res;
                 let _error;
 
-                if (_chain !== 'komodod' &&
+                if (_chain !== 'safecoind' &&
                     stdout.indexOf(`error creating`) > -1) {
                   shepherd.log(`replace error creating (gen${_chain})`);
                   stdout = stdout.replace(`error creating (gen${_chain})`, '');
@@ -195,7 +195,7 @@ module.exports = (shepherd) => {
               }
 
               res.end(JSON.stringify(responseObj));
-              // shepherd.killRogueProcess('komodo-cli');
+              // shepherd.killRogueProcess('safecoin-cli');
             });
           } else {
             if (_cmd === 'debug' &&
@@ -287,7 +287,7 @@ module.exports = (shepherd) => {
             }
           }
         } else {
-          let _coindCliBin = shepherd.komodocliBin;
+          let _coindCliBin = shepherd.safecoincliBin;
 
           if (shepherd.nativeCoindList &&
               _chain &&
@@ -325,7 +325,7 @@ module.exports = (shepherd) => {
             }
 
             res.end(JSON.stringify(responseObj));
-            shepherd.killRogueProcess('komodo-cli');
+            shepherd.killRogueProcess('safecoin-cli');
           });
         }
       }
