@@ -3,29 +3,14 @@ import mainWindow from '../../util/mainWindow';
 
 const addCoinOptionsAC = () => {
   const _assetChains = [
-    'bet',
-    'bots',
-    'ceal',
-    'coqui',
-    'crypto',
-    'hodl',
-    'dex',
     'jumblr',
     'kv',
-    'mgw',
-    'mnz',
-    'pangea',
-    'revs',
-    'mshark',
     'supernet',
-    'wlc',
     'axo',
     'etomic',
-    'btch',
-    'beer',
-    'pizza',
-    'vote2018',
-    'ninja'
+    'bitcoinz',
+    'snowgem',
+    'zencash'
   ];
   let _items = [];
 
