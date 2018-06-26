@@ -64,4 +64,8 @@ let electrumServers = {
   },
   };
 
+electrumServers.btcz = electrumServers.bitcoinz;
+electrumServers.xsg = electrumServers.snowgem;
+electrumServers.zen = electrumServers.zencash;
+  
 module.exports = electrumServers;

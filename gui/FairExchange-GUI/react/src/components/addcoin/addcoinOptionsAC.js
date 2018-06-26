@@ -3,14 +3,14 @@ import mainWindow from '../../util/mainWindow';
 
 const addCoinOptionsAC = () => {
   const _assetChains = [
-    'jumblr',
-    'kv',
-    'supernet',
-    'axo',
-    'etomic',
     'btcz',
     'xsg',
-    'zen'
+    'zen',
+    'jumblr',
+    'supernet',
+    'kv',
+    'axo',
+    'etomic'
   ];
   let _items = [];
 
