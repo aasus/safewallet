@@ -10,10 +10,6 @@ const addCoinOptionsCrypto = () => {
     icon: 'SAFE',
     value: `SAFE|${availableSAFEModes}`,
   }, {
-    label: 'Chips (CHIPS)',
-    icon: 'CHIPS',
-    value: `CHIPS|spv`,
-  }, {
       label: 'SnowGem (XSG)',
       icon: 'XSG',
       value: `XSG|spv`,

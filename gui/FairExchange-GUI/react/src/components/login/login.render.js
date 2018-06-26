@@ -296,9 +296,9 @@ const LoginRender = function() {
                   valueRenderer={ this.renderShortcutOption }
                  options={[
                     { value: 'safe', label: 'safe' },
-                    { value: 'bitcoinz', label: 'bitcoinz' },
-                    { value: 'snowgem', label: 'snowgem' },
-                    { value: 'zencash', label: 'zencash' },
+                    { value: 'btcz', label: 'btcz' },
+                    { value: 'xsg', label: 'xsg' },
+                    { value: 'zen', label: 'zen' },
                    ]} />
                </div>
  
