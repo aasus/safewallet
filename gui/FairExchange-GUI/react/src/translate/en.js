@@ -829,11 +829,6 @@ export const LANG_EN = {
     'BTCZ': 'BitcoinZ (BTCZ)',
     'XSG': 'SnowGem (XSG)',
     'ZEN': 'ZenCash (ZEN)',
-    'BTCH': 'BTCH (BTCH)',
-    'BEER': 'BEER (Test coin)',
-    'PIZZA': 'PIZZA (Test coin)',
-    'VOTE2018': 'VOTE2018 (Notary Elections)',
-    'NINJA': 'NINJA (NINJA)',
   },
   'DEX': {
     'GEN_NEW_PASSPHRASE': 'Generate a new passphrase',
