@@ -8,9 +8,9 @@ const addCoinOptionsAC = () => {
     'supernet',
     'axo',
     'etomic',
-    'bitcoinz',
-    'snowgem',
-    'zencash'
+    'btcz',
+    'xsg',
+    'zen'
   ];
   let _items = [];
 
