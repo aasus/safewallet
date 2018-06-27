@@ -275,20 +275,22 @@ export function coindList() {
     'BTCZ',
     'XSG',
     'ZEN',
-    'JUMBLR',
-    'SUPERNET'
+    'CMM'
+    /*'JUMBLR',
+    'SUPERNET'*/
   ];
 
   return _coins;
 }
 
 export const isSafecoinCoin = (coin) => {
-  if (coin === 'SUPERNET' ||
-      coin === 'JUMBLR' ||
+  if (/*coin === 'SUPERNET' ||
+      coin === 'JUMBLR' ||*/
       coin === 'SAFE' ||
       coin === 'BTCZ' ||
       coin === 'XSG' ||
-      coin === 'ZEN') {
+      /*coin === 'ZEN' ||*/
+      coin === 'CMM') {
     return true;
   }
 }
