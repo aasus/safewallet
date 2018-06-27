@@ -298,7 +298,8 @@ const LoginRender = function() {
                     { value: 'safe', label: 'safe' },
                     { value: 'btcz', label: 'btcz' },
                     { value: 'xsg', label: 'xsg' },
-                    { value: 'zen', label: 'zen' },
+                    /*{ value: 'zen', label: 'zen' },*/
+                    { value: 'cmm', label: 'cmm' },
                    ]} />
                </div>
  

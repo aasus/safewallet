@@ -828,7 +828,8 @@ export const LANG_EN = {
     'SUPERNET': 'SUPERNET (SUPERNET)',
     'BTCZ': 'BitcoinZ (BTCZ)',
     'XSG': 'SnowGem (XSG)',
-    'ZEN': 'ZenCash (ZEN)',
+    /*'ZEN': 'ZenCash (ZEN)',*/
+    'CMM': 'Commercium (CMM)',
   },
   'DEX': {
     'GEN_NEW_PASSPHRASE': 'Generate a new passphrase',

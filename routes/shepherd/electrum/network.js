@@ -10,8 +10,10 @@ module.exports = (shepherd) => {
         network === 'XSG' ||
         network === 'BTCZ' ||
         network === 'btcz' ||
-        network === 'ZEN' ||
-        network === 'zen') {
+        /*network === 'ZEN' ||
+        network === 'zen' ||*/
+        network === 'CMM' ||
+        network === 'cmm') {
       return true;
     }
   };
@@ -54,8 +56,10 @@ module.exports = (shepherd) => {
         coin === 'BITCOINZ' ||
         coin === 'XSG' ||
         coin === 'SAFECOIN' ||
-        coin === 'ZEN' ||
-        coin === 'ZENCASH' ||
+        /*coin === 'ZEN' ||
+        coin === 'ZENCASH' ||*/
+        coin === 'CMM' ||
+        coin === 'COMMERCIUM' ||
         coin === 'SUPERNET' ||
         coin === 'JUMBLR' ||
         coinUC === 'SAFE' ||
@@ -64,8 +68,10 @@ module.exports = (shepherd) => {
         coinUC === 'BITCOINZ' ||
         coinUC === 'XSG' ||
         coinUC === 'SAFECOIN' ||
-        coinUC === 'ZEN' ||
-        coinUC === 'ZENCASH' ||
+        /*coinUC === 'ZEN' ||
+        coinUC === 'ZENCASH' ||*/
+        coin === 'CMM' ||
+        coin === 'COMMERCIUM' ||
         coinUC === 'SUPERNET' ||
         coinUC === 'JUMBLR') {
       return shepherd.electrumJSNetworks.safecoin;

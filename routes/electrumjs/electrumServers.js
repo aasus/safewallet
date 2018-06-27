@@ -29,7 +29,8 @@ let electrumServers = {
     abbr: 'XSG',
     serverList: [
       'electrumsvr.snowgem.org:50001',
-      'electrumsvr2.snowgem.org:50001'
+      'electrumsvr2.snowgem.org:50001',
+      'local.support:50001'
     ],
   },
   zencash: {
@@ -39,6 +40,17 @@ let electrumServers = {
     txfee: 10000,
     abbr: 'ZEN',
     serverList: 'none',
+  },
+  commercium: { // !estimatefee 50002-ssl
+    address: 'elec01.commercium.net',
+    port: 50001,
+    proto: 'tcp',
+    txfee: 10000,
+    abbr: 'CMM',
+    serverList: [
+      'elec01.commercium.net:50001',
+      'elec02.commercium.net:50001'
+    ],
   },
   supernet: { // !estimatefee
     address: 'electrum1.ipv6admin.com',

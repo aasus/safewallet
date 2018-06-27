@@ -21,9 +21,13 @@ export function getCoinTitle(coin) {
       coinlogo = 'xsg';
       coinname = 'SnowGem';
       break;
-    case 'ZEN':
+/*    case 'ZEN':
       coinlogo = 'zen';
       coinname = 'ZenCash';
+      break; */
+    case 'CMM':
+      coinlogo = 'cmm';
+      coinname = 'Commercium';
       break;
     case 'SUPERNET':
       titleBG = true;

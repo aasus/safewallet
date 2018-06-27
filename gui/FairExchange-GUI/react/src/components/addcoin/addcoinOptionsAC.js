@@ -5,12 +5,13 @@ const addCoinOptionsAC = () => {
   const _assetChains = [
     'btcz',
     'xsg',
-    'zen',
+    /*'zen',*/
+    'cmm'/*,
     'jumblr',
     'supernet',
     'kv',
     'axo',
-    'etomic'
+    'etomic'*/
   ];
   let _items = [];
 
