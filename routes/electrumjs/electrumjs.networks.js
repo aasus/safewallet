@@ -60,18 +60,17 @@ networks.zen = { // new address type
   isZcash: true,
 };
 
-networks.commercium = {
+networks.cmm = {
   messagePrefix: '\x19Commercium Signed Message:\n',
   bip32: {
     public: 0x0488b21e,
     private: 0x0488ade4,
   },
-  pubKeyHash: 0x1C,
+  pubKeyHash: 0x1c,
   scriptHash: 0x32,
-  wif: 0x8C,
+  wif: 0x8c,
   dustThreshold: 1000,
   isZcash: true,
 };
 
 networks.safe = networks.safecoin;
-networks.cmm = networks.commercium;

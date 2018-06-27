@@ -21,10 +21,6 @@ export function getCoinTitle(coin) {
       coinlogo = 'xsg';
       coinname = 'SnowGem';
       break;
-/*    case 'ZEN':
-      coinlogo = 'zen';
-      coinname = 'ZenCash';
-      break; */
     case 'CMM':
       coinlogo = 'cmm';
       coinname = 'Commercium';
@@ -289,7 +285,6 @@ export const isSafecoinCoin = (coin) => {
       coin === 'SAFE' ||
       coin === 'BTCZ' ||
       coin === 'XSG' ||
-      /*coin === 'ZEN' ||*/
       coin === 'CMM') {
     return true;
   }

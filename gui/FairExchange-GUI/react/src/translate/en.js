@@ -828,7 +828,6 @@ export const LANG_EN = {
     'SUPERNET': 'SUPERNET (SUPERNET)',
     'BTCZ': 'BitcoinZ (BTCZ)',
     'XSG': 'SnowGem (XSG)',
-    /*'ZEN': 'ZenCash (ZEN)',*/
     'CMM': 'Commercium (CMM)',
   },
   'DEX': {

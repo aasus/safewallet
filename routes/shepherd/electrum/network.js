@@ -10,8 +10,6 @@ module.exports = (shepherd) => {
         network === 'XSG' ||
         network === 'BTCZ' ||
         network === 'btcz' ||
-        /*network === 'ZEN' ||
-        network === 'zen' ||*/
         network === 'CMM' ||
         network === 'cmm') {
       return true;
@@ -56,8 +54,6 @@ module.exports = (shepherd) => {
         coin === 'BITCOINZ' ||
         coin === 'XSG' ||
         coin === 'SAFECOIN' ||
-        /*coin === 'ZEN' ||
-        coin === 'ZENCASH' ||*/
         coin === 'CMM' ||
         coin === 'COMMERCIUM' ||
         coin === 'SUPERNET' ||
@@ -68,8 +64,6 @@ module.exports = (shepherd) => {
         coinUC === 'BITCOINZ' ||
         coinUC === 'XSG' ||
         coinUC === 'SAFECOIN' ||
-        /*coinUC === 'ZEN' ||
-        coinUC === 'ZENCASH' ||*/
         coinUC === 'CMM' ||
         coinUC === 'COMMERCIUM' ||
         coinUC === 'SUPERNET' ||

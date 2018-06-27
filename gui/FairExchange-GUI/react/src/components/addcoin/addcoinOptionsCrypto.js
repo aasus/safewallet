@@ -16,11 +16,7 @@ const addCoinOptionsCrypto = () => {
       label: 'SnowGem (XSG)',
       icon: 'XSG',
       value: `XSG|spv`,
-    }, /*{
-      label: 'ZenCash (ZEN)',
-      icon: 'ZEN',
-      value: `ZEN|spv`,
-    },*/ {
+    }, {
       label: 'BitcoinZ (BTCZ)',
       icon: 'BTCZ',
       value: `BTCZ|spv`,
