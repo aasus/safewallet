@@ -3,10 +3,6 @@ import mainWindow from '../../util/mainWindow';
 
 const addCoinOptionsAC = () => {
   const _assetChains = [
-/*,
-    'jumblr',
-    'supernet',
-*/
     'btcz',
     'xsg',
     'cmm'

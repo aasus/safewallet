@@ -25,20 +25,6 @@ export function getCoinTitle(coin) {
       coinlogo = 'cmm';
       coinname = 'Commercium';
       break;
-/*    
-    case 'SUPERNET':
-      titleBG = true;
-      coinlogo = 'SUPERNET';
-      coinname = 'SUPERNET';
-      break;
-    case 'JUMBLR':
-      titleBG = true;
-      transparentBG = true;
-      hideTitle = true;
-      coinlogo = 'JUMBLR';
-      coinname = 'JUMBLR';
-      break;
-*/
     case 'USD':
       titleBG = true;
       transparentBG = true;
@@ -273,10 +259,6 @@ export function coindList() {
     'BTCZ',
     'XSG',
     'CMM'
-/*
-    'JUMBLR',
-    'SUPERNET'
-*/
   ];
 
   return _coins;
@@ -286,12 +268,7 @@ export const isSafecoinCoin = (coin) => {
   if (coin === 'SAFE' ||
       coin === 'BTCZ' ||
       coin === 'XSG' ||
-      coin === 'CMM'
-/*
-      coin === 'SUPERNET' ||
-      coin === 'JUMBLR' ||
-*/
-      ) {
+      coin === 'CMM') {
     return true;
   }
 }

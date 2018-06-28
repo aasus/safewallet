@@ -56,10 +56,6 @@ module.exports = (shepherd) => {
         coin === 'SNOWGEM' ||
         coin === 'CMM' ||
         coin === 'COMMERCIUM' ||
-/*
-		coin === 'SUPERNET' ||
-        coin === 'JUMBLR' ||
-*/
         coinUC === 'SAFE' ||
         coinUC === 'SAFECOIN' ||
         coinUC === 'BTCZ' ||
@@ -68,10 +64,6 @@ module.exports = (shepherd) => {
         coinUC === 'SNOWGEM' ||
         coinUC === 'CMM' ||
         coinUC === 'COMMERCIUM') 
-/*
-        coinUC === 'SUPERNET' ||
-        coinUC === 'JUMBLR') 
-*/
 		{
       return shepherd.electrumJSNetworks.safecoin;
     } else {

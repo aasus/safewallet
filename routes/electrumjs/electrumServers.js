@@ -44,30 +44,6 @@ let electrumServers = {
       'elec02.commercium.net:50001'
     ],
   },
-/*
-  supernet: { // !estimatefee
-    address: 'electrum1.ipv6admin.com',
-    port: 10005,
-    proto: 'tcp',
-    txfee: 10000,
-    abbr: 'SUPERNET',
-    serverList: [
-      'electrum1.ipv6admin.com:10005',
-      'electrum2.ipv6admin.com:10005'
-    ],
-  },
-  jumblr: { // !estimatefee
-    address: 'electrum1.ipv6admin.com',
-    port: 10004,
-    proto: 'tcp',
-    txfee: 10000,
-    abbr: 'JUMBLR',
-    serverList: [
-      'electrum1.ipv6admin.com:10004',
-      'electrum2.ipv6admin.com:10004'
-    ],
-  },
-*/
   };
 
 electrumServers.btcz = electrumServers.bitcoinz;

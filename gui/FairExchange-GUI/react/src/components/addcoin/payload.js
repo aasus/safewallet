@@ -3,9 +3,7 @@
 //			 cleanup
 
 export function checkAC(coinVal) {
-	if (/*coinVal === 'SUPERNET' ||
-			coinVal === 'JUMBLR' ||*/
-			coinVal === 'XSG' ||
+	if (coinVal === 'XSG' ||
 			coinVal === 'BTCZ' ||
 			coinVal === 'CMM')	{
 		return true;
