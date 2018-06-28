@@ -5,8 +5,9 @@ const request = require('request');
 
 module.exports = (shepherd) => {
   shepherd.startSPV = (coin) => {
-    if (coin === 'SAFE+JUMBLR') {
+    if (coin === 'SAFE+REVS+JUMBLR') {
       shepherd.addElectrumCoin('SAFE');
+      shepherd.addElectrumCoin('REVS');
       shepherd.addElectrumCoin('JUMBLR');
     } else {
       if (process.argv.indexOf('spvcoins=all/add-all') > -1) {

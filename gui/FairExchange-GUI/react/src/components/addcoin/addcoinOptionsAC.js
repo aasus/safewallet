@@ -5,7 +5,30 @@ const addCoinOptionsAC = () => {
   const _assetChains = [
     'btcz',
     'xsg',
-    'cmm'
+    'cmm',
+    'bet',
+    'bots',
+    'ceal',
+    'coqui',
+    'crypto',
+    'hodl',
+    'dex',
+    'jumblr',
+    'kv',
+    'mgw',
+    'mnz',
+    'pangea',
+    'revs',
+    'mshark',
+    'supernet',
+    'wlc',
+    'axo',
+    'etomic',
+    'btch',
+    'beer',
+    'pizza',
+    'vote2018',
+    'ninja'
   ];
   let _items = [];
 
