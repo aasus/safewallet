@@ -824,8 +824,10 @@ export const LANG_EN = {
     'USD': 'US Dollar (USD)',
   },
   'ASSETCHAINS': {
+/*
     'JUMBLR': 'JUMBLR (JUMBLR)',
     'SUPERNET': 'SUPERNET (SUPERNET)',
+*/
     'BTCZ': 'BitcoinZ (BTCZ)',
     'XSG': 'SnowGem (XSG)',
     'CMM': 'Commercium (CMM)',

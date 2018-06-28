@@ -3,11 +3,11 @@
 //			 cleanup
 
 export function checkAC(coinVal) {
-	if (coinVal === 'SUPERNET' ||
-			coinVal === 'JUMBLR' ||
+	if (/*coinVal === 'SUPERNET' ||
+			coinVal === 'JUMBLR' ||*/
 			coinVal === 'XSG' ||
-			coinVal === 'ZEN' ||
-			coinVal === 'BTCZ')	{
+			coinVal === 'BTCZ' ||
+			coinVal === 'CMM')	{
 		return true;
 	} else {
 		return false;
@@ -33,10 +33,10 @@ export function startAssetChain(confpath, coin, mode, getSuppyOnly) {
 		XSG: {
 			supply: 20998641,// TODO
 		},
-		ZEN: {
+		BTCZ: {
 			supply: 20998641,// TODO
 		},
-		BTCZ: {
+		CMM: {
 			supply: 20998641,// TODO
 		},
 	};

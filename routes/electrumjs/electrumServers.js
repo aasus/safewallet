@@ -33,15 +33,7 @@ let electrumServers = {
       'local.support:50001'
     ],
   },
-  zencash: {
-    address: 'https://explorer.zen-solutions.io/api/',
-    proto: 'insight',
-    insightRawApi: false,
-    txfee: 10000,
-    abbr: 'ZEN',
-    serverList: 'none',
-  },
-  commercium: { // !estimatefee 50002-ssl
+  cmm: { // !estimatefee 50002-ssl
     address: 'elec01.commercium.net',
     port: 50001,
     proto: 'tcp',
@@ -52,6 +44,7 @@ let electrumServers = {
       'elec02.commercium.net:50001'
     ],
   },
+/*
   supernet: { // !estimatefee
     address: 'electrum1.ipv6admin.com',
     port: 10005,
@@ -74,11 +67,10 @@ let electrumServers = {
       'electrum2.ipv6admin.com:10004'
     ],
   },
+*/
   };
 
 electrumServers.btcz = electrumServers.bitcoinz;
 electrumServers.xsg = electrumServers.snowgem;
-electrumServers.zen = electrumServers.zencash;
-electrumServers.cmm = electrumServers.commercium;
 
 module.exports = electrumServers;
