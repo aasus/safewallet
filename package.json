@@ -27,6 +27,7 @@
     "electron": "^1.8.4"
   },
   "dependencies": {
+    "safewallet-wallet-lib": "git://github.com/OleksandrBlack/safewallet-wallet-lib#dev",
     "adm-zip": "^0.4.7",
     "arch": "^2.1.0",
     "async": "^2.6.0",
