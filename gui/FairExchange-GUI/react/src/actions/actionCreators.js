@@ -31,6 +31,10 @@ import {
   DISPLAY_ZCASH_PARAMS_FETCH,
   DASHBOARD_REMOVE_COIN,
   DISPLAY_NOTARY_ELECTIONS_MODAL,
+  SAFE_BTC_RATE,
+  BTC_USD_RATE,
+  SAFE_TRADE_CHANGE_ACTIVE_PAIR,
+  SAFE_TRADE_TICKERS
 } from './storeType';
 
 export * from './actions/nativeSyncInfo';
@@ -54,6 +58,11 @@ export * from './actions/nativeNetwork';
 export * from './actions/tools';
 export * from './actions/prices';
 export * from './actions/elections';
+export * from './actions/safeBtcRate';
+export * from './actions/btcUsdRate';
+export * from './actions/safeTradePairList';
+export * from './actions/safeTradeTickers';
+export * from './actions/safeVote';
 
 export function changeActiveAddress(address) {
   return {
@@ -309,3 +318,14 @@ export function toggleNotaryElectionsModal(display) {
     displayNotaryElectionsModal: display,
   }
 }
+
+export function safeTradeChangeActivePair(pairId, pairName){
+  return {
+    type: SAFE_TRADE_CHANGE_ACTIVE_PAIR,
+    pair: {
+      id: pairId,
+      name: pairName
+    },
+  }
+}
+

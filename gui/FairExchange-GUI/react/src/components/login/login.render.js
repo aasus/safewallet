@@ -247,7 +247,7 @@ const LoginRender = function() {
             <button
               className="btn btn-lg btn-primary btn-block ladda-button"
               onClick={ this.toggleActivateCoinForm }>
-              <span className="ladda-label">
+              <span className="ladda-label">              
                 { translate('INDEX.ACTIVATE_COIN') }
               </span>
             </button>

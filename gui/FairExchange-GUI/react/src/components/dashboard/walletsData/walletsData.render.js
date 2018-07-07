@@ -245,28 +245,8 @@ export const WalletsDataRender = function() {
               <div>
                 <div className="col-xlg-12 col-lg-12 col-sm-12 col-xs-12">
                   <div className="panel no-margin padding-top-10 padding-bottom-10 center">
-                    { this.displayClaimInterestUI() === 777 &&
-                      <div>
-                        { translate('DASHBOARD.CLAIM_INTEREST_HELPER_BAR_P1') } <strong>{ this.props.ActiveCoin.balance.interest }</strong> SAFE { translate('DASHBOARD.CLAIM_INTEREST_HELPER_BAR_P2') }.
-                        <button
-                          type="button"
-                          className="btn btn-success waves-effect waves-light dashboard-claim-interest-btn"
-                          onClick={ this.openClaimInterestModal }>
-                          <i className="icon fa-dollar"></i> { translate('DASHBOARD.CLAIM_INTEREST_HELPER_BAR_P3') }
-                        </button>
-                      </div>
-                    }
-                    { this.displayClaimInterestUI() === -777 &&
-                      <div>
-                        { translate('DASHBOARD.CLAIM_INTEREST_HELPER_BAR_ALT_P1') }.
-                        <button
-                          type="button"
-                          className="btn btn-success waves-effect waves-light dashboard-claim-interest-btn"
-                          onClick={ this.openClaimInterestModal }>
-                          <i className="icon fa-search"></i> { translate('DASHBOARD.CLAIM_INTEREST_HELPER_BAR_ALT_P2') }
-                        </button>
-                      </div>
-                    }
+                    <div>
+                      </div>                    
                   </div>
                 </div>
               </div>
