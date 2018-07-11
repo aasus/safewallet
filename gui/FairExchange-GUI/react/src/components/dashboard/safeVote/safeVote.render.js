@@ -13,7 +13,7 @@ const SafeVoteRender = function() {
           
           { this.props.hasRound && this.props.round && this.props.round.endDate &&
             <div>
-              <div className="text-center">Round #{ this.props.round.number }</div>
+              <h4><div className="text-center">Round #{ this.props.round.number }</div></h4>
               <br />
               <div className="text-center">{ this.renderEndDate() }</div>
             </div>

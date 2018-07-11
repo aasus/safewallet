@@ -9,10 +9,6 @@ const addCoinOptionsCrypto = () => {
     label: 'Safecoin (SAFE)',
     icon: 'SAFE',
     value: `SAFE|${availableSAFEModes}`,
-  }, {
-    label: 'Chips (CHIPS)',
-    icon: 'CHIPS',
-    value: `CHIPS|spv`,
   }];
 
   if (config.experimentalFeatures) {
