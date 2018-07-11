@@ -100,10 +100,11 @@ class WalletsBalance extends React.Component {
       }
     }    
     
-    if (this.props.ActiveCoin.coin === 'SAFE' && this.props.Dashboard.safeBtcRate && this.props.Dashboard.btcUsdRate){
+    if (this.props.ActiveCoin.coin === 'SAFE' && this.props.SafeTrade && this.props.SafeTrade.tickers && 
+     this.props.SafeTrade.tickers['safebtc'] && this.props.Dashboard.btcUsdRate){
       let _btcTotal = 0;
       let _btcRatePerCoin = 0;     
-      const _safeBtcRates = this.props.Dashboard.safeBtcRate;      
+      const _safeBtcRates = this.props.SafeTrade.tickers['safebtc'].ticker;   
       if (_safeBtcRates.buy){
         _btcRatePerCoin = _safeBtcRates.buy;
         _btcTotal = _balance * _safeBtcRates.buy;           
@@ -221,6 +222,7 @@ const mapStateToProps = (state) => {
       progress: state.ActiveCoin.progress,
     },
     Dashboard: state.Dashboard,
+    SafeTrade: state.SafeTrade,
   };
 };
 

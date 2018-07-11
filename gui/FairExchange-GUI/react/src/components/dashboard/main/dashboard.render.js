@@ -37,21 +37,24 @@ const DashboardRender = function() {
         }
         { this.props.Dashboard.displayZcparamsModal &&
           <ZcparamsFetchModal />
-        }
-        
+        }        
         <div className={ this.isSectionActive('wallets') ? 'show' : 'hide' }>        
           <CoinTile />
           <WalletsNav />
           <WalletsTxInfo />
           <WalletsMain />
         </div>
-        <div className={ this.isSectionActive('safetrade') ? 'show' : 'hide' }> 
-          <PairTile />         
-          <SafeTrade />
-        </div>
-        <div className={ this.isSectionActive('safevote') ? 'show' : 'hide' }>
-          <SafeVote />
-        </div>
+        { this.props.SafeTrade &&
+          <div className={ this.isSectionActive('safetrade') ? 'show' : 'hide' }> 
+            <PairTile />         
+            <SafeTrade />
+          </div>
+        }
+        { this.props.SafeVote &&
+          <div className={ this.isSectionActive('safevote') ? 'show' : 'hide' }>
+            <SafeVote />
+          </div>
+        }
         { this.isSectionActive('edex') &&
           <EDEX />
         }

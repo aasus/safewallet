@@ -5,7 +5,6 @@ import { translate } from '../../../translate/translate';
 import {
   triggerToaster,
   prices,
-  safeBtcRate,
   btcUsdRate,  
 } from '../../../actions/actionCreators';
 import { getCoinTitle } from '../../../util/coinHelper';
@@ -18,7 +17,6 @@ import io from 'socket.io-client';
 
 const socket = io.connect(`http://127.0.0.1:${Config.safewalletPort}`);
 const PRICES_UPDATE_INTERVAL = 120000; // every 2m
-const SAFE_BTC_RATE_UPDATE_INTERVAL = 300000;
 const BTC_USD_RATE_UPDATE_INTERVAL = 300000;
 
 class WalletsMain extends React.Component {
@@ -26,7 +24,6 @@ class WalletsMain extends React.Component {
     super();
     this.getCoinStyle = this.getCoinStyle.bind(this);
     this.pricesInterval = null;
-    this.safeBtcRateInterval = null;
     this.btcUsdRateInterval = null;
     socket.on('service', msg => this.updateSocketsData(msg));
   }
@@ -34,10 +31,6 @@ class WalletsMain extends React.Component {
   componentWillUnmount() {
     if (this.pricesInterval) {
       clearInterval(this.pricesInterval);      
-    }
-
-    if (this.safeBtcRateInterval){
-      clearInterval(this.safeBtcRateInterval);
     }
 
     if (this.btcUsdRateInterval){
@@ -52,11 +45,6 @@ class WalletsMain extends React.Component {
         Store.dispatch(prices());
       }, PRICES_UPDATE_INTERVAL);
     }
-
-    Store.dispatch(safeBtcRate());
-    this.safeBtcRateInterval = setInterval(() => {
-      Store.dispatch(safeBtcRate());
-    }, SAFE_BTC_RATE_UPDATE_INTERVAL);
 
     Store.dispatch(btcUsdRate());
     this.btcUsdRateInterval = setInterval(() => {

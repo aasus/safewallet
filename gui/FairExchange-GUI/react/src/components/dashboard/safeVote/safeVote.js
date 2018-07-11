@@ -3,34 +3,15 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { connect } from 'react-redux';
 import SafeVoteRender from './safeVote.render';
 import {
-    safeVote, triggerToaster,
+    triggerToaster,
 } from '../../../actions/actionCreators';
 import Store from '../../../store';
-import { AddressItemRender } from '../walletsData/walletsData.render';
 import Countdown from 'react-countdown-now';
 
 
-const SAFE_VOTE_UPDATE_INTERVAL = 300000;
+
 
 class SafeVote extends React.Component {
-    constructor(){
-        super();
-        this.safeVoteInterval = null;
-    }
-
-    componentWillMount(){
-        Store.dispatch(safeVote());
-        this.safeVoteInterval = setInterval(() => {
-            Store.dispatch(safeVote());
-          }, SAFE_VOTE_UPDATE_INTERVAL);
-    }
-
-    componentWillUnmount(){
-        if (this.safeVoteInterval){
-            clearInterval(this.safeVoteInterval);
-        }
-    }
-
     renderEndDate(){
         const renderer = ({ total, days, hours, minutes, seconds, milliseconds, completed }) => {
             if (completed){

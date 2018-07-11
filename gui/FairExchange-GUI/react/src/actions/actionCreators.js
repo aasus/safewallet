@@ -31,7 +31,6 @@ import {
   DISPLAY_ZCASH_PARAMS_FETCH,
   DASHBOARD_REMOVE_COIN,
   DISPLAY_NOTARY_ELECTIONS_MODAL,
-  SAFE_BTC_RATE,
   BTC_USD_RATE,
   SAFE_TRADE_CHANGE_ACTIVE_PAIR,
   SAFE_TRADE_TICKERS
@@ -58,7 +57,6 @@ export * from './actions/nativeNetwork';
 export * from './actions/tools';
 export * from './actions/prices';
 export * from './actions/elections';
-export * from './actions/safeBtcRate';
 export * from './actions/btcUsdRate';
 export * from './actions/safeTradePairList';
 export * from './actions/safeTradeTickers';
