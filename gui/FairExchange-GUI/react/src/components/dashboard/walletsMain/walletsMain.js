@@ -11,7 +11,7 @@ import { getCoinTitle } from '../../../util/coinHelper';
 import Config from '../../../config';
 import Store from '../../../store';
 import mainWindow from '../../../util/mainWindow';
-
+import { safeTradeChangeActivePair } from '../../../actions/actionCreators';
 import { SocketProvider } from 'socket.io-react';
 import io from 'socket.io-client';
 
@@ -50,6 +50,8 @@ class WalletsMain extends React.Component {
     this.btcUsdRateInterval = setInterval(() => {
       Store.dispatch(btcUsdRate());
     }, BTC_USD_RATE_UPDATE_INTERVAL);
+
+    Store.dispatch(safeTradeChangeActivePair('safebtc', 'safe/btc'));
 
     if (mainWindow.createSeed.triggered &&
         !mainWindow.createSeed.secondaryLoginPH) {

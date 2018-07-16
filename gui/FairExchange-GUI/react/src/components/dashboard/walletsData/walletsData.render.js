@@ -269,7 +269,7 @@ export const WalletsDataRender = function() {
                         className="icon fa-refresh manual-txhistory-refresh pointer"
                         onClick={ this.refreshTxHistory }></i>
                     }
-                    <h4 className="panel-title">{ translate('INDEX.TRANSACTION_HISTORY') }</h4>
+                    <h4 className="panel-title safe-title">{ translate('INDEX.TRANSACTION_HISTORY') }</h4>
                   </header>
                   <div className="panel-body">
                     <div className="row padding-bottom-30 padding-top-10">

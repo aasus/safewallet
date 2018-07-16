@@ -22,7 +22,7 @@ const NavbarRender = function() {
         <div className="navbar-brand navbar-brand-center site-gridmenu-toggle">
           <img
             className="navbar-brand-logo hidden-xs"
-            src="assets/images/safewallet-logo-side.svg"
+            src="assets/images/safewallet-icon-white.png"
             height="100"
             width="100"
             title={ translate('ABOUT.SAFEWALLET_WALLET') } />

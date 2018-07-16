@@ -10,7 +10,7 @@ const SafeTradeRender = function() {
                         <div className="text-center"><img src={`assets/images/safe-trade.png`} /></div>
                         { this.props.activePair && 
                             <div>
-                                <h3><p className="text-center text-uppercase">{ this.props.activePair.name }</p></h3>
+                                <h3><p className="text-center text-uppercase safe-title">{ this.props.activePair.name }</p></h3>
                             </div>
                         }
                     </div>

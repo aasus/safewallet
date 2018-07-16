@@ -26,7 +26,7 @@ const appConfig = {
   },
   schema: {
     host: {
-      display: true,
+      display: false,
       type: 'string',
       displayName: 'Hostname',
       info: 'Application hostname',

@@ -5,7 +5,7 @@ const PairTileItemRender = function(){
 
     return (
         <div className="list-group-item col-xlg-6 col-lg-12 wallet-widgets-info pointer">
-          <div className={ 'widget widget-shadow' + (this.props.activePair === item._id ? ' active' : '')}>
+          <div className={ 'widget widget-shadow' + (this.props.activePair && this.props.activePair.id === item._id ? ' active' : '')}>
             <div
               className="widget-content text-center bg-white padding-20"
               onClick={ () => this._safeTradeChangeActivePair(item._id, item._name) }> 

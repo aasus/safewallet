@@ -2,7 +2,7 @@
   "name": "safewallet-app",
   "productName": "Safewallet",
   "version": "0.2.35",
-  "description": "Safewallet Wallet Desktop App",
+  "description": "Safewallet Desktop App",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
