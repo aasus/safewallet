@@ -2,7 +2,7 @@
   "name": "safewallet-app",
   "productName": "Safewallet",
   "version": "0.2.35",
-  "description": "Safewallet Wallet Desktop App",
+  "description": "Safewallet Desktop App",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -59,7 +59,7 @@
     "sha256": "^0.2.0",
     "socket.io": "^1.7.3",
     "tx-decoder": "git://github.com/pbca26/tx-decoder",
-    "webpack": "^4.6.0",
+    "webpack": "^2.7.0",
     "wif": "^2.0.6"
   }
 }
