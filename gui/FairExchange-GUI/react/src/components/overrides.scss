@@ -404,3 +404,23 @@ code {
   background-color: #ffffff;
   color: #2b3441;
 }
+
+.markets-filter select {
+  margin: 0 auto;
+}
+
+.white-font {
+  color: #ffffff;
+}
+
+table.white-font>tfoot>tr>th, .table.white-font>thead>tr>th {
+  color: #ffffff;
+}
+
+table.white-font>tbody>tr>td {
+  text-align: left;
+}
+
+textarea.raw {
+  background-color: #2b3441;
+}
