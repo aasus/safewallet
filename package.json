@@ -24,7 +24,7 @@
   "author": "SuperNET Team",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^1.8.4"
+    "electron": "^1.8.7"
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
@@ -32,8 +32,8 @@
     "async": "^2.6.0",
     "bigi": "^1.4.2",
     "bip39": "^2.5.0",
-    "bitcoinforkjs-lib": "git://github.com/Fair-Exchange/bitcoinforkjs-lib",
-    "bitcoinjs-lib": "git://github.com/Fair-Exchange/bitcoinjs-lib",
+    "bitcoinforkjs-lib": "git://github.com/Fair-Exchange/bitcoinforkjs-lib.git",
+    "bitcoinjs-lib": "git://github.com/Fair-Exchange/bitcoinjs-lib.git",
     "bitcoinjs-lib-pos": "git://github.com/Fair-Exchange/bitcoinjs-lib-pos",
     "bitcoinjs-lib-zcash": "git://github.com/pbca26/bitcoinjs-lib#zcash",
     "bluebird": "^3.4.7",

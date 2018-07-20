@@ -56,7 +56,7 @@
     "socket.io-react": "^1.1.2",
     "url-loader": "^0.5.7",
     "whatwg-fetch": "^2.0.3",
-    "react-copy-to-clipboard":"5.0.1",
+    "react-copy-to-clipboard": "5.0.1",
     "react-countdown-now": "1.3.0",
     "cors-anywhere": "0.4.1"
   },
