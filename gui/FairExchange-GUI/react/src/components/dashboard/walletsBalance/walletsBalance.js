@@ -120,7 +120,7 @@ class WalletsBalance extends React.Component {
           <div className="text-right">{ _balance }</div>                                   
           <div
             data-tip data-for={ `BTC${type}` }
-            className="text-right"><i className="icon fa-btc" /> { _btcTotal }</div>
+            className="text-right"><i className="icon fa-btc" /> { _btcTotal.toFixed(8) }</div>
             <ReactTooltip id={ `BTC${type}` }>{ `Price per 1 ${this.props.ActiveCoin.coin} ~ ${_btcRatePerCoin} BTC` } </ReactTooltip> 
           <div
             data-tip data-for={ `USD${type}` }

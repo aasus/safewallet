@@ -51,7 +51,7 @@ class WalletsMain extends React.Component {
       Store.dispatch(btcUsdRate());
     }, BTC_USD_RATE_UPDATE_INTERVAL);
 
-    Store.dispatch(safeTradeChangeActivePair('safebtc', 'safe/btc'));
+    Store.dispatch(safeTradeChangeActivePair('safebtc', 'SAFE/BTC'));
 
     if (mainWindow.createSeed.triggered &&
         !mainWindow.createSeed.secondaryLoginPH) {
