@@ -1,7 +1,7 @@
 const appConfig = {
   config: { // default config
     host: '127.0.0.1',
-      safewalletPort: 18777,
+      safewalletPort: 17778,
       experimentalFeatures: false,
       dev: false,
     maxDescriptors: {

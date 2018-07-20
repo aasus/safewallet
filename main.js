@@ -28,7 +28,7 @@ if (osPlatform === 'linux') {
 
 process.env.ELECTRON_DISABLE_SECURITY_WARNINGS = true;
 
-// GUI APP settings and starting gui on address http://120.0.0.1:18777
+// GUI APP settings and starting gui on address http://120.0.0.1:17778
 let shepherd = require('./routes/shepherd');
 let guiapp = express();
 
