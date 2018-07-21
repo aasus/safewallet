@@ -59,7 +59,7 @@ const NavbarRender = function() {
             { this.props.SafeTrade && 
             <li className={ this.isSectionActive('safetrade') ? 'active nav-top-menu' : 'nav-top-menu' }>
                 <a onClick={ () => this.dashboardChangeSection('safetrade') }>
-                  <i className="site-menu-icon"></i> Safe Trade
+                  <i className="site-menu-icon"></i> Safe.Trade
                 </a>
               </li>
             }
