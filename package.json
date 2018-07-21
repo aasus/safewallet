@@ -60,6 +60,7 @@
     "socket.io": "^1.7.3",
     "tx-decoder": "git://github.com/pbca26/tx-decoder",
     "webpack": "^2.7.0",
-    "wif": "^2.0.6"
+    "wif": "^2.0.6",
+    "cors-anywhere": "0.4.1"
   }
 }
