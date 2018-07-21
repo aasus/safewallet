@@ -3,10 +3,10 @@ import { triggerToaster } from '../actionCreators';
 
 export function safeVote() {    
     return dispatch => {
-      return fetch('http://localhost:17778/https://vote.safe.trade/api/stats', {
+      return fetch('https://vote.safe.trade/api/stats', {
         method: 'GET',
         headers: {
-          'content-type': 'application/json'
+          'content-type': 'application/json',
         },
       })
       .catch((error) => {

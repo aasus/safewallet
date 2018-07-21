@@ -73,7 +73,6 @@ module.exports = (shepherd) => {
     var port = 17778;
     cors_proxy.createServer({
       originWhitelist: [],
-      requireHeader: ['origin', 'x-requested-with']
     }).listen(port, host, function() {
       shepherd.log('CORS Anywhere running on ' + host + ':' + port);
     });
