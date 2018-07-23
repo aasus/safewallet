@@ -35,9 +35,12 @@ The instructions to make production build of Safewallet App will be updated soon
 
 To build the production ready app, install `electron-packager` and `electron-prebuilt` packages from npm
 ```shell
-npm install -y .
+sudo npm install electrum -g
 npm install electron-packager -g
 npm install electron-prebuilt -g
+./buildscripts/fairexchange-build.sh
+npm install -y .
+./buildscripts/electron-build-windows.sh
 ```
 
 #### **Build the Wallet-App**
