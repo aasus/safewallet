@@ -330,8 +330,8 @@ class ElectrumJSCore extends Client {
     return this.request('blockchain.headers.subscribe', []);
   }
 
-  blockchainNumblocksSubscribe(block_height) {
-    return this.request('blockchain.headers.subscribe', []);
+  blockchainNumblocksSubscribe() {
+    return this.request('blockchain.numblocks.subscribe', []);
   }
 
   blockchainRelayfee() {
