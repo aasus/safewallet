@@ -273,7 +273,7 @@ class ElectrumJSCore extends Client {
     super.onClose();
     const list = [
       'server.peers.subscribe',
- //sc     'blockchain.numblocks.subscribe',
+      'blockchain.numblocks.subscribe',
       'blockchain.headers.subscribe',
       'blockchain.address.subscribe'
     ];
