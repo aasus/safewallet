@@ -2,9 +2,6 @@
 
 const explorerList = {
   SAFE: 'https://explorer.safecoin.org',
-  BTCZ: 'https://explorer.bitcoinz.site',
-  XSG: 'https://insight.snowgem.org',
-  CMM: 'http://cmm.explorer.commercium.net',
   MSHARK: 'http://MSHARK.explorer.ipv6admin.com',
   REVS: 'http://revs.explorer.ipv6admin.com',
   SUPERNET: 'http://SUPERNET.explorer.ipv6admin.com',
@@ -44,6 +41,7 @@ const explorerList = {
   ZCL: 'http://explorer.zclmine.pro',
   ZMY: 'https://myriadexplorer.com',
   BTX: 'http://explorer.bitcore.cc',
+  BTCZ: 'https://explorer.bitcoinz.site',
   HODLC: 'http://www.fuzzbawls.pw/explore/HOdlcoin/tx.php?tx=',
   SIB: 'https://chain.sibcoin.net/en/tx/',
   ZEC: 'https://explorer.zcha.in/transactions/',

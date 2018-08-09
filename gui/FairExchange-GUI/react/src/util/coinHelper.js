@@ -6,25 +6,6 @@ export function getCoinTitle(coin) {
   let hideTitle = false;
 
   switch (coin) {
-    case 'BTCZ':
-      coinlogo = 'btcz';
-      coinname = 'BitcoinZ';
-      break;
-    case 'SAFE':
-      hideTitle = true;
-      titleBG = true;
-      transparentBG = true;
-      coinlogo = 'safe';
-      coinname = 'Safecoin';
-      break;
-    case 'XSG':
-      coinlogo = 'xsg';
-      coinname = 'SnowGem';
-      break;
-    case 'CMM':
-      coinlogo = 'cmm';
-      coinname = 'Commercium';
-      break;
     case 'NINJA':
       coinlogo = 'ninja';
       coinname = 'NINJA';
@@ -40,6 +21,10 @@ export function getCoinTitle(coin) {
     case 'DNR':
       coinlogo = 'dnr';
       coinname = 'Denarius';
+      break;
+    case 'BTCZ':
+      coinlogo = 'btcz';
+      coinname = 'BitcoinZ';
       break;
     case 'QTUM':
       coinlogo = 'qtum';
@@ -176,6 +161,13 @@ export function getCoinTitle(coin) {
     case 'MNZ':
       coinlogo = 'mnz';
       coinname = 'Monaize';
+      break;
+    case 'SAFE':
+      hideTitle = true;
+      titleBG = true;
+      transparentBG = true;
+      coinlogo = 'safe';
+      coinname = 'Safecoin';
       break;
     case 'BTM':
       coinlogo = 'bitmark';
@@ -518,43 +510,14 @@ export function getModeInfo(mode) {
 
 export function coindList() {
   const _coins = [
-    'SAFE',
-    'BTCZ',
-    'XSG',
-    'CMM',
-    'CHIPS',
-    'BET',
-    'BOTS',
-    'CEAL',
-    'COQUI',
-    'CRYPTO',
-    'HODL',
-    'DEX',
-    'JUMBLR',
-    'KV',
-    'MGW',
-    'MVP',
-    'MNZ',
-    'PANGEA',
-    'REVS',
-    'MSHARK',
-    'MESH',
-    'SUPERNET',
-    'WLC',
-    'AXO',
-    'ETOMIC',
-    'BTCH'
+    'SAFE'
   ];
 
   return _coins;
 }
 
 export const isSafecoinCoin = (coin) => {
-  if (coin === 'SAFE' ||
-      coin === 'BTCZ' ||
-      coin === 'XSG' ||
-      coin === 'CMM' ||
-      coin === 'SUPERNET' ||
+  if (coin === 'SUPERNET' ||
       coin === 'REVS' ||
       coin === 'PANGEA' ||
       coin === 'DEX' ||
@@ -573,6 +536,7 @@ export const isSafecoinCoin = (coin) => {
       coin === 'WLC' ||
       coin === 'MNZ' ||
       coin === 'CHIPS' ||
+      coin === 'SAFE' ||
       coin === 'AXO' ||
       coin === 'ETOMIC' ||
       coin === 'BTCH') {

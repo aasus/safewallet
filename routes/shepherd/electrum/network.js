@@ -6,16 +6,12 @@ const txDecoder = {
 
 module.exports = (shepherd) => {
   shepherd.isZcash = (network) => {
-    if (network === 'xsg' ||
-        network === 'XSG' ||
-        network === 'BTCZ' ||
-        network === 'btcz' ||
-        network === 'CMM' ||
-        network === 'cmm' ||
-		network === 'ZEC' ||
+    if (network === 'ZEC' ||
         network === 'zec' ||
         network === 'zcash' ||
         network === 'ZCASH' ||
+        network === 'sng' ||
+        network === 'SNG' ||
         network === 'HUSH' ||
         network === 'hush' ||
         network === 'ZCL' ||
@@ -70,23 +66,16 @@ module.exports = (shepherd) => {
       coin = network.toUpperCase();
     }
 
-    if (coin === 'SAFE' ||
-        coin === 'SAFECOIN' ||
-        coin === 'BTCZ' ||
-        coin === 'BITCOINZ' ||
-        coin === 'XSG' ||
-        coin === 'SNOWGEM' ||
-        coin === 'CMM' ||
-        coin === 'COMMERCIUM' ||
-		coin === 'SUPERNET' ||
+    if (coin === 'SUPERNET' ||
         coin === 'REVS' ||
+        coin === 'SUPERNET' ||
         coin === 'PANGEA' ||
         coin === 'DEX' ||
         coin === 'JUMBLR' ||
         coin === 'BET' ||
         coin === 'CRYPTO' ||
         coin === 'COQUI' ||
-		coin === 'CHAIN' ||
+	coin === 'CHAIN' ||
         coin === 'GLXT' ||
         coin === 'OOT' ||
         coin === 'HODL' ||
@@ -102,28 +91,23 @@ module.exports = (shepherd) => {
         coin === 'WLC' ||
         coin === 'MNZ' ||
         coin === 'BTCH' ||
+        coin === 'SAFE' ||
         coin === 'BEER' ||
         coin === 'PIZZA' ||
         coin === 'VOTE2018' ||
         coin === 'NINJA' ||
+        coin === 'SAFECOIN' ||
         coin === 'BNTN' ||
-        coinUC === 'SAFE' ||
-        coinUC === 'SAFECOIN' ||
-        coinUC === 'BTCZ' ||
-        coinUC === 'BITCOINZ' ||
-        coinUC === 'XSG' ||
-        coinUC === 'SNOWGEM' ||
-        coinUC === 'CMM' ||
-        coinUC === 'COMMERCIUM' ||
         coinUC === 'SUPERNET' ||
         coinUC === 'REVS' ||
+        coinUC === 'SUPERNET' ||
         coinUC === 'PANGEA' ||
         coinUC === 'DEX' ||
         coinUC === 'JUMBLR' ||
         coinUC === 'BET' ||
         coinUC === 'CRYPTO' ||
         coinUC === 'COQUI' ||
-        coinUC === 'CHAIN' ||
+	coinUC === 'CHAIN' ||
         coinUC === 'GLXT' ||
         coinUC === 'OOT' ||
         coinUC === 'EQL' ||
@@ -143,6 +127,8 @@ module.exports = (shepherd) => {
         coinUC === 'PIZZA' ||
         coinUC === 'VOTE2018' ||
         coinUC === 'NINJA' ||
+        coinUC === 'SAFE' ||
+        coinUC === 'SAFECOIN' ||
         coinUC === 'BNTN') {
       return shepherd.electrumJSNetworks.safecoin;
     } else {

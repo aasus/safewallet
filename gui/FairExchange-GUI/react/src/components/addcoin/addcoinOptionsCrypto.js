@@ -9,22 +9,6 @@ const addCoinOptionsCrypto = () => {
     label: 'Safecoin (SAFE)',
     icon: 'SAFE',
     value: `SAFE|${availableSAFEModes}`,
-  }, {
-    label: 'Chips (CHIPS)',
-    icon: 'CHIPS',
-    value: `CHIPS|spv`,
-  }, {
-    label: 'SnowGem (XSG)',
-    icon: 'XSG',
-    value: `XSG|spv`,
-  }, {
-    label: 'BitcoinZ (BTCZ)',
-    icon: 'BTCZ',
-    value: `BTCZ|spv`,
-  }, {
-    label: 'Commercium (CMM)',
-    icon: 'CMM',
-    value: `CMM|spv`,
   }];
 
   if (config.experimentalFeatures) {

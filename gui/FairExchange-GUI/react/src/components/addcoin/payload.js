@@ -3,10 +3,7 @@
 //			 cleanup
 
 export function checkAC(coinVal) {
-	if (coinVal === 'XSG' ||
-			coinVal === 'BTCZ' ||
-			coinVal === 'CMM' ||
-			coinVal === 'SUPERNET' ||
+	if (coinVal === 'SUPERNET' ||
 			coinVal === 'REVS' ||
 			coinVal === 'WLC' ||
 			coinVal === 'DEX' ||
@@ -46,15 +43,6 @@ export function startAssetChain(confpath, coin, mode, getSuppyOnly) {
 	const assetChainPorts = window.require('electron').remote.getCurrentWindow().assetChainPorts;
 
 	const acConfig = {
-		XSG: {
-			supply: 20998641,// TODO
-		},
-		BTCZ: {
-			supply: 20998641,// TODO
-		},
-		CMM: {
-			supply: 20998641,// TODO
-		},
 		SUPERNET: {
 			supply: 816061,
 		},

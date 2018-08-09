@@ -1,10 +1,6 @@
 // TODO: merge with spv mode
 
 const electrumServersList = {
-  "SAFE": [{"local.support":10001},{"45.63.13.60":10001}],
-  "BTCZ": [{"electrum1.cipig.net": 10056},{"electrum2.cipig.net": 10056}],
-  "XSG": [{"electrumsvr.snowgem.org": 50001},{"electrumsvr2.snowgem.org": 50001},{"local.support": 50001}],
-  "CMM": [{"elec01.commercium.net": 50001},{"elec02.commercium.net": 50001}],
   "ARG": [{"173.212.225.176": 50081},{"136.243.45.140": 50081}],
   "BET": [{"electrum2.ipv6admin.com":10012},{"electrum1.ipv6admin.com":10012}],
   "BTC": [{"electrum2.ipv6admin.com":10000},{"electrum1.ipv6admin.com":10000}],
@@ -22,6 +18,7 @@ const electrumServersList = {
   "HODL": [{"electrum2.ipv6admin.com":10009},{"electrum1.ipv6admin.com":10009}],
   "HUSH": [{"173.212.225.176": 50013},{"136.243.45.140": 50013}],
   "JUMBLR": [{"electrum2.ipv6admin.com": 10004},{"electrum1.ipv6admin.com": 10004}],
+  "SAFE": [{"local.support":10001},{"45.63.13.60":10001}],
   "LTC": [{"173.212.225.176": 50012},{"136.243.45.140": 50012}],
   "MNZ": [{"electrum2.ipv6admin.com":10002},{"electrum1.ipv6admin.com":10002}],
   "MONA": [{"173.212.225.176": 50002},{"136.243.45.140": 50002}],

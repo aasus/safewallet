@@ -1,8 +1,5 @@
 const remoteExplorers = {
-  SAFE: 'https://explorer.safecoin.org',
-  BTCZ: 'https://explorer.btcz.rocks',
-  XSG: 'https://insight.snowgem.org',
-  CMM: 'http://cmm.explorer.commercium.net',
+  SAFE: 'http://explorer.safecoin.org',
   MSHARK: 'http://MSHARK.explorer.ipv6admin.com',
   REVS: 'http://revs.explorer.ipv6admin.com',
   SUPERNET: 'http://SUPERNET.explorer.ipv6admin.com',

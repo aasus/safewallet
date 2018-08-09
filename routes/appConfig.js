@@ -25,7 +25,7 @@ const appConfig = {
   },
   schema: {
     host: {
-      display: true,
+      display: false,
       type: 'string',
       displayName: 'Hostname',
       info: 'Application hostname',
@@ -126,7 +126,7 @@ const appConfig = {
       type: 'boolean',
     },
     fiatRates: {
-      display: true,
+      display: false,
       displayName: 'Fetch fiat rates',
       info: 'Get coin fiat rates from atomicexplorer.com',
       type: 'boolean',
