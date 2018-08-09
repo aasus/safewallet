@@ -70,15 +70,13 @@ export function getModeInfo(mode) {
 export function coindList() {
   const _coins = [
     'SAFE',
-    'BTCZ',
   ];
 
   return _coins;
 }
 
 export const isSafecoinCoin = (coin) => {
-  if (coin === 'SAFE' ||
-      coin === 'BTCZ') {
+  if (coin === 'SAFE') {
     return true;
   }
 }
