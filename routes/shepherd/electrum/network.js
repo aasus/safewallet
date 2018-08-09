@@ -6,30 +6,8 @@ const txDecoder = {
 
 module.exports = (shepherd) => {
   shepherd.isZcash = (network) => {
-    if (network === 'ZEC' ||
-        network === 'zec' ||
-        network === 'zcash' ||
-        network === 'ZCASH' ||
-        network === 'sng' ||
-        network === 'SNG' ||
-        network === 'HUSH' ||
-        network === 'hush' ||
-        network === 'ZCL' ||
-        network === 'zcl' ||
-        network === 'BTCZ' ||
-        network === 'btcz' ||
-        network === 'VOT' ||
-        network === 'vot' ||
-        network === 'BTCP' ||
-        network === 'btcp' ||
-        network === 'XZC' ||
-        network === 'xzc' ||
-        network === 'ZEN' ||
-        network === 'zen' ||
-        network === 'SYS' ||
-        network === 'sys' ||
-        network === 'SMART' ||
-        network === 'smart') {
+    if (network === 'BTCZ' ||
+        network === 'btcz') {
       return true;
     }
   };
@@ -66,70 +44,11 @@ module.exports = (shepherd) => {
       coin = network.toUpperCase();
     }
 
-    if (coin === 'SUPERNET' ||
-        coin === 'REVS' ||
-        coin === 'SUPERNET' ||
-        coin === 'PANGEA' ||
-        coin === 'DEX' ||
-        coin === 'JUMBLR' ||
-        coin === 'BET' ||
-        coin === 'CRYPTO' ||
-        coin === 'COQUI' ||
-	coin === 'CHAIN' ||
-        coin === 'GLXT' ||
-        coin === 'OOT' ||
-        coin === 'HODL' ||
-        coin === 'EQL' ||
-        coin === 'SHARK' ||
-        coin === 'MSHARK' ||
-        coin === 'BOTS' ||
-        coin === 'MGW' ||
-        coin === 'MVP' ||
-        coin === 'KV' ||
-        coin === 'CEAL' ||
-        coin === 'MESH' ||
-        coin === 'WLC' ||
-        coin === 'MNZ' ||
-        coin === 'BTCH' ||
+    if (coin === 'BTCZ' ||
         coin === 'SAFE' ||
-        coin === 'BEER' ||
-        coin === 'PIZZA' ||
-        coin === 'VOTE2018' ||
-        coin === 'NINJA' ||
-        coin === 'SAFECOIN' ||
-        coin === 'BNTN' ||
-        coinUC === 'SUPERNET' ||
-        coinUC === 'REVS' ||
-        coinUC === 'SUPERNET' ||
-        coinUC === 'PANGEA' ||
-        coinUC === 'DEX' ||
-        coinUC === 'JUMBLR' ||
-        coinUC === 'BET' ||
-        coinUC === 'CRYPTO' ||
-        coinUC === 'COQUI' ||
-	coinUC === 'CHAIN' ||
-        coinUC === 'GLXT' ||
-        coinUC === 'OOT' ||
-        coinUC === 'EQL' ||
-        coinUC === 'HODL' ||
-        coinUC === 'SHARK' ||
-        coinUC === 'MSHARK' ||
-        coinUC === 'BOTS' ||
-        coinUC === 'MGW' ||
-        coinUC === 'MVP' ||
-        coinUC === 'KV' ||
-        coinUC === 'CEAL' ||
-        coinUC === 'MESH' ||
-        coinUC === 'WLC' ||
-        coinUC === 'MNZ' ||
-        coinUC === 'BTCH' ||
-        coinUC === 'BEER' ||
-        coinUC === 'PIZZA' ||
-        coinUC === 'VOTE2018' ||
-        coinUC === 'NINJA' ||
+        coinUC === 'BTCZ' ||
         coinUC === 'SAFE' ||
-        coinUC === 'SAFECOIN' ||
-        coinUC === 'BNTN') {
+        coinUC === 'SAFECOIN') {
       return shepherd.electrumJSNetworks.safecoin;
     } else {
       return shepherd.electrumJSNetworks[network];
