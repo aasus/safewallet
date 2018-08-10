@@ -11,7 +11,7 @@ const appConfig = {
     dev: false,
     debug: false,
     roundValues: false,
-    experimentalFeatures: false,
+    experimentalFeatures: true,
     dataDir: '',
     dex: {
       walletUnlockTimeout: 3600,

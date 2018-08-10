@@ -10,7 +10,7 @@ let electrumServers = {
       '45.63.13.60:10001'
     ],
   },
-  btcz: { // !estimatefee
+  btcz: {
     address: 'electrum1.cipig.net',
     port: 10056,
     proto: 'tcp',

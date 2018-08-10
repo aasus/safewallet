@@ -44,9 +44,7 @@ module.exports = (shepherd) => {
       coin = network.toUpperCase();
     }
 
-    if (coin === 'BTCZ' ||
-        coin === 'SAFE' ||
-        coinUC === 'BTCZ' ||
+    if (coin === 'SAFE' ||
         coinUC === 'SAFE' ||
         coinUC === 'SAFECOIN') {
       return shepherd.electrumJSNetworks.safecoin;

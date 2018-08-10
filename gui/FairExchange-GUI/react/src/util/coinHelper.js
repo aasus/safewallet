@@ -69,7 +69,7 @@ export function getModeInfo(mode) {
 
 export function coindList() {
   const _coins = [
-    'SAFE',
+    'SAFE'
   ];
 
   return _coins;
