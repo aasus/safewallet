@@ -11,14 +11,14 @@ let electrumServers = {
     ],
   },
   btcz: {
-    address: 'electrum1.cipig.net',
-    port: 10056,
+    address: 'local.support',
+    port: 10002,
     proto: 'tcp',
     txfee: 10000,
     abbr: 'BTCZ',
     serverList: [
-      'electrum1.cipig.net:10056',
-      'electrum2.cipig.net:10056'
+      'local.support:10002',
+      '45.63.13.60:10002'
     ],
   },
 };

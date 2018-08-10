@@ -9,14 +9,18 @@ const addCoinOptionsCrypto = () => {
     label: 'Safecoin (SAFE)',
     icon: 'SAFE',
     value: `SAFE|${availableSAFEModes}`,
-    }];
-
-  if (config.experimentalFeatures) {
-    _coins.push({
+    },{
       label: 'BitcoinZ (BTCZ)',
       icon: 'BTCZ',
       value: `BTCZ|spv`,
-    });
+    }];
+
+  if (config.experimentalFeatures) {
+    _coins.push(/*{
+      label: 'BitcoinZ (BTCZ)',
+      icon: 'BTCZ',
+      value: `BTCZ|spv`,
+    }*/);
   }
 
   return _coins;
