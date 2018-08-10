@@ -2,7 +2,7 @@ const appConfig = {
   config: { // default config
     host: '127.0.0.1',
       safewalletPort: 18777,
-      experimentalFeatures: true,
+      experimentalFeatures: false,
       dev: false,
     maxDescriptors: {
       darwin: 90000,
@@ -11,7 +11,7 @@ const appConfig = {
     dev: false,
     debug: false,
     roundValues: false,
-    experimentalFeatures: true,
+    experimentalFeatures: false,
     dataDir: '',
     dex: {
       walletUnlockTimeout: 3600,
