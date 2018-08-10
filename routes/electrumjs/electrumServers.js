@@ -7,7 +7,7 @@ let electrumServers = {
     abbr: 'SAFE',
     serverList: [
       'local.support:10001',
-      '45.63.13.60:10001'
+      'electrum.safc.cc:10001'
     ],
   },
   btcz: {
@@ -18,7 +18,7 @@ let electrumServers = {
     abbr: 'BTCZ',
     serverList: [
       'local.support:10002',
-      '45.63.13.60:10002'
+      'electrum.safc.cc:10002'
     ],
   },
 };
