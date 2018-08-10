@@ -56,14 +56,14 @@ const NavbarRender = function() {
                 <i className="site-menu-icon"></i> { translate('INDEX.WALLETS') }
               </a>
             </li>
-            { this.props.SafeTrade && 
+            { this.props.SafeTrade && this.props.SafeTrade.tickers &&
             <li className={ this.isSectionActive('safetrade') ? 'active nav-top-menu' : 'nav-top-menu' }>
                 <a onClick={ () => this.dashboardChangeSection('safetrade') }>
                   <i className="site-menu-icon"></i> Safe.Trade
                 </a>
               </li>
             }
-            { this.props.SafeVote && 
+            { this.props.SafeVote && this.props.SafeVote.items &&
               <li className={ this.isSectionActive('safevote') ? 'active nav-top-menu' : 'nav-top-menu' }>
                 <a onClick={ () => this.dashboardChangeSection('safevote') }>
                   <i className="site-menu-icon"></i> Safe Vote

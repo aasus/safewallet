@@ -44,13 +44,13 @@ const DashboardRender = function() {
           <WalletsTxInfo />
           <WalletsMain />
         </div>
-        { this.props.SafeTrade &&
+        { this.props.SafeTrade && this.props.SafeTrade.tickers &&
           <div className={ this.isSectionActive('safetrade') ? 'show' : 'hide' }> 
             <PairTile />         
             <SafeTrade />
           </div>
         }
-        { this.props.SafeVote &&
+        { this.props.SafeVote && this.props.SafeVote.items &&
           <div className={ this.isSectionActive('safevote') ? 'show' : 'hide' }>
             <SafeVote />
           </div>
