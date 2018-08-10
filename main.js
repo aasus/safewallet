@@ -119,7 +119,7 @@ process.once('loaded', () => {
 			applicationName: app.getName(),
 			applicationVersion: `${app.getVersion().replace('version=', '')}-beta`,
 			copyright: 'Released under the MIT license',
-			credits: 'SuperNET Team',
+			credits: 'SafeCoin DEV Team',
 		});
 	} else if (osPlatform === 'linux') {
 		process.setFdLimit(appConfig.maxDescriptors.linux);

@@ -71,8 +71,8 @@ const appConfig = {
       type: 'boolean',
     },
     experimentalFeatures: {
-      display: false,
-      initDisplay: false,
+      display: true,
+      initDisplay: true,
       displayName: 'Enable advanced features',
       type: 'boolean',
     },

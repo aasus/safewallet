@@ -296,6 +296,7 @@ const LoginRender = function() {
                   valueRenderer={ this.renderShortcutOption }
                  options={[
                     { value: 'safe', label: 'safe' },
+                    { value: 'btcz', label: 'btcz' },
                    ]} />
                </div>
  
