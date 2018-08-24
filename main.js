@@ -119,7 +119,7 @@ process.once('loaded', () => {
 			applicationName: app.getName(),
 			applicationVersion: `${app.getVersion().replace('version=', '')}-beta`,
 			copyright: 'Released under the MIT license',
-			credits: 'SuperNET Team',
+			credits: 'SafeCoin DEV Team',
 		});
 	} else if (osPlatform === 'linux') {
 		process.setFdLimit(appConfig.maxDescriptors.linux);
@@ -234,7 +234,7 @@ function createWindow(status, hideLoadingWindow) {
 					shepherd.log(`guiapp and sockets.io are listening on port ${appConfig.safewalletPort}`);
 					shepherd.writeLog(`guiapp and sockets.io are listening on port ${appConfig.safewalletPort}`);
 					// start sockets.io
-					io.set('origins', appConfig.dev ? 'http://127.0.0.1:3000' : null); // set origin
+					io.set('origins', appConfig.dev ? 'http://127.0.0.1:3000' : `http://127.0.0.1:${appConfig.safewalletPort}`);
 				});
 
 				// initialise window

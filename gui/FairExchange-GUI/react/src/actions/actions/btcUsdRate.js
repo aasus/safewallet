@@ -3,7 +3,7 @@ import { triggerToaster } from '../actionCreators';
 
 export function btcUsdRate(){
     return dispatch => {
-        return fetch('https://api.coinmarketcap.com/v2/ticker/1/', {
+        return fetch('https://coinlib.io/api/v1/coin?key=d437271814700b9a&pref=USD&symbol=SAFE', {
             method: 'GET',
         })
         .catch((error) => {
@@ -18,7 +18,7 @@ export function btcUsdRate(){
         })
         .then(response => response.json())
         .then(json => {
-            let _rate = json.data.quotes.USD.price;
+            let _rate = json.data.price;
             dispatch(btcUsdRateState(_rate));
         })
     }
