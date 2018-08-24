@@ -70,6 +70,11 @@ const NavbarRender = function() {
                 </a>
               </li>
             }
+            <li className={ this.isSectionActive('swissknife') ? 'active nav-top-menu' : 'nav-top-menu' }>
+                <a onClick={ () => this.dashboardChangeSection('swissknife') }>
+                  <i className="site-menu-icon"></i> Swiss Knife
+                </a>
+            </li>
             <li className={ (this.isSectionActive('dex') ? 'active nav-top-menu' : 'nav-top-menu') + (mainWindow.argv.indexOf('dexonly') > -1 ? '' : ' hide') }>
               <a onClick={ () => this.dashboardChangeSection('dex') }>
                 <i className="site-menu-icon"></i> BarterDEX
