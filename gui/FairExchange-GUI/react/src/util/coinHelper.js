@@ -6,16 +6,28 @@ export function getCoinTitle(coin) {
   let hideTitle = false;
 
   switch (coin) {
+    case 'XSG':
+      coinlogo = 'xsg';
+      coinname = 'SnowGem';
+      break;
     case 'BTCZ':
       coinlogo = 'btcz';
       coinname = 'BitcoinZ';
+      break;
+    /*case 'ANON':
+      coinlogo = 'anon';
+      coinname = 'ANON';
+      break;*/
+    case 'ZCL':
+      coinlogo = 'zcl';
+      coinname = 'ZClassic';
       break;
     case 'SAFE':
       hideTitle = true;
       titleBG = true;
       transparentBG = true;
       coinlogo = 'safe';
-      coinname = 'Safecoin';
+      coinname = 'SafeCoin';
       break;
   }
 

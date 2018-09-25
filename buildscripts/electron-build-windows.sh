@@ -10,7 +10,7 @@ echo "Build script for Iguana application for Windows x64 platform."
 echo "Preparing electron package $SAFEWALLET_VERSION"
 
 electron-packager . --platform=win32 \
-  --arch=x64 \
+  --arch=ia32 \
   --icon=assets/icons/safewallet_app_icon.ico \
   --out=build/ \
   --buildVersion=$SAFEWALLET_VERSION \
@@ -25,4 +25,4 @@ electron-packager . --platform=win32 \
   --version-string.OriginalFilename="Safewallet" \
   --version-string.ProductName="Safewallet" \
   --version-string.InternalName="Safewallet" \
-  --app-copyright="Copyright (C) 2017 SuperNET. All rights reserved."
+  --app-copyright="Copyright (C) 2018 SafeCoin. All rights reserved."

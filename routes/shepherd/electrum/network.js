@@ -7,21 +7,27 @@ const txDecoder = {
 module.exports = (shepherd) => {
   shepherd.isZcash = (network) => {
     if (network === 'BTCZ' ||
-        network === 'btcz') {
+        network === 'btcz' ||
+//        network === 'ANON' ||
+//        network === 'anon' ||
+        network === 'ZCL' ||
+        network === 'zcl' ||
+        network === 'XSG' ||
+        network === 'xsg') {
       return true;
     }
   };
 
   shepherd.isPos = (network) => {
-    if (network === 'BLK' ||
-        network === 'blk' ||
-        network === 'DNR' ||
-        network === 'dnr' ||
-        network === 'XWC' ||
-        network === 'xwc') {
-      return true;
-    }
-  };
+//    if (network === 'BLK' ||
+//        network === 'blk' ||
+//        network === 'DNR' ||
+//        network === 'dnr' ||
+//        network === 'XWC' ||
+//        network === 'xwc') {
+//      return true;
+//    }
+};
 
   shepherd.electrumJSTxDecoder = (rawtx, networkName, network, insight) => {
     if (shepherd.isZcash(networkName)) {
