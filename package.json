@@ -1,14 +1,17 @@
 {
   "name": "safewallet-app",
-  "productName": "Safewallet",
-  "version": "0.2.35",
-  "description": "Safewallet Desktop App",
+  "productName": "SafeWallet",
+  "version": "0.0.32",
+  "description": "SafeWallet Desktop App",
   "main": "main.js",
+
   "scripts": {
     "start": "electron .",
     "make-patch": "./make-patch.sh",
     "make-rpm": "node make-rpm.js",
-    "make-deb": "node make-deb.js"
+    "make-deb": "node make-deb.js",
+	"windist32": "build -w --ia32 --config=buildscripts/winbuild.yaml",
+	"windist64": "build -w --x64 --config=buildscripts/winbuild.yaml"
   },
   "repository": "https://github.com/fair-exchange/Safewallet/",
   "homepage": "http://ipv6admin.com",
@@ -24,7 +27,8 @@
   "author": "SafeCoin DEV Team",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^1.8.7"
+    "electron-builder": "^20.28.4",
+    "electron": "2.0.8"
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
