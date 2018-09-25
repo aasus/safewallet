@@ -297,8 +297,6 @@ const LoginRender = function() {
                  options={[
                     { value: 'safe', label: 'safe' },
                     { value: 'btcz', label: 'btcz' },
-                    { value: 'xsg', label: 'xsg' },
-                    { value: 'cmm', label: 'cmm' },
                    ]} />
                </div>
  
