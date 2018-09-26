@@ -43,6 +43,41 @@ npm install -y .
 ./buildscripts/electron-build-windows.sh
 ```
 
+#### **Dependencies for Ubuntu 16.0.4**
+##### Wine1.8
+
+```shell
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get update
+sudo apt-get install wine1.8
+```
+
+#### **Alternative build SafeWallet through electron-builder**
+
+##### Linux
+##### x32(x86)
+```shell
+npm run dist-lin-deb32
+npm run dist-lin-tar32
+```
+##### x64
+```shell
+npm run dist-lin-deb64
+npm run dist-lin-tar64
+```
+
+##### Windows
+##### x32(x86)
+```shell
+npm run dist-win-exe32
+npm run dist-win-zip32
+```
+##### x64
+```shell
+npm run dist-win-exe64
+npm run dist-win-zip64
+```
+
 #### **Build the Wallet-App**
 Refer to the original [electron-packager](https://github.com/electron-userland/electron-packager) repository for more detailed information.
 

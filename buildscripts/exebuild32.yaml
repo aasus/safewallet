@@ -2,7 +2,7 @@ directories:
   output: dist
   buildResources: build
 appId: org.safecoin.safewallet
-productName: SafeWallet
+productName: SafeWallet_x86
 win:
   icon: assets/icons/icon.ico
   target:
