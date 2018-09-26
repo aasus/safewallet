@@ -3,12 +3,10 @@ directories:
   buildResources: build
 appId: org.safecoin.safewallet
 productName: SafeWallet
-win:
-  icon: assets/icons/icon.ico
+linux:
+  icon: assets/icons/icon.icns
   target:
-    - target: zip
+    - target: deb
       arch:
         - x64
-        - ia32
-
 electronVersion: 2.0.8

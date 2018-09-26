@@ -6,8 +6,7 @@ productName: SafeWallet
 linux:
   icon: assets/icons/icon.icns
   target:
-    - target: deb
+    - target: tar.gz
       arch:
         - x64
-        - ia32
 electronVersion: 2.0.8

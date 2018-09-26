@@ -10,10 +10,17 @@
     "make-patch": "./make-patch.sh",
     "make-rpm": "node make-rpm.js",
     "make-deb": "node make-deb.js",
-	"dist-lin-deb": "rm -r dist/* && build -l --config=buildscripts/debbuild.yaml",
-	"dist-lin-tar": "rm -r dist/* && build -l --config=buildscripts/tarbuild.yaml",
-	"dist-win-exe": "rm -r dist/* && build -w --config=buildscripts/exebuild.yaml",
-	"dist-win-zip": "rm -r dist/* && build -w --config=buildscripts/zipbuild.yaml"
+	"windist": "build -w --config=buildscripts/winbuild.yaml",
+	"lindist": "build -l --config=buildscripts/linbuild.yaml",
+	"dist": "rm -r dist/* && build -wl",
+	"dist-lin-deb32": "rm -r dist/* && build -l --config=buildscripts/debbuild32.yaml",
+	"dist-lin-deb64": "rm -r dist/* && build -l --config=buildscripts/debbuild64.yaml",
+	"dist-lin-tar32": "rm -r dist/* && build -l --config=buildscripts/tarbuild32.yaml",
+	"dist-lin-tar64": "rm -r dist/* && build -l --config=buildscripts/tarbuild64.yaml",
+	"dist-win-exe32": "rm -r dist/* && build -w --config=buildscripts/exebuild32.yaml",
+	"dist-win-exe64": "rm -r dist/* && build -w --config=buildscripts/exebuild64.yaml",
+	"dist-win-zip32": "rm -r dist/* && build -w --config=buildscripts/zipbuild32.yaml",
+	"dist-win-zip64": "rm -r dist/* && build -w --config=buildscripts/zipbuild64.yaml"
 	
   },
   "repository": "https://github.com/fair-exchange/Safewallet/",
