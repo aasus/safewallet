@@ -4,9 +4,11 @@ directories:
 appId: org.safecoin.safewallet
 productName: SafeWallet
 win:
-  target: nsis
   icon: assets/icons/icon.ico
-  legalTrademarks: SafeCoin
+  target:
+    - target: nsis
+      arch:
+        - ia32
 nsis:
   oneClick: false
   perMachine: true
@@ -15,4 +17,5 @@ nsis:
   license: LICENSE
   displayLanguageSelector: true
   createStartMenuShortcut: true
+
 electronVersion: 2.0.8
