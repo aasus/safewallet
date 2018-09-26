@@ -10,8 +10,11 @@
     "make-patch": "./make-patch.sh",
     "make-rpm": "node make-rpm.js",
     "make-deb": "node make-deb.js",
-	"windist32": "build -w --ia32 --config=buildscripts/winbuild.yaml",
-	"windist64": "build -w --x64 --config=buildscripts/winbuild.yaml"
+	"dist-lin-deb": "rm -r dist/* && build -l --config=buildscripts/debbuild.yaml",
+	"dist-lin-tar": "rm -r dist/* && build -l --config=buildscripts/tarbuild.yaml",
+	"dist-win-exe": "rm -r dist/* && build -w --config=buildscripts/exebuild.yaml",
+	"dist-win-zip": "rm -r dist/* && build -w --config=buildscripts/zipbuild.yaml"
+	
   },
   "repository": "https://github.com/fair-exchange/Safewallet/",
   "homepage": "http://ipv6admin.com",
@@ -24,7 +27,7 @@
     "spv",
     "jumblr"
   ],
-  "author": "SafeCoin DEV Team",
+  "author": "SafeCoin DEV Team <inbox@safecoin.org>",
   "license": "MIT",
   "devDependencies": {
     "electron-builder": "^20.28.4",
