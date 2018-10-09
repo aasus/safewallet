@@ -1,10 +1,10 @@
 // TODO: clean old placeholders
 
-export const LANG_EN = {
+export const LANG_SE = {
   'WALLETS_INFO': {
     'ADDRESS': 'Adress',
     'ADDRESS_LOCAL': 'Adress lokal',
-    'SERVICES': 'Tj‰nster',
+    'SERVICES': 'Tj√§nster',
     'VERSION': 'Version',
     'SUBVERSION': 'Subversion',
     'WHITELISTED': 'Vitlistad',
@@ -16,35 +16,35 @@ export const LANG_EN = {
     'LAST_RECEIVED': 'Sist mottagen',
     'DATA_SENT': 'Data skickat',
     'DATA_RECEIVED': 'Data mottaget',
-    'BAN_SCORE': 'Bannlysnings po‰ng',
-    'STARTING_HEIGHT': 'Start hˆjd',
+    'BAN_SCORE': 'Bannlysnings po√§ng',
+    'STARTING_HEIGHT': 'Start h√∂jd',
     'SYNCED_HEADERS': 'Synkade huvuden',
     'SYNCED_BLOCKS': 'Synkade block',
-    'NETWORK_TOTALS': 'N‰tverks totaler',
+    'NETWORK_TOTALS': 'N√§tverks totaler',
     'TIME': 'Tid',
-    'PEERS': 'J‰mnlikar',
+    'PEERS': 'J√§mnlikar',
     'LOADING': 'Laddar...',
   },
   'IMPORT_KEY': {
     'IMPORT': 'Importera',
     'IMPORT_KEY': 'Importera nyckel',
-    'TWO_FORMS_BELOW_P1': 'TvÂ formul‰r nedanfˆr kan du importara vilken som',
-    'TWO_FORMS_BELOW_P2': 'Lˆsenordsfras (seed) eller',
+    'TWO_FORMS_BELOW_P1': 'Tv√• formul√§r nedanf√∂r kan du importara vilken som',
+    'TWO_FORMS_BELOW_P2': 'L√∂senordsfras (seed) eller',
     'TWO_FORMS_BELOW_P3': 'nyckel',
-    'PASSPHRASE': 'Lˆsenordsfras / seed',
+    'PASSPHRASE': 'L√∂senordsfras / seed',
     'NOTICE': 'Notera',
-    'NOTICE_DESC': 'vid importering av lˆsenordsfras kommer en fullst‰ndig plÂnboks skanning att ske',
-    'SAFE_RESCAN_WARNING_TIME': 'Det kan ta flera timmar fˆr denna process att skanna hela blockkedjan',
+    'NOTICE_DESC': 'vid importering av l√∂senordsfras kommer en fullst√§ndig pl√•nboks skanning att ske',
+    'SAFE_RESCAN_WARNING_TIME': 'Det kan ta flera timmar f√∂r denna process att skanna hela blockkedjan',
     'SHOW_ADDRESS_AND_WIF': 'Visa adress och WIF',
     'ADDRESS': 'Adress',
     'OR': 'eller',
     'TRIGGER_RESCAN': 'Starta skanning',
-    'RESCAN_TIP': 'Anv‰nd det h‰r alternativet om du vill starta en skanning av plÂnboken direkt efter WIF ‰r importerad. Om du har flera adresser som skall importeras, l‰gger du in dem en & en och s‰tter pÂ det h‰r alternativet pÂ den sista adress importen.',
+    'RESCAN_TIP': 'Anv√§nd det h√§r alternativet om du vill starta en skanning av pl√•nboken direkt efter WIF √§r importerad. Om du har flera adresser som skall importeras, l√§gger du in dem en & en och s√§tter p√• det h√§r alternativet p√• den sista adress importen.',
     'WIF_KEY': 'WIF nyckel',
     'IMPORT_AND_RESCAN': 'Importera och skanna om',
   },
   'CLAIM_INTEREST': {
-    'SHOW_ZERO_INTEREST': 'Visa noll r‰nta',
+    'SHOW_ZERO_INTEREST': 'Visa noll r√§nta',
     'REQ_P1': 'Requirements to accrue interest',
     'REQ_P2': 'spend transaction was made at least 1 hour ago, locktime field is set and amount is greater than',
     'CLAIM_INTEREST': 'Claim @template@ interest',
@@ -58,9 +58,9 @@ export const LANG_EN = {
   'ABOUT': {
     'SAFEWALLET_WALLET': 'Safewallet',
     'ABOUT_SAFEWALLET': 'Om Safewallet',
-    'SAFEWALLET_MODES': 'Safewallet ‰r en applikation som kan anv‰ndas som plÂnbok till multipla krypto-valutor. ' +
-                   'N‰r du skapar en plÂnbok, kan du konfigurera den att operera i fˆljande l‰gen:',
-    'NATIVE_MODE_DESC': 'Endast tillg‰nglig fˆr ett fÂtal valutor. Som \'Full Mode\' fast med avancerad funktionalitet.',
+    'SAFEWALLET_MODES': 'Safewallet √§r en applikation som kan anv√§ndas som pl√•nbok till multipla krypto-valutor. ' +
+                   'N√§r du skapar en pl√•nbok, kan du konfigurera den att operera i f√∂ljande l√§gen:',
+    'NATIVE_MODE_DESC': 'Endast tillg√§nglig f√∂r ett f√•tal valutor. Som \'Full Mode\' fast med avancerad funktionalitet.',
     'SAFEWALLET_CAPABILITIES': 'Safewallet includes the following capabilities:',
     'BARTER_DEX_DESC': 'Easily exchange cryptocurrencies via a shapeshift-like service.',
     'SAFEWALLET_NOTE': 'Note: Safewallet is still in development. ' +
