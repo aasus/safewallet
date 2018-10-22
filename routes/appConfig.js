@@ -116,7 +116,9 @@ const appConfig = {
       type: 'select',
       data: [
         { name: 'EN', label: 'English' },
-        { name: 'DE', label: 'German' }
+        { name: 'DE', label: 'German' },
+        { name: 'UA', label: 'Українська' },
+        { name: 'RU', label: 'Русский' }
       ],
     },
     rpc2cli: {
