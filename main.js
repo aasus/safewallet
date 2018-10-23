@@ -234,7 +234,7 @@ function createWindow(status, hideLoadingWindow) {
 					shepherd.log(`guiapp and sockets.io are listening on port ${appConfig.safewalletPort}`);
 					shepherd.writeLog(`guiapp and sockets.io are listening on port ${appConfig.safewalletPort}`);
 					// start sockets.io
-					io.set('origins', appConfig.dev ? 'http://127.0.0.1:3000' : `http://127.0.0.1:${appConfig.safewalletPort}`);
+					io.set('origins', appConfig.dev ? 'http://127.0.0.1:3000' : null); // set origin
 				});
 
 				// initialise window
