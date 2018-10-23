@@ -1,10 +1,14 @@
 import { LANG_EN } from './en';
 import { LANG_DE } from './de';
+import { LANG_UA } from './ua';
+import { LANG_RU } from './ru';
 import Config from '../config';
 
 const _lang = {
   EN: LANG_EN,
   DE: LANG_DE,
+  UA: LANG_UA,
+  RU: LANG_RU,
 };
 
 export function translate(langID, interpolateStr) {

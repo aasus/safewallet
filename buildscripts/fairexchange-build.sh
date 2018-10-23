@@ -8,9 +8,11 @@
 echo "Building FairExchange-GUI"
 echo "Actual directory is: ${PWD}"
 
-echo "Checkout to redux branch."
-git checkout electrum
-git pull origin electrum
+#TODO
+#echo "Checkout to redux branch."
+#git checkout electrum
+#git pull origin electrum
+#
 
 [ -d react ] && cd react || echo "!!! I can't find react"
 echo "Actual directory is: ${PWD}"

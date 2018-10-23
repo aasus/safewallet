@@ -1,14 +1,27 @@
 {
   "name": "safewallet-app",
-  "productName": "Safewallet",
-  "version": "0.2.35",
-  "description": "Safewallet Desktop App",
+  "productName": "SafeWallet",
+  "version": "0.0.32",
+  "description": "SafeWallet Desktop App",
   "main": "main.js",
+
   "scripts": {
     "start": "electron .",
     "make-patch": "./make-patch.sh",
     "make-rpm": "node make-rpm.js",
-    "make-deb": "node make-deb.js"
+    "make-deb": "node make-deb.js",
+	"windist": "build -w --config=buildscripts/winbuild.yaml",
+	"lindist": "build -l --config=buildscripts/linbuild.yaml",
+	"dist": "rm -r dist/* && build -wl",
+	"dist-lin-deb32": "build -l --config=buildscripts/debbuild32.yaml && mkdir -p ~/wallets/ && cp dist/*.deb ~/wallets/ && rm -r dist/*",
+	"dist-lin-deb64": "build -l --config=buildscripts/debbuild64.yaml && mkdir -p ~/wallets/ && cp dist/*.deb ~/wallets/ && rm -r dist/*",
+	"dist-lin-tar32": "build -l --config=buildscripts/tarbuild32.yaml && mkdir -p ~/wallets/ && cp dist/*.gz ~/wallets/ && rm -r dist/*",
+	"dist-lin-tar64": "build -l --config=buildscripts/tarbuild64.yaml && mkdir -p ~/wallets/ && cp dist/*.gz ~/wallets/ && rm -r dist/*",
+	"dist-win-exe32": "build -w --config=buildscripts/exebuild32.yaml && mkdir -p ~/wallets/ && cp dist/*.exe ~/wallets/ && rm -r dist/*",
+	"dist-win-exe64": "build -w --config=buildscripts/exebuild64.yaml && mkdir -p ~/wallets/ && cp dist/*.exe ~/wallets/ && rm -r dist/*",
+	"dist-win-zip32": "build -w --config=buildscripts/zipbuild32.yaml && mkdir -p ~/wallets/ && cp dist/*.zip ~/wallets/ && rm -r dist/*",
+	"dist-win-zip64": "build -w --config=buildscripts/zipbuild64.yaml && mkdir -p ~/wallets/ && cp dist/*.zip ~/wallets/ && rm -r dist/*"
+	
   },
   "repository": "https://github.com/fair-exchange/Safewallet/",
   "homepage": "http://ipv6admin.com",
@@ -21,10 +34,11 @@
     "spv",
     "jumblr"
   ],
-  "author": "SafeCoin DEV Team",
+  "author": "SafeCoin DEV Team <inbox@safecoin.org>",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^1.8.7"
+    "electron-builder": "^20.28.4",
+    "electron": "2.0.8"
   },
   "dependencies": {
     "adm-zip": "^0.4.7",
@@ -59,7 +73,7 @@
     "sha256": "^0.2.0",
     "socket.io": "^1.7.3",
     "tx-decoder": "git://github.com/pbca26/tx-decoder",
-    "webpack": "^2.7.0",
+    "webpack": "^4.6.0",
     "wif": "^2.0.6",
     "cors-anywhere": "0.4.1"
   }

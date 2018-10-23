@@ -1,5 +1,3 @@
-// TODO: clean old placeholders
-
 export const LANG_EN = {
   'WALLETS_INFO': {
     'ADDRESS': 'Address',
@@ -185,11 +183,12 @@ export const LANG_EN = {
     'SELECT_A_COIN': 'Select Coin to add to Safewallet',
     'WALLETS': 'Wallets',
     'ACTIVATE_COIN': 'Activate Coin',
-    'WELCOME_PLEASE_ADD': 'Welcome. Please choose SAFE to begin.',
+    'WELCOME_PLEASE_ADD': 'Welcome.',
+    'WELCOME_PLEASE_ADD2': 'Please choose SAFE to begin.',
     'SELECT_SEED_TYPE': 'Please select compatible wallet seed type',
     'SELECT': '-Select-',
     'NATIVE_MODE': 'Native Mode',
-    'NATIVE_MODE_DESC1': 'This mode is ONLY available for SAFECOIN Coin, PAX FIAT Chains, Assetchains, and Geckochains. ' +
+    'NATIVE_MODE_DESC1': 'This mode is ONLY available for SafeCoin. ' +
                          'This mode uses',
     'NATIVE_MODE_DESC2': 'to query blockchain data.',
     'NATIVE_MODE_DESC3': 'is the only mode which allows you to make',
@@ -199,7 +198,8 @@ export const LANG_EN = {
     'PLEASE_USE': 'Please use either',
     'OR': 'or',
     'TO_USE': 'to use',
-    'WELCOME_LOGIN': 'Welcome. Please login',
+    'WELCOME_LOGIN': 'Welcome.',
+    'WELCOME_LOGIN2': 'Please login',
     'WALLET_SEED': 'Wallet Seed / WIF',
     'SIGN_IN': 'Sign in',
     'CREATE_WALLET': 'Create new wallet',
@@ -342,6 +342,9 @@ export const LANG_EN = {
     'CHOOSE_RECEIVING_ADDRESS': 'Choose Address',
     'SAVE_AS_IMAGE': 'Save as Image',
     'OPEN_TRANSACTION_IN_EPLORER': 'Open transaction in @template@ Explorer',
+    'SWISSKNIFE': 'Swiss Knife',
+    'SAFEVOTE': 'Safe Vote',
+    'TOOLS': 'Tools',
   },
   'ATOMIC': {
     'RAW_OUTPUT': 'Raw Output',
@@ -824,7 +827,11 @@ export const LANG_EN = {
     'USD': 'US Dollar (USD)',
   },
   'ASSETCHAINS': {
+    'SAFE': 'SafeCoin (SAFE)',
     'BTCZ': 'BitcoinZ (BTCZ)',
+    'ANON': 'ANON (ANON)',
+    'ZCL': 'ZClassic (ZCL)',
+    'XSG': 'SnowGem (XSG)',
   },
   'DEX': {
     'GEN_NEW_PASSPHRASE': 'Generate a new passphrase',

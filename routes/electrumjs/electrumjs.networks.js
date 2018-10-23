@@ -33,4 +33,45 @@ networks.btcz = {
   isZcash: true,
 };
 
+networks.anon = {
+  messagePrefix: '\x19ANON Signed Message:\n',
+  bip32: {
+    public: 0x0488B21E,
+    private: 0x0488ADE4,
+  },
+  pubKeyHash: 0x0582,
+  scriptHash: 0x5389,
+  wif: 0x80,
+  dustThreshold: 1000,
+  isZcash: true,
+};
+
+networks.zclassic = {
+  messagePrefix: '\x19Zclassic Signed Message:\n',
+  bip32: {
+    public: 0x0488B21E,
+    private: 0x0488ADE4,
+  },
+  pubKeyHash: 0x1CB8,
+  scriptHash: 0x1CBD,
+  wif: 0x80,
+  dustThreshold: 1000,
+  isZcash: true,
+};
+
+networks.snowgem = {
+  messagePrefix: '\x19SnowGem Signed Message:\n',
+  bip32: {
+    public: 0x0488B21E,
+    private: 0x0488ADE4,
+  },
+  pubKeyHash: 0x1C28,
+  scriptHash: 0x1C2D,
+  wif: 0x80,
+  dustThreshold: 1000,
+  isZcash: true,
+};
+
 networks.safe = networks.safecoin;
+networks.zcl = networks.zclassic;
+networks.xsg = networks.snowgem;

@@ -66,13 +66,13 @@ const NavbarRender = function() {
             { this.props.SafeVote && this.props.SafeVote.items &&
               <li className={ this.isSectionActive('safevote') ? 'active nav-top-menu' : 'nav-top-menu' }>
                 <a onClick={ () => this.dashboardChangeSection('safevote') }>
-                  <i className="site-menu-icon"></i> Safe Vote
+                  <i className="site-menu-icon"></i> { translate('INDEX.SAFEVOTE') }
                 </a>
               </li>
             }
             <li className={ this.isSectionActive('swissknife') ? 'active nav-top-menu' : 'nav-top-menu' }>
                 <a onClick={ () => this.dashboardChangeSection('swissknife') }>
-                  <i className="site-menu-icon"></i> Swiss Knife
+                  <i className="site-menu-icon"></i> { translate('INDEX.SWISSKNIFE') }
                 </a>
             </li>
             <li className={ (this.isSectionActive('dex') ? 'active nav-top-menu' : 'nav-top-menu') + (mainWindow.argv.indexOf('dexonly') > -1 ? '' : ' hide') }>
@@ -104,7 +104,7 @@ const NavbarRender = function() {
             { Config.experimentalFeatures &&
               <li className={ this.isSectionActive('tools') ? 'active nav-top-menu' : 'nav-top-menu' }>
                 <a onClick={ () => this.dashboardChangeSection('tools') }>
-                  <i className="site-menu-icon"></i> Tools
+                  <i className="site-menu-icon"></i> { translate('INDEX.TOOLS') }
                 </a>
               </li>
             }
