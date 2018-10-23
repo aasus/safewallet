@@ -21,6 +21,42 @@ let electrumServers = {
       'electrum.safc.cc:10002'
     ],
   },
+  anon: {
+    address: 'local.support',
+    port: 20003,
+    proto: 'tcp',
+    txfee: 10000,
+    abbr: 'ANON',
+    serverList: [
+      'local.support:20003',
+      '45.63.13.60:20003',
+      'electrum.safc.cc:20003'
+    ],
+  },
+  zcl: {
+    address: 'local.support',
+    port: 40001,
+    proto: 'tcp',
+    txfee: 1000,
+    abbr: 'ZCL',
+    serverList: [
+      'local.support:40001',
+      '45.63.13.60:40001',
+      'electrum.safc.cc:40001'
+    ],
+  },
+  xsg: {
+    address: 'local.support',
+    port: 50001,
+    proto: 'tcp',
+    txfee: 10000,
+    abbr: 'XSG',
+    serverList: [
+      'local.support:50001',
+      '45.63.13.60:50001',
+      'electrum.safc.cc:50001'
+    ],
+  },
 };
 
 module.exports = electrumServers;

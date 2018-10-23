@@ -61,6 +61,9 @@ const LoginRender = function() {
             <h4 className="color-white">
               { translate('INDEX.WELCOME_LOGIN') }
             </h4>
+            <h4 className="color-white">
+              { translate('INDEX.WELCOME_LOGIN2') }
+            </h4>
             { this.props.Login.pinList.length > 0 &&
              <span>{ translate('LOGIN.PIN_LOGIN_INFO') }</span>
             }
@@ -243,6 +246,9 @@ const LoginRender = function() {
             <h4 className="color-white">
               { translate('INDEX.WELCOME_PLEASE_ADD') }
             </h4>
+            <h4 className="color-white">
+              { translate('INDEX.WELCOME_PLEASE_ADD2') }
+            </h4>
             <div className="form-group form-material floating width-540 vertical-margin-30 auto-side-margin">
               <button
                 className="btn btn-lg btn-primary btn-block ladda-button"
@@ -297,6 +303,9 @@ const LoginRender = function() {
                  options={[
                     { value: 'safe', label: 'safe' },
                     { value: 'btcz', label: 'btcz' },
+                    /*{ value: 'anon', label: 'anon' },*/
+                    { value: 'zcl', label: 'zcl' },
+                    { value: 'xsg', label: 'xsg' },
                    ]} />
                </div>
  
