@@ -1,10 +1,12 @@
 import { LANG_EN } from './en';
 import { LANG_DE } from './de';
+import { LANG_SE } from './se';
 import Config from '../config';
 
 const _lang = {
   EN: LANG_EN,
   DE: LANG_DE,
+  SE: LANG_SE,
 };
 
 export function translate(langID, interpolateStr) {
