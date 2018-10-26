@@ -1,0 +1,24 @@
+directories:
+  output: dist
+  buildResources: build
+appId: org.safecoin.safewallet
+productName: SafeWallet
+win:
+  icon: assets/icons/icon.ico
+  compression: maximum
+  artifactName: ${productName}-x64-${version}.${ext}
+  asarUnpack: assets/bin/
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  perMachine: true
+  allowElevation: true
+  allowToChangeInstallationDirectory: true
+  license: LICENSE
+  displayLanguageSelector: true
+  createStartMenuShortcut: true
+
+electronVersion: 2.0.8

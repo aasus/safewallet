@@ -42,7 +42,6 @@ let electrumServers = {
     serverList: [
       'local.support:40001',
       '45.63.13.60:40001',
-      'electrum.safc.cc:40001'
     ],
   },
   xsg: {
@@ -54,7 +53,6 @@ let electrumServers = {
     serverList: [
       'local.support:50001',
       '45.63.13.60:50001',
-      'electrum.safc.cc:50001'
     ],
   },
 };
