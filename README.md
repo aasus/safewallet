@@ -6,15 +6,13 @@ You must have `node.js` and `npm` installed on your machine.
 
 Clone Safewallet Desktop App with FairExchange-GUI submodule
 ```shell
-1) git clone https://github.com/fair-exchange/safewallet --recursive --branch pkg_automation_electrum --single-branch
-with this command you git clone safewallet - but explicitly just the pkg_automation_electrum branch (therefore --single-branch) which we also use for the release packages.
+1) git clone https://github.com/fair-exchange/safewallet 
 2) cd safewallet && cd gui/FairExchange-GUI/
-3) git checkout electrum && git pull origin electrum
-4) npm install && npm install webpack
-5) ./binary_artifacts.sh
-6) npm start in project root folder
-7) cd gui/FairExchange-GUI/react/src
-8) npm start
+3) npm install && npm install webpack
+4) ./binary_artifacts.sh
+5) npm start in project root folder
+6) cd gui/FairExchange-GUI/react/src
+7) npm start
 8) toggle dev and debug options in settings
 9) restart the app
 10) sync safecoind and/or asset chains
@@ -54,29 +52,39 @@ sudo apt-get install wine1.8
 
 #### **Alternative build SafeWallet through electron-builder**
 
-##### Linux
-##### x32(x86)
+#### Build SafeWallet
+You must have `node.js` and `npm` installed on your machine.
+Dependencies Wine1.8
+Clone Safewallet Desktop App with FairExchange-GUI submodule
 ```shell
-npm run dist-lin-deb32
-npm run dist-lin-tar32
+1) git clone https://github.com/fair-exchange/safewallet 
+2) cd safewallet
+3) ./buildscripts/fairexchange-build.sh
+4) npm install -y 
+5)
 ```
-##### x64
+
+##### Linux
+#####
 ```shell
-npm run dist-lin-deb64
-npm run dist-lin-tar64
+npm run dist-lin-deb
+npm run dist-lin-tar
 ```
 
 ##### Windows
-##### x32(x86)
+#####
 ```shell
-npm run dist-win-exe32
-npm run dist-win-zip32
+npm run dist-win-exe
+npm run dist-win-zip
 ```
-##### x64
+
+##### MAC
+#####
 ```shell
-npm run dist-win-exe64
-npm run dist-win-zip64
+npm run dist-mac-zip
 ```
+
+Finished build is saved to %HOME%/wallets/
 
 #### **Build the Wallet-App**
 Refer to the original [electron-packager](https://github.com/electron-userland/electron-packager) repository for more detailed information.
