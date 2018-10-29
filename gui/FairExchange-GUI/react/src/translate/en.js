@@ -65,7 +65,7 @@ export const LANG_EN = {
     'BARTER_DEX_DESC': 'Easily exchange cryptocurrencies via a shapeshift-like service.',
     'SAFEWALLET_NOTE': 'Note: Safewallet is still in development. ' +
                   'It is safe to use, but you should make proper backups. ' +
-                  'We do not recommend using it as the primarily wallet for your cryptocurrencies.',
+                  'We do not recommend using it as the primarily wallet for your other cryptocurrencies.',
     'TESTERS': 'Testers',
     'TESTERS_P1': 'You can help us test Safewallet. Just',
     'TESTERS_P2': 'download and install the latest release',
@@ -86,7 +86,7 @@ export const LANG_EN = {
     'ADDRESS_ALREADY_REG': 'Address already registered',
     'COULDNT_COPY_ADDRESS': 'Couldn\'t copy address to clipboard',
     'COULDNT_CREATE_SEED': 'Couldn\'t create new wallet seed',
-    'WALLETDAT_MISMATCH': 'Your wallet.dat is not matching the blockchain. Please restart the wallet with -reindex param.',
+    'WALLETDAT_MISMATCH': 'Your wallet.dat is not matching the blockchain. Please restart the wallet with -reindex param. If you got this error while sending funds, it\'s because there is many incoming micro transactions. These causes the Utxo send buffer to decrease, so you need to send a smaller amount and work your way up. Make sure to set a higher payout threshold on the pool to avoid this in the future.',
     'PEER_ADDED': 'Peer is added',
     'ADDNODE_ALREADY_PENDING': 'Addnode connection was already pending',
     'PEER_ALREADY_CONN': 'Peer was already connected',
@@ -469,7 +469,7 @@ export const LANG_EN = {
   },
   'DASHBOARD': {
     'SHOW_ALL_ADDR': 'Show all addresses',
-    'RPC_CONN_FAILURE': 'Unable to establish RPC connection! Retries count',
+    'RPC_CONN_FAILURE': 'Unable to establish RPC connection! Add exception in Firewall and Antivirus. Retries count',
     'REMOVE': 'Remove',
     'STOP': 'Stop',
     'SOFT_LOGOUT': 'Soft logout',
@@ -511,7 +511,7 @@ export const LANG_EN = {
     'WIN_SYNC_WORKAROUND_APPLIED': 'Windows sync workaround is applied. Closing the app...',
     'WIN_SYNC_WORKAROUND_APPLY_FAILED': 'Unable to apply Windows sync workaround!',
     'WIN_SYNC_WORKAROUND_REVERTED': 'Current sync state reached 80% level. Windows sync workaround is disabled. Changes will be applied next time you start the app.',
-    'WIN_SYNC_WORKAROUND_CTA_P1': 'Slow sync speed on Windows? Try this workaround.',
+    'WIN_SYNC_WORKAROUND_CTA_P1': 'Old slow Computer? Try this workaround.',
     'WIN_SYNC_WORKAROUND_CTA_P2': 'It will add maxconnections=1 in safecoin.conf file and force close the app.',
     'WIN_SYNC_WORKAROUND_CTA_P3': 'Please run the app again after that.',
     'APPLY_WORKAROUND': 'Apply workaround',
@@ -736,7 +736,7 @@ export const LANG_EN = {
   'ZCPARAMS_FETCH': {
     'DOWNLOADING_ZCASH_KEYS': 'Downloading Zcash keys',
     'BOTH_KEYS_VERIFIED': 'Both Zcash param keys are downloaded and verified!',
-    'CLOSE_THE_MODAL': 'Close the modal and try to add a coin again.',
+    'CLOSE_THE_MODAL': 'Close the app and try to add a coin again.',
     'ZCPARAMS_VERIFICATION_ERROR_P1': 'Zcash param',
     'ZCPARAMS_VERIFICATION_ERROR_P2': 'verification error!',
     'ZCPARAMS_FETCH': 'ZCash Params Fetch',
