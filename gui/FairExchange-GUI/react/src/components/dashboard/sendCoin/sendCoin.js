@@ -583,7 +583,7 @@ class SendCoin extends React.Component {
     }
 
     if (!this.state.sendTo ||
-        (this.state.sendTo && this.state.sendTo.substring(0, 2) !== 'zc')) {
+        (this.state.sendTo && this.state.sendTo.substring(0, 2) !== 'x4')) {
       const _validateAddress = mainWindow.addressVersionCheck(this.props.ActiveCoin.coin, this.state.sendTo);
       let _msg;
 
@@ -644,7 +644,7 @@ class SendCoin extends React.Component {
       }
 
       if (this.state.sendTo.length > 34 &&
-          this.state.sendTo.substring(0, 2) === 'zc' &&
+          this.state.sendTo.substring(0, 2) === 'x4' &&
           !this.state.sendFrom) {
         Store.dispatch(
           triggerToaster(

@@ -99,7 +99,7 @@ module.exports = (shepherd) => {
                   }
 
                   if (isNewAddr &&
-                      (allAddrArray[a].substring(0, 2) === 'zc' ||
+                      (allAddrArray[a].substring(0, 2) === 'x4' ||
                       allAddrArray[a].substring(0, 2) === 'zt')) {
                     result[1][result[1].length] = allAddrArray[a];
                   } else {
