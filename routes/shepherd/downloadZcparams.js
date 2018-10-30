@@ -17,8 +17,8 @@ module.exports = (shepherd) => {
       verifying: 'https://z.cash/downloads/sprout-verifying.key',
     },
     'Ukraine': {
-      proving: 'http://electrumua.safecoin.org/zcashparams/sprout-proving.key',
-      verifying: 'http://electrumua.safecoin.org/zcashparams/sprout-verifying.key',
+      proving: 'http://electrumua.safecoin.org/sprout-proving.key',
+      verifying: 'http://electrumua.safecoin.org/sprout-verifying.key',
     },
     'USA': {
       proving: 'https://assets.anonfork.io/sprout-proving.key',
