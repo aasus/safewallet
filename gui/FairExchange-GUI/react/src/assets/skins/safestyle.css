@@ -1897,11 +1897,11 @@ code {
   border: 1px solid #ffe0b2;
 }
 .table {
-  color: #000000;
+  color: #fff;
 }
 .table > thead > tr > th,
 .table > tfoot > tr > th {
-  color: #616161;
+  color: #fff;
 }
 .table > thead > tr > th {
   border-bottom: 1px solid #e0e0e0;
@@ -4565,7 +4565,7 @@ button.list-group-item-dark.active:focus {
   border-color: #e0e0e0;
 }
 .panel-title {
-  color: #424242;
+  color: #fff;
 }
 .panel-title small {
   color: #000000;
