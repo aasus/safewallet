@@ -22,66 +22,13 @@ class WalletsProgress extends React.Component {
     this.state = {
       prevProgress: {},
       isWindows: false,
-      isWindowsWorkaroundEnabled: false,
     };
     this.isWinSyncPercBelowThreshold = this.isWinSyncPercBelowThreshold.bind(this);
-    this.applyWindowsSyncWorkaround = this.applyWindowsSyncWorkaround.bind(this);
   }
 
   componentWillMount() {
     const _mainWindow = mainWindow;
     const _isWindows = mainWindow.isWindows;
-
-    if (_isWindows) {
-      _mainWindow.getMaxconSAFEConf()
-      .then((res) => {
-        if (!res ||
-            Number(res) !== 1) {
-          this.setState({
-            isWindowsWorkaroundEnabled: false,
-            isWindows: _isWindows,
-          });
-        } else {
-          this.setState({
-            isWindowsWorkaroundEnabled: true,
-            isWindows: _isWindows,
-          });
-        }
-      });
-    }
-  }
-
-  applyWindowsSyncWorkaround() {
-    const _mainWindow = mainWindow;
-
-    _mainWindow.setMaxconSAFEConf(1)
-    .then((res) => {
-      if (res) {
-        this.setState({
-          isWindowsWorkaroundEnabled: true,
-        });
-
-        Store.dispatch(
-          triggerToaster(
-            translate('DASHBOARD.WIN_SYNC_WORKAROUND_APPLIED'),
-            translate('TOASTR.WALLET_NOTIFICATION'),
-            'success'
-          )
-        );
-
-        setTimeout(() => {
-          _mainWindow.appExit();
-        }, 2000);
-      } else {
-        Store.dispatch(
-          triggerToaster(
-            translate('DASHBOARD.WIN_SYNC_WORKAROUND_APPLY_FAILED'),
-            translate('TOASTR.WALLET_NOTIFICATION'),
-            'error'
-          )
-        );
-      }
-    });
   }
 
   componentWillReceiveProps(props) {
@@ -106,35 +53,9 @@ class WalletsProgress extends React.Component {
     }
 
     if (this.isWinSyncPercBelowThreshold() !== -777 &&
-        this.state.isWindowsWorkaroundEnabled &&
         !this.isWinSyncPercBelowThreshold()) {
       const _mainWindow = mainWindow;
 
-      _mainWindow.setMaxconSAFEConf()
-      .then((res) => {
-        if (res) {
-          this.setState({
-            isWindowsWorkaroundEnabled: false,
-          });
-
-          Store.dispatch(
-            triggerToaster(
-              translate('DASHBOARD.WIN_SYNC_WORKAROUND_REVERTED'),
-              translate('TOASTR.WALLET_NOTIFICATION'),
-              'info',
-              false
-            )
-          );
-        } else {
-          Store.dispatch(
-            triggerToaster(
-              translate('DASHBOARD.WIN_SYNC_WORKAROUND_APPLY_FAILED'),
-              translate('TOASTR.WALLET_NOTIFICATION'),
-              'error'
-            )
-          );
-        }
-      });
     }
   }
 

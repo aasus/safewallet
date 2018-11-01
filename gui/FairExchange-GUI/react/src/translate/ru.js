@@ -511,13 +511,6 @@ export const LANG_RU = {
     'CLAIM_INTEREST_HELPER_BAR_ALT_P1': 'У вас нет процентов к зачислению',
     'CLAIM_INTEREST_HELPER_BAR_ALT_P2': 'Проверить UTXO',
     'SEARCH': 'Поиск',
-    'WIN_SYNC_WORKAROUND_APPLIED': '"workaround" включен. Закрываем приложение...',
-    'WIN_SYNC_WORKAROUND_APPLY_FAILED': 'Невозможно применить "workaround"!',
-    'WIN_SYNC_WORKAROUND_REVERTED': 'Текущий прогресс синхронизации достиг 80% "workaround" отключен. Изменения будут применены при следующем запуске приложения..',
-    'WIN_SYNC_WORKAROUND_CTA_P1': 'Медленно синхронизируется под Windows? попробуйте "workaround".',
-    'WIN_SYNC_WORKAROUND_CTA_P2': 'Это добавит maxconnections=1 в файл safecoin.conf и закроет приложение.',
-    'WIN_SYNC_WORKAROUND_CTA_P3': 'После этого, пожалуйста, запустите приложение еще раз.',
-    'APPLY_WORKAROUND': 'Применить "workaround"',
     'CURRENT_BLOCK_SM': 'текущий блок',
   },
   'TOASTR': {
