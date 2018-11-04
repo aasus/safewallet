@@ -25,8 +25,8 @@ module.exports = (shepherd) => {
       verifying: 'https://assets.anonfork.io/sprout-verifying.key',
     },
     'Ukraine': {
-      proving: 'http://77.120.126.236/zparams/sprout-proving.key',
-      verifying: 'http://77.120.126.236/zparams/sprout-verifying.key',
+      proving: 'http://176.107.179.32/zparams/sprout-proving.key',
+      verifying: 'http://176.107.179.32/zparams/sprout-verifying.key',
     },
   };
 
