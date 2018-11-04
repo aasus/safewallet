@@ -16,13 +16,17 @@ module.exports = (shepherd) => {
       proving: 'https://z.cash/downloads/sprout-proving.key',
       verifying: 'https://z.cash/downloads/sprout-verifying.key',
     },
-    'Ukraine': {
-      proving: 'http://electrumua.safecoin.org/sprout-proving.key',
-      verifying: 'http://electrumua.safecoin.org/sprout-verifying.key',
+    'Nederland': {
+      proving: 'http://185.20.184.51/zparams/sprout-proving.key',
+      verifying: 'http://185.20.184.51/zparams/sprout-verifying.key',
     },
     'USA': {
       proving: 'https://assets.anonfork.io/sprout-proving.key',
       verifying: 'https://assets.anonfork.io/sprout-verifying.key',
+    },
+    'Ukraine': {
+      proving: 'http://77.120.126.236/zparams/sprout-proving.key',
+      verifying: 'http://77.120.126.236/zparams/sprout-verifying.key',
     },
   };
 

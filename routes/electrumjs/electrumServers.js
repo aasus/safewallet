@@ -8,7 +8,7 @@ let electrumServers = {
     serverList: [
       'local.support:10001',
       'electrum.safc.cc:10001',
-      'electrumua.safecoin.org:10001'
+      'electrumnld.safecoin.org:10001'
     ],
   },
   btcz: {
