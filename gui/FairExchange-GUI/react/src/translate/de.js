@@ -481,13 +481,6 @@ export const LANG_DE = {
     'CLAIM_INTEREST_HELPER_BAR_ALT_P1': 'Es sind keine Zinsen zum Abrufen vorhanden.',
     'CLAIM_INTEREST_HELPER_BAR_ALT_P2': 'UTXO überprüfen',
     'SEARCH': 'Suche',
-    'WIN_SYNC_WORKAROUND_APPLIED': 'Abhilfemaßnahme für Sync unter Windows wird angewendet. App wird geschlossen...',
-    'WIN_SYNC_WORKAROUND_APPLY_FAILED': 'Abhilfemaßnahme für Sync unter Windows kann nicht angewendet werden!',
-    'WIN_SYNC_WORKAROUND_REVERTED': 'Der Status der Synchronisierung hat einen Stand von 80 % erreicht. Abhilfemaßnahme für Sync unter Windows ist deaktiviert. Änderungen werden beim nächsten Neustart der App angewendet.',
-    'WIN_SYNC_WORKAROUND_CTA_P1': 'Langsame Synchronisierung unter Windows? Versuchen Sie es mit dieser Abhilfemaßnahme.',
-    'WIN_SYNC_WORKAROUND_CTA_P2': 'Dadurch wird maxconnections=1 in der Datei safecoin.conf hinzugefügt und die App geschlossen.',
-    'WIN_SYNC_WORKAROUND_CTA_P3': 'Bitte starten Sie die App anschließend neu.',
-    'APPLY_WORKAROUND': 'Abhilfemaßnahme anwenden',
     'CURRENT_BLOCK_SM': 'aktueller Block'
   },
   'TOASTR': {

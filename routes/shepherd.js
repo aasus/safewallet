@@ -128,7 +128,6 @@ shepherd = require('./shepherd/quitDaemon.js')(shepherd);
 shepherd = require('./shepherd/rpc.js')(shepherd);
 shepherd = require('./shepherd/kickstart.js')(shepherd);
 shepherd = require('./shepherd/debugLog.js')(shepherd);
-shepherd = require('./shepherd/confMaxconnections.js')(shepherd);
 shepherd = require('./shepherd/appInfo.js')(shepherd);
 shepherd = require('./shepherd/daemonControl.js')(shepherd);
 shepherd = require('./shepherd/auth.js')(shepherd);

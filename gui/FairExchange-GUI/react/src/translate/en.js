@@ -511,13 +511,6 @@ export const LANG_EN = {
     'CLAIM_INTEREST_HELPER_BAR_ALT_P1': 'You don\'t have any interest to claim',
     'CLAIM_INTEREST_HELPER_BAR_ALT_P2': 'Check UTXO',
     'SEARCH': 'Search',
-    'WIN_SYNC_WORKAROUND_APPLIED': 'Windows sync workaround is applied. Closing the app...',
-    'WIN_SYNC_WORKAROUND_APPLY_FAILED': 'Unable to apply Windows sync workaround!',
-    'WIN_SYNC_WORKAROUND_REVERTED': 'Current sync state reached 80% level. Windows sync workaround is disabled. Changes will be applied next time you start the app.',
-    'WIN_SYNC_WORKAROUND_CTA_P1': 'Slow sync speed on Windows? Try this workaround.',
-    'WIN_SYNC_WORKAROUND_CTA_P2': 'It will add maxconnections=1 in safecoin.conf file and force close the app.',
-    'WIN_SYNC_WORKAROUND_CTA_P3': 'Please run the app again after that.',
-    'APPLY_WORKAROUND': 'Apply workaround',
     'CURRENT_BLOCK_SM': 'current block',
   },
   'TOASTR': {
